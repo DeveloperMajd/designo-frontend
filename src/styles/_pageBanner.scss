@@ -1,0 +1,53 @@
+.page-banner {
+  position: relative;
+
+  * {
+    &::selection {
+      color: $white;
+      background-color: rgba($color: $cinnamon, $alpha: 0.5);
+    }
+  }
+
+  .bg-wrapper {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%) scaleY(-1);
+    svg {
+      display: block;
+    }
+  }
+
+  .container {
+    background-color: $peach;
+    padding: $container-padding-mobile;
+
+    @include tablet {
+      padding: $container-padding-tablet;
+      border-radius: 0.9375rem;
+    }
+
+    @include desktop {
+      padding: $container-padding-desktop;
+    }
+  }
+
+  .content-wrapper {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    color: $white;
+
+    .title {
+      color: $white;
+    }
+  }
+  .btn-wrapper {
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    @include desktop {
+      justify-content: flex-end;
+    }
+  }
+}

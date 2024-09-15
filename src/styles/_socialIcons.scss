@@ -1,0 +1,20 @@
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  a {
+    outline: none;
+
+    svg {
+      display: block;
+    }
+    &:hover,
+    &:focus {
+      path {
+        fill: $light-peach;
+      }
+    }
+  }
+}

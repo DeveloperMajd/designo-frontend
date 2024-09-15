@@ -1,0 +1,261 @@
+html {
+  scroll-behavior: auto;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  outline: none;
+  overflow-wrap: break-word;
+}
+
+img,
+svg {
+  display: block;
+  &::selection {
+    background-color: rgba($color: $light-peach, $alpha: 0.5);
+  }
+}
+body {
+  font-family: $jost-reqular;
+  font-size: 0.9375rem;
+  line-height: 1.5625rem;
+  color: $dark-grey;
+
+  @include tablet {
+    font-size: 1rem;
+    line-height: 1.625rem;
+  }
+
+  * {
+    &::selection {
+      color: $white;
+      background-color: $peach;
+    }
+  }
+}
+
+section {
+  position: relative;
+  margin: 0 $section-padding-mobile 7.5rem $section-padding-mobile;
+
+  @include tablet {
+    margin: 0 $section-padding-tablet 7.5rem $section-padding-tablet;
+  }
+  @include desktop {
+    margin: 0 $section-padding-desktop 10rem $section-padding-desktop;
+  }
+  @include fullhd {
+    margin: 0 $section-padding-fullhd 10rem $section-padding-fullhd;
+  }
+
+  &.is-full-width {
+    @include mobile {
+      margin: 0 0 7.5rem 0;
+    }
+  }
+}
+
+.container {
+  overflow: hidden;
+  justify-content: space-between;
+  align-items: center !important;
+}
+
+.columns {
+  position: relative;
+  z-index: 1;
+}
+
+h1,
+.h1 {
+  font-family: $jost-medium;
+  font-size: 2rem;
+  line-height: 2.25rem;
+
+  @include tablet {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+}
+
+h2,
+.h2 {
+  font-family: $jost-medium;
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+  letter-spacing: 0.0875rem;
+  color: $white;
+
+  @include desktop {
+    font-size: 2.5rem;
+    line-height: 3rem;
+    letter-spacing: 0.125rem;
+  }
+}
+h3,
+.h3 {
+  font-family: $jost-medium;
+  font-size: 1.25rem;
+  line-height: 1.625rem;
+  letter-spacing: 0.3125rem;
+  color: $dark-grey;
+}
+h4,
+.h4 {
+  font-family: $jost-medium;
+  font-size: 2rem;
+  line-height: 2.25rem;
+
+  @include tablet {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+  }
+}
+h5,
+.h5 {
+  font-family: $jost-medium;
+  font-size: 2rem;
+  line-height: 2.25rem;
+
+  @include tablet {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+}
+
+strong {
+  font-family: $jost-bold;
+}
+.btn {
+  font-family: $jost-medium;
+  border-radius: 8px;
+  font-size: 0.938rem;
+  letter-spacing: 0.0625rem;
+  text-transform: uppercase;
+  width: 9.5rem;
+  height: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  &.onDark {
+    color: $dark-grey;
+    background-color: $white;
+    box-shadow: 0 4px 4px 0 rgba($color: #000000, $alpha: 0.25);
+
+    &:hover {
+      color: $white;
+      background-color: $light-peach;
+      box-shadow: none;
+    }
+  }
+  &.onLight {
+    color: $white;
+    background-color: $peach;
+
+    &:hover {
+      background-color: $light-peach;
+    }
+  }
+}
+
+.nav-item {
+  font-family: $jost-reqular;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  line-height: 1.5625rem;
+  letter-spacing: 0.125rem;
+  color: $white;
+  cursor: pointer;
+
+  @include tablet {
+    font-size: 0.875rem;
+    line-height: 0.875rem;
+    color: $dark-grey;
+  }
+}
+
+.form-input {
+  background-color: transparent;
+  border-bottom: 0.0625rem solid $white;
+  color: rgba($color: $white, $alpha: 0.5);
+  font-family: $jost-medium;
+  font-size: 0.9375rem;
+  line-height: 1.625rem;
+
+  padding: 0 0.5rem 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &.filled {
+    color: $white;
+    border-bottom: 0.25rem solid $white;
+  }
+}
+
+.error-massage {
+  font-family: $jost-italic;
+  font-size: 0.75rem;
+  line-height: 1.625rem;
+  color: $white;
+
+  .error-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-left: 0.5rem;
+  }
+}
+
+.columns,
+.column {
+  margin: 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.bg-pattern {
+  position: absolute;
+  z-index: -10;
+
+  &.is-left-bottom {
+    top: 50%;
+    left: -5rem;
+
+    @include fullhd {
+      left: -10.3125rem;
+    }
+  }
+  &.is-right-top {
+    bottom: 50%;
+    right: -5rem;
+    transform: rotate(180deg);
+    @include fullhd {
+      right: -10.3125rem;
+    }
+  }
+  &.is-right-bottom {
+    bottom: 0;
+    right: -5rem;
+    transform: translate(40%, 70%);
+
+    @include fullhd {
+      right: -10.3125rem;
+      transform: translate(30%, 70%);
+    }
+    @include ultrahd {
+      transform: translate(15%, 70%);
+    }
+  }
+}

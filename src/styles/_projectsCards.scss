@@ -1,0 +1,84 @@
+.projects-cards {
+  .container {
+    .main-columns {
+      outline: 1px solid blue;
+      display: flex;
+      row-gap: 2.5rem;
+      
+      @include tablet {
+        row-gap: 2rem;
+      }
+      @include desktop {
+        row-gap: 1.5rem;
+        flex-direction: row;
+      }
+    }
+    .project-card {
+      border-radius: 0.9375rem 0.9375rem 0 0;
+      padding-block: 0;
+
+      @include tablet {
+        border-radius: 0.9375rem 0 0 0.9375rem;
+      }
+      @include desktop {
+        border-radius: 0.9375rem 0.9375rem 0 0;
+        display: flex;
+        .columns {
+          flex-direction: column;
+        }
+      }
+
+      .card-image {
+        padding: 0;
+        img {
+          width: 100%;
+          border-radius: 0.9375rem 0.9375rem 0 0;
+
+          @include tablet {
+            border-radius: 0.9375rem 0 0 0.9375rem;
+          }
+          @include desktop {
+            border-radius: 0.9375rem 0.9375rem 0 0;
+          }
+        }
+      }
+      .card-content {
+        padding: 2rem 1.875rem;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: $faded-peach;
+        border-radius: 0 0 0.9375rem 0.9375rem;
+        cursor: pointer;
+        transition: background-color 0.4s ease-in-out;
+
+        @include tablet {
+          padding: 2rem 2.5rem;
+          border-radius: 0 0.9375rem 0.9375rem 0;
+        }
+        @include desktop {
+          padding: 2rem;
+          border-radius: 0 0 0.9375rem 0.9375rem;
+          flex: 1;
+          justify-content: flex-start;
+        }
+
+        .title {
+          color: $peach;
+          text-transform: uppercase;
+          margin-bottom: 1rem;
+        }
+
+        &:hover {
+          background-color: $peach;
+          color: $white;
+          .title {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}

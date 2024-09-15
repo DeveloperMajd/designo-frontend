@@ -1,0 +1,109 @@
+.navbar {
+  position: relative;
+  background-color: $white;
+  display: flex;
+  justify-content: center;
+
+  .logo {
+    margin-top: 0.25rem;
+    width: 12.625rem;
+    height: 1.6875rem;
+    @include tablet {
+      margin-top: 0;
+    }
+  }
+
+  .container {
+    z-index: 10;
+    background-color: $white;
+    padding: 1.5rem .8rem 1.3rem 1.5rem;
+
+    @include tablet {
+      padding: 4rem $section-padding-tablet;
+    }
+    @include desktop {
+      margin: 4rem 0;
+      padding: 0;
+    }
+    @include fullhd {
+      margin: 4rem $section-padding-fullhd;
+      padding: 0;
+    }
+  }
+
+  .nav-items-wrapper {
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    @include mobile {
+      position: absolute;
+      inset: 0;
+      top: 100%;
+      height: calc(100dvh );
+    }
+    @include tablet {
+      position: relative;
+      height: initial;
+      background-color: $white;
+    }
+
+    .nav-items {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      @include mobile {
+        background-color: $black;
+        padding: 3rem 1.5rem;
+      }
+
+      @include tablet {
+        flex-direction: row;
+        gap: 2.625rem;
+        background-color: $white;
+        padding: 0;
+      }
+
+      .nav-item {
+        position: relative;
+        text-decoration: none;
+        outline: none;
+        width: fit-content;
+
+        &::before {
+          content: "";
+          position: absolute;
+          display: block;
+          width: 100%;
+          height: 1px;
+          bottom: 0;
+          left: 0;
+          background-color: $white;
+          transform: scaleX(0);
+          transition: transform 0.3s ease;
+
+          @include tablet {
+            background-color: $dark-grey;
+          }
+        }
+
+        &:hover,
+        &:focus {
+          &::before {
+            transform: scaleX(1);
+          }
+        }
+      }
+    }
+    .overlay {
+      flex: 1;
+      background-color: rgba($color: #000000, $alpha: 0.5);
+    }
+  }
+
+  .hamburger-react {
+    > div {
+      height: 4px !important;
+    }
+  }
+}

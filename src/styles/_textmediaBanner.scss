@@ -1,0 +1,87 @@
+.text-media-banner {
+  * {
+    &::selection {
+      color: $white;
+      background-color: rgba($color: $cinnamon, $alpha: 0.5);
+    }
+  }
+
+  img {
+    &::selection {
+      background-color: transparent;
+    }
+  }
+  .columns {
+    @include desktop {
+      flex-direction: row-reverse;
+    }
+  }
+  .img-column {
+    position: relative;
+    z-index: 2;
+
+    img {
+      height: 100%;
+      width: 100%;
+      @include tablet {
+        border-radius: 0.9375rem 0.9375rem 0 0;
+      }
+      @include desktop {
+        border-radius: 0 0.9375rem 0.9375rem 0;
+      }
+    }
+  }
+  .text-column {
+    background-color: $peach;
+    padding: $container-padding-mobile;
+    text-align: center;
+    color: $white;
+    position: relative;
+    @include tablet {
+      border-radius: 0 0 0.9375rem 0.9375rem;
+      padding: $container-padding-tablet;
+    }
+    @include desktop {
+      border-radius: 0.9375rem 0 0 0.9375rem;
+      text-align: left;
+      padding: $container-padding-desktop;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      margin-bottom: 1.5rem;
+
+      @include tablet {
+        margin-bottom: 2rem;
+      }
+    }
+
+    .text-content {
+      position: relative;
+      z-index: 2;
+    }
+    .bg-pattern-wrapper {
+      position: absolute;
+      top: -34%;
+      right: 0;
+      z-index: 1;
+      @include tablet {
+        left: -10%;
+        top: unset;
+        bottom: 20%;
+      }
+      @include desktop {
+        left: unset;
+        right: 0;
+        bottom: 0;
+      }
+      @include fullhd {
+        right: unset;
+        left: 0;
+      }
+    }
+  }
+}

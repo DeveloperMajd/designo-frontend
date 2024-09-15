@@ -1,0 +1,82 @@
+.contact-showcase {
+  position: relative;
+  margin-bottom: 0;
+  transform: translateY(13rem);
+  margin-top: -13rem;
+  z-index: 1;
+  * {
+    &::selection {
+      color: $white;
+      background-color: rgba($color: $cinnamon, $alpha: 0.5);
+    }
+  }
+  @include tablet {
+    transform: translateY(7rem);
+    margin-top: -7rem;
+  }
+
+  @include desktop {
+    transform: translateY(5rem);
+    margin-top: -5rem;
+  }
+
+  .bg-wrapper {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+
+    @include tablet {
+      left: 0;
+    }
+    @include desktop {
+      left: unset;
+    }
+  }
+
+  .container {
+    background-color: $peach;
+    padding: 4rem 1.5rem;
+    border-radius: 0.9375rem;
+    @include tablet {
+      padding: 3.5rem;
+    }
+
+    @include desktop {
+      padding: 4.5rem 6rem;
+    }
+  }
+
+  .content-wrapper {
+    display: flex;
+    text-align: center;
+    color: $white;
+
+    .content {
+      @include desktop {
+        margin: 0;
+        padding: 0;
+      }
+    }
+    .title {
+      color: $white;
+    }
+    @include tablet {
+      align-items: center;
+      justify-self: centers;
+    }
+    @include desktop {
+      justify-content: space-between;
+      align-items: center;
+      text-align: start;
+    }
+  }
+  .btn-wrapper {
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    @include desktop {
+      justify-content: flex-end;
+    }
+  }
+}

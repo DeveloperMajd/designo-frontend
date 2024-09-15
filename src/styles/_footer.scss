@@ -1,0 +1,129 @@
+.footer {
+  padding: 0;
+  background-color: $black;
+  color: $white;
+
+  section {
+    margin-bottom: 0;
+  }
+  .logo {
+    width: 12.625rem;
+    height: 1.6875rem;
+  }
+
+  .container {
+    padding-block: 4rem;
+
+    @include tablet {
+      padding-block: 5rem;
+    }
+    @include desktop {
+      padding-block: 4.5rem;
+    }
+
+    &.has-box {
+      padding-top: 15.8125rem;
+
+      @include tablet {
+        padding-top: 10.375rem;
+      }
+      @include desktop {
+        padding-top: 9rem;
+      }
+    }
+  }
+  .column,
+  .columns {
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-col {
+    margin-bottom: 2.5rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+  }
+  .line {
+    width: 100%;
+    height: 1px;
+    background-color: $white;
+    opacity: 20%;
+    margin-block: 2rem;
+  }
+
+  .footer-items-wrapper {
+    .footer-items {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+
+      @include tablet {
+        flex-direction: row;
+        gap: 2.625rem;
+      }
+
+      .footer-item {
+        position: relative;
+        text-decoration: none;
+        outline: none;
+        width: fit-content;
+        color: $white;
+
+        @include mobile {
+          font-size: 0.875rem;
+          line-height: 0.875rem;
+        }
+
+      
+        
+
+        &::before {
+          content: "";
+          position: absolute;
+          display: block;
+          width: 100%;
+          height: 1px;
+          bottom: 0;
+          left: 0;
+          background-color: $white;
+          transform: scaleX(0);
+          transition: transform 0.3s ease;
+        }
+
+        &:hover,
+        &:focus {
+          &::before {
+            transform: scaleX(1);
+          }
+        }
+      }
+    }
+  }
+  .address,
+  .contact-info {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: rgba($color: $white, $alpha: 0.5);
+    @include tablet {
+      margin-bottom: 0;
+      text-align: start;
+    }
+  }
+
+  .social-col {
+    justify-content: center;
+    align-items: center;
+    @include tablet {
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+  }
+}

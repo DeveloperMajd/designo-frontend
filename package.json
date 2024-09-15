@@ -1,0 +1,33 @@
+{
+  "name": "designo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "bulma": "^0.9.4",
+    "framer-motion": "^10.18.0",
+    "hamburger-react": "^2.5.0",
+    "leaflet": "^1.9.4",
+    "next": "14.0.4",
+    "qs": "^6.13.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-leaflet": "^4.2.1",
+    "sass": "^1.76.0"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
+    "@types/leaflet": "^1.9.8",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.4",
+    "typescript": "^5"
+  }
+}

@@ -1,0 +1,55 @@
+//* Fonts
+@font-face {
+  font-family: "Jost Medium";
+  src: url("../assets/fonts/Jost-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Jost Reqular";
+  src: url("../assets/fonts/Jost-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Jost italic";
+  src: url("../assets/fonts/Jost-Italic.ttf");
+}
+
+@font-face {
+  font-family: "Jost Bold";
+  src: url("../assets/fonts/Jost-Bold.ttf");
+}
+
+$jost-bold: "Jost Bold", Arial Bold, Helvetica Bold, sans-serif;
+$jost-medium: "Jost Medium", Arial Bold, Helvetica Bold, sans-serif;
+$jost-reqular: "Jost Reqular", Arial, Helvetica, sans-serif;
+$jost-italic: "Jost italic", Arial, Helvetica, sans-serif;
+
+//* Colors
+$peach: #e7816b;
+$light-peach: #ffad9b;
+
+$black: #1d1c1e;
+$white: #ffffff;
+
+$dark-grey: #333136;
+$light-grey: #f1f3f5;
+
+$cinnamon: #93726a;
+
+$faded-peach: #fdf3f0;
+
+//* Sections padding
+$section-padding-mobile: 1.5rem;
+$section-padding-tablet: 2.5rem;
+$section-padding-desktop: 5rem;
+$section-padding-fullhd: 10.3125rem;
+
+$container-padding-mobile: 4rem 1.5rem;
+$container-padding-tablet: 3.5rem;
+$container-padding-desktop: 4.5rem 6rem;
+
+@mixin ultrahd {
+  @media screen and (min-width: 1920px) {
+    @content;
+  }
+}
