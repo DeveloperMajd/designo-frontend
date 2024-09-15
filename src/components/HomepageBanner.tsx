@@ -18,7 +18,6 @@ interface HomepageBannerProps {
 
 export const HomepageBanner = ({ data }: HomepageBannerProps) => {
   const { headline, text, image, link } = data;
-  const imageData = image?.data?.attributes;
 
   return (
     <section className="content-showcase is-full-width">
@@ -42,16 +41,9 @@ export const HomepageBanner = ({ data }: HomepageBannerProps) => {
                 </Link>
               </div>
             </div>
-            {imageData && (
-              <div className="column is-12-tablet is-6-desktop img-col">
-                <MediaItem
-                  src={imageData.url}
-                  alt={imageData.alternativeText || "homepage banner image"}
-                  height={imageData.height}
-                  width={imageData.width}
-                />
-              </div>
-            )}
+            <div className="column is-12-tablet is-6-desktop img-col">
+              <MediaItem imageData={image} />
+            </div>
           </div>
         </div>
       </div>

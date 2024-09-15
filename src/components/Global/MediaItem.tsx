@@ -1,32 +1,26 @@
 import Image from "next/image";
 import { getStrapiMedia } from "../../utils/fetchMedia";
+import { ImageType } from "@/utils/baseTypes";
 
 interface MediaItemProps {
-  src: string;
-  alt: string;
-  height: number;
-  width: number;
-  className?: string;
+  imageData: ImageType;
 }
 
-export function MediaItem({
-  src,
-  alt,
-  height,
-  width,
-  className,
-}: Readonly<MediaItemProps>) {
-  if (!src) return null;
-  const imageUrl = getStrapiMedia(src);
-  const imageFallback = `https://placehold.co/${width}x${height}`;
+export const MediaItem = ({ imageData }: MediaItemProps) => {
+  const { url, alternativeText, width, height } = imageData.data.attributes;
+
+  const imageUrl = getStrapiMedia(url) || ""; // Add default value of an empty string
 
   return (
     <Image
-      src={imageUrl ?? imageFallback}
-      alt={alt}
-      height={height}
+      src={imageUrl}
+      alt={alternativeText}
       width={width}
-      className={className}
+      height={height}
+      style={{
+        objectFit: "cover",
+        objectPosition: "center",
+      }}
     />
   );
-}
+};
