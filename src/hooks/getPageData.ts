@@ -1,5 +1,5 @@
 import { PageType } from "@/utils/baseTypes";
-import { getPage } from "./getPage";
+import { getPage } from "./getData";
 
 export async function getPageData(
   dynamicRoute: string[]

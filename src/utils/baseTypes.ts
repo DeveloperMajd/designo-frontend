@@ -22,6 +22,20 @@ export type ContactType = {
   };
 };
 
+export type MenuType = {
+  id: number;
+  attributes: {
+    title: string;
+    slug: string;
+    items: {
+      data: {
+        id: number;
+        attributes: LinkType;
+      }[];
+    };
+  };
+};
+
 export type ImageType = {
   data: {
     attributes: {

@@ -1,9 +1,9 @@
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
 import { getAllPaths } from "@/hooks/getAllPaths";
-import { getContactData } from "@/hooks/getPage";
+import { getContactData, getMenuData } from "@/hooks/getData";
 import { getPageData } from "@/hooks/getPageData";
-import { ContactType, PageType } from "@/utils/baseTypes";
+import { ContactType, MenuType, PageType } from "@/utils/baseTypes";
 import { Modules } from "@/utils/module-list";
 import { GetStaticPropsContext } from "next";
 
@@ -12,12 +12,18 @@ import Head from "next/head";
 interface DynamicPageProps {
   pageData: PageType[];
   contactData: ContactType;
+  menuData: MenuType[];
 }
 
 export default function DynamicPage({
   pageData,
   contactData,
+  menuData,
 }: DynamicPageProps) {
+  const mainMenu = menuData.find(
+    (menu) => menu.attributes.slug === "main-menu"
+  );
+
   return (
     <>
       <Head>
@@ -27,13 +33,13 @@ export default function DynamicPage({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Navbar />
+        <Navbar mainMenu={mainMenu} />
         {pageData[0] &&
           pageData[0].attributes.Module &&
           pageData[0].attributes.Module.map((module, index) => (
             <Modules key={index} module={module} />
           ))}
-        <Footer data={true} contactData={contactData} />
+        <Footer data={true} contactData={contactData} mainMenu={mainMenu} />
       </main>
     </>
   );
@@ -52,11 +58,13 @@ export async function getStaticProps(context: GetStaticPropsContext) {
 
   const pageData = await getPageData(dynamicRoute);
   const contactData = await getContactData();
+  const menuData = await getMenuData();
 
   return {
     props: {
       pageData,
       contactData,
+      menuData,
     },
     revalidate: 120,
   };

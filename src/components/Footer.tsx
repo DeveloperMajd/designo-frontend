@@ -3,16 +3,17 @@ import Link from "next/link";
 import Logo from "../assets/images/shared/desktop/logo-light.png";
 import { SocialIcons } from "./SocialIcons";
 import { ContactShowcase } from "./ContactShowcase";
-import { ContactType } from "@/utils/baseTypes";
+import { ContactType, MenuType } from "@/utils/baseTypes";
 
 type footerType = boolean;
 
 interface footerProps {
   data: footerType;
   contactData: ContactType;
+  mainMenu?: MenuType;
 }
 
-export const Footer = ({ data, contactData }: footerProps) => {
+export const Footer = ({ data, contactData, mainMenu }: footerProps) => {
   const address = contactData?.attributes.address;
   const phone = contactData?.attributes.phone;
   const email = contactData?.attributes.email;
@@ -34,15 +35,16 @@ export const Footer = ({ data, contactData }: footerProps) => {
                 <div className="line is-hidden-tablet"></div>
                 <div className="footer-items-wrapper">
                   <div className="footer-items">
-                    <Link href="/" className="nav-item footer-item">
-                      out compoany
-                    </Link>
-                    <Link href="/" className="nav-item footer-item">
-                      locations
-                    </Link>
-                    <Link href="/" className="nav-item footer-item">
-                      contact
-                    </Link>
+                    {mainMenu?.attributes.items.data.map((item, index) => (
+                      <Link
+                        key={index}
+                        href={item.attributes.url}
+                        target={item.attributes.target}
+                        className="nav-item footer-item"
+                      >
+                        {item.attributes.title}
+                      </Link>
+                    ))}
                   </div>
                 </div>
               </div>

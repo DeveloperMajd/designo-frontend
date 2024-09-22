@@ -6,8 +6,13 @@ import { useEffect, useState } from "react";
 import Hamburger from "hamburger-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { MenuType } from "@/utils/baseTypes";
 
-export const Navbar = () => {
+interface NavbarProps {
+  mainMenu?: MenuType;
+}
+
+export const Navbar = ({ mainMenu }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const variants = {
@@ -56,15 +61,16 @@ export const Navbar = () => {
         </div>
         <div className="nav-items-wrapper is-hidden-mobile">
           <div className="nav-items">
-            <Link href="/about" className="nav-item">
-              out compoany
-            </Link>
-            <Link href="/locations" className="nav-item">
-              locations
-            </Link>
-            <Link href="/contact" className="nav-item">
-              contact
-            </Link>
+            {mainMenu?.attributes.items.data.map((item, index) => (
+              <Link
+                key={index}
+                href={item.attributes.url}
+                target={item.attributes.target}
+                className="nav-item"
+              >
+                {item.attributes.title}
+              </Link>
+            ))}
           </div>
         </div>
       </div>
@@ -75,9 +81,16 @@ export const Navbar = () => {
         variants={variants}
       >
         <div className="nav-items">
-          <div className="nav-item">out compoany</div>
-          <div className="nav-item">locations</div>
-          <div className="nav-item">contact</div>
+          {mainMenu?.attributes.items.data.map((item, index) => (
+            <Link
+              key={index}
+              href={item.attributes.url}
+              target={item.attributes.target}
+              className="nav-item"
+            >
+              {item.attributes.title}
+            </Link>
+          ))}
         </div>
         <div className="overlay" onClick={() => setIsOpen(false)}></div>
       </motion.div>

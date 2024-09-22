@@ -1,21 +1,11 @@
-import { PageType } from "./baseTypes";
-
-export const fetchData = async (url: string): Promise<PageType[]> => {
+export const fetchData = async <T>(url: string): Promise<T | null> => {
   try {
     const res = await fetch(url);
     const json = await res.json();
-    return json.data;
+
+    return json.data as T;
   } catch (error) {
-    console.error("🚀 ~ fetchData ~ error:", error);
-    return [
-      {
-        id: 0,
-        attributes: {
-          Slug: "",
-          Title: "",
-          Module: [],
-        },
-      },
-    ];
+    console.log("🚀 ~ fetchData ~ error:", error);
+    return null;
   }
 };
