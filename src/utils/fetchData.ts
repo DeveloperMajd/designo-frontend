@@ -6,7 +6,7 @@ export const fetchData = async (url: string): Promise<PageType[]> => {
     const json = await res.json();
     return json.data;
   } catch (error) {
-    console.log("🚀 ~ fetchData ~ error:", error)
+    console.error("🚀 ~ fetchData ~ error:", error);
     return [
       {
         id: 0,

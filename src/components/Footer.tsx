@@ -3,14 +3,23 @@ import Link from "next/link";
 import Logo from "../assets/images/shared/desktop/logo-light.png";
 import { SocialIcons } from "./SocialIcons";
 import { ContactShowcase } from "./ContactShowcase";
+import { ContactType } from "@/utils/baseTypes";
 
 type footerType = boolean;
 
 interface footerProps {
   data: footerType;
+  contactData: ContactType;
 }
 
-export const Footer = ({ data }: footerProps) => {
+export const Footer = ({ data, contactData }: footerProps) => {
+  const address = contactData?.attributes.address;
+  const phone = contactData?.attributes.phone;
+  const email = contactData?.attributes.email;
+  const socials = contactData?.attributes.socials;
+
+  const formattedPhone = phone?.replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
+
   return (
     <>
       {data && <ContactShowcase />}
@@ -40,19 +49,36 @@ export const Footer = ({ data }: footerProps) => {
               <div className="line is-hidden-mobile"></div>
               <div className="column is-12">
                 <div className="columns">
-                  <div className="column address is-4-tablet">
-                    <p>Designo Central Office</p>
-                    <p>3886 Wellington Street</p>
-                    <p>Toronto, Ontario M9C 3J5</p>
-                  </div>
+                  {address && (
+                    <div
+                      className="column address is-4-tablet"
+                      dangerouslySetInnerHTML={{
+                        __html: address,
+                      }}
+                    />
+                  )}
+
                   <div className="column contact-info is-4-tablet">
                     <p>Contact Us (Central Office)</p>
-                    <p>P : +1 253-863-8967</p>
-                    <p>M : contact@designo.co</p>
+                    <p>
+                      Phone: <a href={`tel:${phone}`}>{formattedPhone}</a>
+                    </p>
+                    <p>
+                      Email:{" "}
+                      <a
+                        href={`mailto:${email}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {email}
+                      </a>
+                    </p>
                   </div>
-                  <div className="column social-col is-4-tablet is-flex">
-                    <SocialIcons />
-                  </div>
+                  {socials && (
+                    <div className="column social-col is-4-tablet is-flex">
+                      <SocialIcons socials={socials} />
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

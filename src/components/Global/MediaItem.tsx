@@ -9,18 +9,20 @@ interface MediaItemProps {
 export const MediaItem = ({ imageData }: MediaItemProps) => {
   const { url, alternativeText, width, height } = imageData.data.attributes;
 
-  const imageUrl = getStrapiMedia(url) || ""; // Add default value of an empty string
+  const imageUrl = getStrapiMedia(url) || "";
 
   return (
-    <Image
-      src={imageUrl}
-      alt={alternativeText}
-      width={width}
-      height={height}
-      style={{
-        objectFit: "cover",
-        objectPosition: "center",
-      }}
-    />
+    <div className="social-icon">
+      <Image
+        src={imageUrl}
+        alt={alternativeText}
+        width={width}
+        height={height}
+        style={{
+          objectFit: "cover",
+          objectPosition: "center",
+        }}
+      />
+    </div>
   );
 };

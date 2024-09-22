@@ -8,7 +8,6 @@ interface ModulesProps {
   module: HomepageBannerType | projectsGridType;
 }
 export const Modules = (props: ModulesProps) => {
-  console.log("🚀 ~ Modules ~ props:", props)
   switch (props.module.__component) {
     case "components.homepage-banner":
       return <HomepageBanner data={props.module} />;

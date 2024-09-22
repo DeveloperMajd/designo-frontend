@@ -7,6 +7,21 @@ export type PageType = {
   };
 };
 
+export type ContactType = {
+  id: number;
+  attributes: {
+    address?: string;
+    phone?: string;
+    email?: string;
+    Label: string;
+    socials?: {
+      icon: ImageType;
+      link: LinkType;
+      platform: string;
+    }[];
+  };
+};
+
 export type ImageType = {
   data: {
     attributes: {

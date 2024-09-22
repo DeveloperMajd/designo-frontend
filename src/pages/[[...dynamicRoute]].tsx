@@ -1,8 +1,9 @@
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
 import { getAllPaths } from "@/hooks/getAllPaths";
+import { getContactData } from "@/hooks/getPage";
 import { getPageData } from "@/hooks/getPageData";
-import { PageType } from "@/utils/baseTypes";
+import { ContactType, PageType } from "@/utils/baseTypes";
 import { Modules } from "@/utils/module-list";
 import { GetStaticPropsContext } from "next";
 
@@ -10,9 +11,13 @@ import Head from "next/head";
 
 interface DynamicPageProps {
   pageData: PageType[];
+  contactData: ContactType;
 }
 
-export default function DynamicPage({ pageData }: DynamicPageProps) {
+export default function DynamicPage({
+  pageData,
+  contactData,
+}: DynamicPageProps) {
   return (
     <>
       <Head>
@@ -28,7 +33,7 @@ export default function DynamicPage({ pageData }: DynamicPageProps) {
           pageData[0].attributes.Module.map((module, index) => (
             <Modules key={index} module={module} />
           ))}
-        <Footer data={true} />
+        <Footer data={true} contactData={contactData} />
       </main>
     </>
   );
@@ -46,10 +51,12 @@ export async function getStaticProps(context: GetStaticPropsContext) {
   const { dynamicRoute }: any = context.params;
 
   const pageData = await getPageData(dynamicRoute);
+  const contactData = await getContactData();
 
   return {
     props: {
       pageData,
+      contactData,
     },
     revalidate: 120,
   };

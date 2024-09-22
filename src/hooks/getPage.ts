@@ -26,13 +26,31 @@ export const getPage = async (slug: string): Promise<PageType[] | null> => {
     },
   });
 
-  // const url = `${process.env.NEXT_PUBLIC_API_URL}/pages?filters[Slug][$eq]=startpage&populate[Module][populate][Elements][populate]=*`;
-
   const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
   const url = `${BASE_URL}/pages?${query}`;
 
-  console.log("🚀 ~ file: getPage.ts ~ line 20 ~ getPage ~ url", url);
+  const response = await fetchData(url).then((res: PageType[]) => {
+    return res;
+  });
+
+  return response;
+};
+
+export const getContactData = async (): Promise<PageType[] | null> => {
+  const qs = require("qs");
+  const query = qs.stringify({
+    populate: {
+      socials: {
+        populate: "*",
+      },
+    },
+  });
+
+  const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+
+  const url = `${BASE_URL}/contact?${query}`;
+
   const response = await fetchData(url).then((res: PageType[]) => {
     return res;
   });
