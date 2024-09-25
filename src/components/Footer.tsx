@@ -4,6 +4,7 @@ import Logo from "../assets/images/shared/desktop/logo-light.png";
 import { SocialIcons } from "./SocialIcons";
 import { ContactShowcase } from "./ContactShowcase";
 import { ContactType, MenuType } from "@/utils/baseTypes";
+import { findLabel } from "@/utils/findLabel";
 
 type footerType = boolean;
 
@@ -11,9 +12,17 @@ interface footerProps {
   data: footerType;
   contactData: ContactType;
   mainMenu?: MenuType;
+  labels: {
+    [key: string]: string;
+  }[];
 }
 
-export const Footer = ({ data, contactData, mainMenu }: footerProps) => {
+export const Footer = ({
+  data,
+  contactData,
+  mainMenu,
+  labels,
+}: footerProps) => {
   const address = contactData?.attributes.address;
   const phone = contactData?.attributes.phone;
   const email = contactData?.attributes.email;
@@ -21,9 +30,11 @@ export const Footer = ({ data, contactData, mainMenu }: footerProps) => {
 
   const formattedPhone = phone?.replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
 
+  const contactUs = findLabel("contact-us", labels);
+
   return (
     <>
-      {data && <ContactShowcase />}
+      {data && <ContactShowcase labels={labels} />}
       <footer className="footer">
         <section>
           <div className={`container ${data ? "has-box" : ""}`}>
@@ -61,7 +72,7 @@ export const Footer = ({ data, contactData, mainMenu }: footerProps) => {
                   )}
 
                   <div className="column contact-info is-4-tablet">
-                    <p>Contact Us (Central Office)</p>
+                    {contactUs && <p>{contactUs}</p>}
                     <p>
                       Phone: <a href={`tel:${phone}`}>{formattedPhone}</a>
                     </p>

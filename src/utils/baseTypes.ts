@@ -56,3 +56,12 @@ export type LinkType = {
 export type NextJSStaticPathType = {
   params: { dynamicRoute: string[] };
 };
+
+export type LabelType = {
+  attributes: {
+    label: {
+      Name: string;
+      Value: string;
+    };
+  };
+};
