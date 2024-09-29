@@ -1,7 +1,19 @@
-import BgImage from "../assets/shared/desktop/bg-pattern-call-to-action.svg";
-import BgShape from "../assets/shared/desktop/bg-pattern-leaf.svg";
+import BgImage from "../assets/images/shared/desktop/bg-pattern-call-to-action.svg";
+import BgShape from "../assets/images/shared/desktop/bg-pattern-leaf.svg";
 
-export const PageBanner = () => {
+export type PageBannerType = {
+  __component: "components.page-banner";
+  Title: string;
+  Content: string;
+};
+
+interface PageBannerProps {
+  data: PageBannerType;
+}
+
+export const PageBanner = ({ data }: PageBannerProps) => {
+  const { Title, Content } = data;
+
   return (
     <section className="page-banner is-full-width">
       <div className="container">
@@ -10,16 +22,16 @@ export const PageBanner = () => {
         </div>
         <div className="columns is-multiline is-centered content-wrapper m-0">
           <div className="column is-12-mobile is-10-tablet is-6-desktop is-5-fullhd content">
-            <div className="title h4">Web Design</div>
-            <p className="text">
-              We build websites that serve as powerful marketing tools and bring
-              memorable brand experiences.
-            </p>
+            <div className="title h4">{Title}</div>
+            <div
+              className="text"
+              dangerouslySetInnerHTML={{ __html: Content }}
+            />
           </div>
         </div>
       </div>
       {/* Todo: add condition props (has-bg-shape) */}
-      <div className="bg-shape is-left-bottom is-hidden-touch">
+      <div className="bg-pattern is-left-bottom is-hidden-touch">
         <BgShape />
       </div>
     </section>

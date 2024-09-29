@@ -32,9 +32,9 @@ export const ContactShowcase = ({ labels }: ContactShowcaseProps) => {
         </div>
       </div>
       {/* Todo: add condition props (has-bg-shape) */}
-      {/* <div className="bg-pattern is-right-top is-hidden-touch">
+      <div className="bg-pattern is-right-top is-hidden-touch">
         <BgShape />
-      </div> */}
+      </div>
     </section>
   );
 };

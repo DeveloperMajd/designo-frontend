@@ -4,7 +4,7 @@
       outline: 1px solid blue;
       display: flex;
       row-gap: 2.5rem;
-      
+
       @include tablet {
         row-gap: 2rem;
       }
@@ -51,7 +51,6 @@
         flex-direction: column;
         background-color: $faded-peach;
         border-radius: 0 0 0.9375rem 0.9375rem;
-        cursor: pointer;
         transition: background-color 0.4s ease-in-out;
 
         @include tablet {
@@ -71,11 +70,16 @@
           margin-bottom: 1rem;
         }
 
-        &:hover {
-          background-color: $peach;
-          color: $white;
-          .title {
+        &.link {
+          cursor: pointer;
+          color: $dark-grey;
+
+          &:hover {
+            background-color: $peach;
             color: $white;
+            .title {
+              color: $white;
+            }
           }
         }
       }
