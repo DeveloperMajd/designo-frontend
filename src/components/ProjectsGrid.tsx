@@ -44,12 +44,7 @@ export const ProjectsGrid = ({ data }: projectsGridProp) => {
         const { Slug } = page.data.attributes;
 
         return (
-          <Link
-            href={`/${Slug}`}
-            target="_blank"
-            className="grid-item"
-            key={index}
-          >
+          <Link href={`/${Slug}`} className="grid-item" key={index}>
             <div className="image-wrapper">
               <MediaItem
                 imageData={

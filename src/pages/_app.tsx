@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { AnimatePresence } from "framer-motion";
 import { AppProps } from "next/app";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
@@ -7,6 +6,11 @@ import "../style.scss";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
+
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   useEffect(() => {
     const handleRouteChange = (url: string) => {
       try {
@@ -23,6 +27,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           (window as any)._paq.push(["setDocumentTitle", document.title]);
           (window as any)._paq.push(["trackPageView"]);
         }
+
+        console.log("Route change");
+        scrollToTop();
       } catch (e) {
         // Fail silently
       }
@@ -40,9 +47,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <AnimatePresence>
-        <Component {...pageProps} />
-      </AnimatePresence>
+      <Component {...pageProps} />
     </>
   );
 }

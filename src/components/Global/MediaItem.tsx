@@ -15,7 +15,7 @@ export const MediaItem = ({ imageData }: MediaItemProps) => {
     <div className="social-icon">
       <Image
         src={imageUrl}
-        alt={alternativeText}
+        alt={alternativeText || ""}
         width={width}
         height={height}
         style={{

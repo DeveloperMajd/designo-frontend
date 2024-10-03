@@ -41,7 +41,7 @@ export const ProjectsCards = ({ data }: ProjectsCardsProps) => {
                   <div className="column is-12-mobile is-6-tablet is-12-desktop card-image">
                     <MediaItem imageData={Image} />
                   </div>
-                  {link ? (
+                  {link && link.url ? (
                     <Link
                       href={link.url}
                       target={link.target}

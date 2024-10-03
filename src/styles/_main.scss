@@ -1,5 +1,5 @@
 html {
-  scroll-behavior: auto;
+  scroll-behavior: smooth;
   box-sizing: border-box;
 }
 
@@ -42,6 +42,7 @@ body {
 section {
   position: relative;
   margin: 0 $section-padding-mobile 7.5rem $section-padding-mobile;
+  z-index: 2;
 
   @include tablet {
     margin: 0 $section-padding-tablet 7.5rem $section-padding-tablet;
