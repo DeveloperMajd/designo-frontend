@@ -3,6 +3,10 @@
     &.img-right {
       @include desktop {
         flex-direction: row-reverse;
+
+        img {
+          border-radius: 0 0.9375rem 0.9375rem 0;
+        }
       }
     }
   }
@@ -10,16 +14,12 @@
     z-index: 2;
     img {
       height: 100%;
-
+      width: 100%;
       @include tablet {
         border-radius: 0.9375rem 0.9375rem 0 0;
       }
       @include desktop {
         border-radius: 0.9375rem 0 0 0.9375rem;
-
-        &.img-right {
-          border-radius: 0 0.9375rem 0.9375rem 0;
-        }
       }
     }
   }

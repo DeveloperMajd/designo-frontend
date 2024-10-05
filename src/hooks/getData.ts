@@ -21,6 +21,15 @@ export const getPage = async (slug: string): Promise<PageType[] | null> => {
           link: {
             populate: "*",
           },
+          Image: {
+            populate: "*",
+          },
+          ImageMobile: {
+            populate: "*",
+          },
+          ImageTablet: {
+            populate: "*",
+          },
         },
       },
     },

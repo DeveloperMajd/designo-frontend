@@ -12,17 +12,15 @@ export const MediaItem = ({ imageData }: MediaItemProps) => {
   const imageUrl = getStrapiMedia(url) || "";
 
   return (
-    <div className="social-icon">
-      <Image
-        src={imageUrl}
-        alt={alternativeText || ""}
-        width={width}
-        height={height}
-        style={{
-          objectFit: "cover",
-          objectPosition: "center",
-        }}
-      />
-    </div>
+    <Image
+      src={imageUrl}
+      alt={alternativeText || ""}
+      width={width}
+      height={height}
+      style={{
+        objectFit: "cover",
+        objectPosition: "center",
+      }}
+    />
   );
 };

@@ -1,9 +1,16 @@
+import { HomepageBannerType } from "@/components/HomepageBanner";
+import { InfoHighlightsType } from "@/components/InfoHighlights";
+import { PageBannerType } from "@/components/PageBanner";
+import { ProjectsCardsType } from "@/components/ProjectsCards";
+import { projectsGridType } from "@/components/ProjectsGrid";
+import { ModulesType } from "./module-list";
+
 export type PageType = {
   id: number;
   attributes: {
     Slug: string;
     Title: string;
-    Module: any[];
+    Module: ModulesType[];
   };
 };
 
