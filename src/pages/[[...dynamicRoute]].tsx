@@ -22,6 +22,7 @@ export default function DynamicPage({
   menuData,
   labelsData,
 }: DynamicPageProps) {
+  console.log("🚀 ~ pageData:", pageData);
   const mainMenu = menuData.find(
     (menu) => menu.attributes.slug === "main-menu"
   );
@@ -45,10 +46,10 @@ export default function DynamicPage({
         {pageData[0] &&
           pageData[0].attributes.Module &&
           pageData[0].attributes.Module.map((module, index) => (
-            <Modules key={index} module={module} />
+            <Modules key={index} module={module} labels={_labels} />
           ))}
         <Footer
-          data={true}
+          showContactShowcase={pageData[0].attributes.Slug !== "contact"}
           contactData={contactData}
           mainMenu={mainMenu}
           labels={_labels}

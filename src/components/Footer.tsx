@@ -3,22 +3,18 @@ import Link from "next/link";
 import Logo from "../assets/images/shared/desktop/logo-light.png";
 import { SocialIcons } from "./SocialIcons";
 import { ContactShowcase } from "./ContactShowcase";
-import { ContactType, MenuType } from "@/utils/baseTypes";
+import { ContactType, LabelsType, MenuType } from "@/utils/baseTypes";
 import { findLabel } from "@/utils/findLabel";
 
-type footerType = boolean;
-
 interface footerProps {
-  data: footerType;
+  showContactShowcase: boolean;
   contactData: ContactType;
   mainMenu?: MenuType;
-  labels: {
-    [key: string]: string;
-  }[];
+  labels: LabelsType;
 }
 
 export const Footer = ({
-  data,
+  showContactShowcase,
   contactData,
   mainMenu,
   labels,
@@ -34,10 +30,12 @@ export const Footer = ({
 
   return (
     <>
-      {data && <ContactShowcase labels={labels} />}
-      <footer className="footer">
+      {showContactShowcase && <ContactShowcase labels={labels} />}
+      <footer
+        className={`footer ${showContactShowcase ? "" : "contact-page"}`}
+      >
         <section>
-          <div className={`container ${data ? "has-box" : ""}`}>
+          <div className={`container ${showContactShowcase ? "has-box" : ""}`}>
             <div className="columns is-multiline">
               <div className="column nav-col is-12 is-flex">
                 <div className="logo">

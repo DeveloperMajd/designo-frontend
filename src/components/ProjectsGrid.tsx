@@ -33,9 +33,9 @@ export const ProjectsGrid = ({ data }: projectsGridProp) => {
   const { Elements, Type } = data;
 
   const { width } = useWindowSize();
-  const isMobile = width <= 768;
-  const isTablet = width > 768 && width < 1024;
-  // const isDesktop = width > 1024;
+  const isMobile = width < 768;
+  const isTablet = width >= 768 && width < 1024;
+  const isDesktop = width >= 1024;
 
   const gridJSX = (
     <div className={`grid-wrapper ${Type}`}>

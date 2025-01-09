@@ -1,17 +1,28 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import IconError from "../assets/contact/desktop/icon-error.svg";
+import IconError from "../assets/images/contact/desktop/icon-error.svg";
 import BgPattern from "../assets/shared/desktop/bg-pattern-small-circle.svg";
-import BgPatternMobile from "../assets/shared/desktop/bg-pattern-two-circles.svg";
+import BgPatternMobile from "../assets/images/shared/desktop/bg-pattern-two-circles.svg";
 
-export const ContactForm = () => {
+export type ContactFormType = {
+  __component: "components.contact-form";
+  Content: string;
+  Title: string;
+};
+
+interface ContactFormProps {
+  data: ContactFormType;
+}
+
+export const ContactForm = ({ data }: ContactFormProps) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const [submited, setSubmited] = useState(false);
   const [isInvalid, setIsInvalid] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const emailRegex =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -20,6 +31,10 @@ export const ContactForm = () => {
   const handleSubmit = () => {
     setIsInvalid(!validateEmail(email));
     setSubmited(true);
+
+    if (name && email && phone && message && validateEmail(email)) {
+      setIsSuccess(true);
+    }
   };
 
   return (
@@ -27,13 +42,11 @@ export const ContactForm = () => {
       <div className="container">
         <div className="columns is-multiline">
           <div className="column text-col is-12-tablet is-6-desktop">
-            <div className="title h1">Contact Us</div>
-            <p className="text">
-              Ready to take it to the next level? Let’s talk about your project
-              or idea and find out how we can help your business grow. If you
-              are looking for unique digital experiences that’s relatable to
-              your users, drop us a line.
-            </p>
+            <div className="title h1">{data.Title}</div>
+            <div
+              className="text"
+              dangerouslySetInnerHTML={{ __html: data.Content }}
+            />
           </div>
           <div className="column form-col is-12-tablet is-5-desktop is-offset-1-desktop">
             <div className="field">
@@ -116,7 +129,16 @@ export const ContactForm = () => {
               </div>
             </div>
             <div className="field">
-              <div className="control is-flex btn-wrapper">
+              <div
+                className={`control is-flex btn-wrapper ${
+                  isSuccess && "is-success"
+                }`}
+              >
+                {isSuccess && (
+                  <div className="success-msg">
+                    <span>Thanks for submitting!</span>
+                  </div>
+                )}
                 <div className="btn onDark" onClick={() => handleSubmit()}>
                   submit
                 </div>

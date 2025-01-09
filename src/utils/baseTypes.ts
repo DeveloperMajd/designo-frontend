@@ -72,3 +72,7 @@ export type LabelType = {
     };
   };
 };
+
+export type LabelsType = {
+  [key: string]: string;
+}[];

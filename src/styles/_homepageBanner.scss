@@ -108,7 +108,7 @@
     display: flex;
     justify-content: center;
 
-    img {
+    .img-wrapper {
       transform: translateY(10rem) scale(1.4);
       margin-top: -12rem;
 
@@ -119,7 +119,7 @@
       @include desktop {
         position: absolute;
         bottom: -14rem;
-        right: -5.9375rem;
+        right: -6rem;
         transform: none;
         margin-top: 0;
       }

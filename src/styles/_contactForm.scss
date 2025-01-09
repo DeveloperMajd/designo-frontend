@@ -129,6 +129,27 @@
     @include tablet {
       justify-content: flex-end;
     }
+
+    &.is-success {
+      flex-direction: column-reverse;
+      align-items: center;
+
+      @include tablet {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    .success-msg {
+      margin-top: 1rem;
+      color: #6BE8BB;
+
+      @include tablet {
+        margin-top: 0;
+        padding-left: 1rem;
+      }
+    }
   }
 
   .phone[type="number"]::-webkit-inner-spin-button,

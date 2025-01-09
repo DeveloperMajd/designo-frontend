@@ -30,6 +30,9 @@ export const getPage = async (slug: string): Promise<PageType[] | null> => {
           ImageTablet: {
             populate: "*",
           },
+          locations: {
+            populate: "*",
+          },
         },
       },
     },

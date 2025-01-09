@@ -1,4 +1,6 @@
 .locations-highlights {
+  
+
   .columns {
     display: flex;
     flex-direction: column;
@@ -64,5 +66,9 @@
         text-transform: uppercase;
       }
     }
+  }
+
+  .bg-pattern {
+    z-index: -1;
   }
 }

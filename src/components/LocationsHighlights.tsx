@@ -1,61 +1,56 @@
 "use client";
 
-import Img1 from "../assets/shared/desktop/illustration-canada.svg";
-import Img2 from "../assets/shared/desktop/illustration-australia.svg";
-import Img3 from "../assets/shared/desktop/illustration-united-kingdom.svg";
+import Circle from "../assets/images/shared/desktop/bg-pattern-small-circle.svg";
 
-import Circle from "../assets/shared/desktop/bg-pattern-small-circle.svg";
-
-import BgShape from "../assets/shared/desktop/bg-pattern-leaf.svg";
+import BgShape from "../assets/images/shared/desktop/bg-pattern-leaf.svg";
 import Link from "next/link";
+import { ImageType, LabelsType } from "@/utils/baseTypes";
+import { MediaItem } from "./Global/MediaItem";
+import { findLabel } from "@/utils/findLabel";
 
-export const LocationsHightlights = () => {
+export type LocationsHighlightsType = {
+  __component: "components.locations-highlights";
+  Elements: {
+    City: string;
+    Image: ImageType;
+    Tag: string;
+  }[];
+};
+
+interface LocationsHighlightsProps {
+  data: LocationsHighlightsType;
+  labels: LabelsType;
+}
+
+export const LocationsHighlights = ({
+  data,
+  labels,
+}: LocationsHighlightsProps) => {
+  const label = findLabel("see-location", labels);
+
   return (
     <section className="locations-highlights">
       <div className="container">
         <div className="columns">
-          <div className="column is-12-tablet is-4-desktop">
-            <div className="img-wrapper">
-              <span className="overlay">
-                <Circle />
-              </span>
-              <Img1 />
+          {data.Elements.map((element, index) => (
+            <div key={index} className="column is-12-tablet is-4-desktop">
+              <div className="img-wrapper">
+                <span className="overlay">
+                  <Circle />
+                </span>
+                <MediaItem imageData={element.Image} />
+              </div>
+              <div className="content">
+                <div className="title h3">{element.City}</div>
+                <Link
+                  href={`/locations/#${element.Tag}`}
+                  className="btn onLight"
+                >
+                  {label}
+                </Link>
+              </div>
             </div>
-            <div className="content">
-              <div className="title h3">canada</div>
-              <Link href="/locations" className="btn onLight">
-                see location
-              </Link>
-            </div>
-          </div>
-          <div className="column is-12-tablet is-4-desktop">
-            <div className="img-wrapper">
-              <span className="overlay">
-                <Circle />
-              </span>
-              <Img2 />
-            </div>
-            <div className="content">
-              <div className="title h3">australia</div>
-              <Link href="locations" className="btn onLight">
-                see location
-              </Link>
-            </div>
-          </div>
-          <div className="column is-12-tablet is-4-desktop">
-            <div className="img-wrapper">
-              <span className="overlay">
-                <Circle />
-              </span>
-              <Img3 />
-            </div>
-            <div className="content">
-              <div className="title h3">united kingdom</div>
-              <Link href="/locations" className="btn onLight">
-                see location
-              </Link>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
       <div className="bg-pattern is-right-bottom is-hidden-touch">

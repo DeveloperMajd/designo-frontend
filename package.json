@@ -9,20 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "add": "^2.0.6",
     "bulma": "^0.9.4",
     "framer-motion": "^10.18.0",
     "hamburger-react": "^2.5.0",
     "leaflet": "^1.9.4",
     "next": "14.0.4",
     "qs": "^6.13.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-leaflet": "^4.2.1",
+    "react": "^19.0.0-rc-09111202-20241011",
+    "react-dom": "^19.0.0-rc-09111202-20241011",
+    "react-leaflet": "^5.0.0-rc.1",
     "sass": "^1.76.0"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
-    "@types/leaflet": "^1.9.8",
+    "@types/leaflet": "^1.9.12",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

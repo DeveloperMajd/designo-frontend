@@ -6,6 +6,10 @@ import {
   InfoHighlights,
   InfoHighlightsType,
 } from "@/components/InfoHighlights";
+import {
+  LocationsHighlights,
+  LocationsHighlightsType,
+} from "@/components/LocationsHighlights";
 import { PageBanner, PageBannerType } from "@/components/PageBanner";
 import { ProjectsCards, ProjectsCardsType } from "@/components/ProjectsCards";
 import { ProjectsGrid, projectsGridType } from "@/components/ProjectsGrid";
@@ -14,6 +18,14 @@ import {
   TextMediaBanner,
   TextMediaBannerType,
 } from "@/components/TextMediaBanner";
+import { LabelsType } from "./baseTypes";
+import { LocationsType } from "@/components/Locations";
+import dynamic from "next/dynamic";
+import { ContactForm, ContactFormType } from "@/components/ContactForm";
+
+const Locations = dynamic(() => import("@/components/Locations"), {
+  ssr: false,
+});
 
 export type ModulesType =
   | HomepageBannerType
@@ -22,14 +34,17 @@ export type ModulesType =
   | PageBannerType
   | ProjectsCardsType
   | TextMediaBannerType
-  | TextMediaType;
+  | TextMediaType
+  | LocationsHighlightsType
+  | LocationsType
+  | ContactFormType;
 
 interface ModulesProps {
   module: ModulesType;
+  labels: LabelsType;
 }
 
 export const Modules = (props: ModulesProps) => {
-  console.log("🚀 ~ Modules ~ props:", props);
   switch (props.module.__component) {
     case "components.homepage-banner":
       return <HomepageBanner data={props.module} />;
@@ -45,7 +60,12 @@ export const Modules = (props: ModulesProps) => {
       return <TextMediaBanner data={props.module} />;
     case "components.text-media":
       return <TextMedia data={props.module} />;
-
+    case "components.locations-highlights":
+      return <LocationsHighlights data={props.module} labels={props.labels} />;
+    case "components.locations":
+      return <Locations data={props.module} />;
+    case "components.contact-form":
+      return <ContactForm data={props.module} />;
     default:
       return null;
   }
