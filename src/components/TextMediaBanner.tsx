@@ -13,6 +13,8 @@ import BgPatternMobile from "../assets/images/about/mobile/bg-pattern-hero-about
 import BgShape from "../assets/images/shared/desktop/bg-pattern-leaf.svg";
 import { ImageType } from "@/utils/baseTypes";
 import { MediaItem } from "./Global/MediaItem";
+import { motion } from "framer-motion";
+import { fadeInLeft, scaleDown } from "@/utils/transistions";
 
 export type TextMediaBannerType = {
   __component: "components.text-media-banner";
@@ -41,11 +43,19 @@ export const TextMediaBanner = ({ data }: TextMediaBannerProps) => {
       <div className="container">
         <div className="columns is-multiline">
           <div className="column is-12-mobile is-12-tablet is-5-desktop img-column p-0">
-            <MediaItem
-              imageData={
-                isMobile ? ImageMobile : isTablet ? ImageTablet : Image
-              }
-            />
+            <motion.div
+              variants={scaleDown}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: true }}
+              className="media-wrapper"
+            >
+              <MediaItem
+                imageData={
+                  isMobile ? ImageMobile : isTablet ? ImageTablet : Image
+                }
+              />
+            </motion.div>
           </div>
           <div className="column is-12-mobile is-12-tablet is-7-desktop text-column">
             <div className="bg-pattern-wrapper">
@@ -55,10 +65,16 @@ export const TextMediaBanner = ({ data }: TextMediaBannerProps) => {
                 <BgPatternMobile />
               )}
             </div>
-            <div className="text-content">
+            <motion.div
+              variants={fadeInLeft}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              className="text-content"
+            >
               <h1>{Title}</h1>
               <div dangerouslySetInnerHTML={{ __html: Content }} />
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

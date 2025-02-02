@@ -5,6 +5,8 @@ import useWindowSize from "../hooks/useWindowSize";
 import BgPattern from "../assets/images/shared/desktop/bg-pattern-three-circles.svg";
 import { ImageType } from "@/utils/baseTypes";
 import { MediaItem } from "./Global/MediaItem";
+import { motion } from "framer-motion";
+import { fadeInLeft, fadeInRight, scaleDown } from "@/utils/transistions";
 
 export type TextMediaType = {
   __component: "components.text-media";
@@ -34,11 +36,19 @@ export const TextMedia = ({ data }: TextMediaProp) => {
       <div className="container">
         <div className={`columns is-multiline ${data.Position}`}>
           <div className="column is-12-mobile is-12-tablet is-5-desktop img-column p-0">
-            <MediaItem
-              imageData={
-                isMobile ? ImageMobile : isTablet ? ImageTablet : Image
-              }
-            />
+            <motion.div
+              variants={scaleDown}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: true }}
+              className="media-wrapper"
+            >
+              <MediaItem
+                imageData={
+                  isMobile ? ImageMobile : isTablet ? ImageTablet : Image
+                }
+              />
+            </motion.div>
           </div>
           <div
             className={`column is-12-mobile is-12-tablet is-7-desktop text-column ${data.Position}`}
@@ -46,10 +56,16 @@ export const TextMedia = ({ data }: TextMediaProp) => {
             <div className={`bg-pattern-wrapper ${data.Position}`}>
               <BgPattern />
             </div>
-            <div className="text-content">
+            <motion.div
+              variants={data.Position === "img-left" ? fadeInRight : fadeInLeft}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: true }}
+              className="text-content"
+            >
               <div className="title h5">{Title}</div>
               <div dangerouslySetInnerHTML={{ __html: Content }} />
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

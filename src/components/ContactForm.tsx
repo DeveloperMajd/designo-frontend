@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import IconError from "../assets/images/contact/desktop/icon-error.svg";
 import BgPattern from "../assets/shared/desktop/bg-pattern-small-circle.svg";
 import BgPatternMobile from "../assets/images/shared/desktop/bg-pattern-two-circles.svg";
+import { motion } from "framer-motion";
+import { fadeInLeft, fadeInRight, stager } from "@/utils/transistions";
 
 export type ContactFormType = {
   __component: "components.contact-form";
@@ -41,15 +43,27 @@ export const ContactForm = ({ data }: ContactFormProps) => {
     <section className="contact-form is-full-width">
       <div className="container">
         <div className="columns is-multiline">
-          <div className="column text-col is-12-tablet is-6-desktop">
+          <motion.div
+            variants={fadeInLeft}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: true }}
+            className="column text-col is-12-tablet is-6-desktop"
+          >
             <div className="title h1">{data.Title}</div>
             <div
               className="text"
               dangerouslySetInnerHTML={{ __html: data.Content }}
             />
-          </div>
-          <div className="column form-col is-12-tablet is-5-desktop is-offset-1-desktop">
-            <div className="field">
+          </motion.div>
+          <motion.div
+            variants={stager}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: true }}
+            className="column form-col is-12-tablet is-5-desktop is-offset-1-desktop"
+          >
+            <motion.div variants={fadeInRight} className="field">
               <div className="control">
                 <input
                   className={`input ${name ? "has-value" : ""}`}
@@ -65,8 +79,8 @@ export const ContactForm = ({ data }: ContactFormProps) => {
                   </div>
                 )}
               </div>
-            </div>
-            <div className="field">
+            </motion.div>
+            <motion.div variants={fadeInRight} className="field">
               <div className="control has-icons-right">
                 <input
                   className={`input ${email ? "has-value" : ""}`}
@@ -91,8 +105,8 @@ export const ContactForm = ({ data }: ContactFormProps) => {
                   ) : null
                 ) : null}
               </div>
-            </div>
-            <div className="field">
+            </motion.div>
+            <motion.div variants={fadeInRight} className="field">
               <div className="control has-icons-right">
                 <input
                   className={`input phone${phone ? "has-value" : ""}`}
@@ -109,8 +123,8 @@ export const ContactForm = ({ data }: ContactFormProps) => {
                   </div>
                 )}
               </div>
-            </div>
-            <div className="field">
+            </motion.div>
+            <motion.div variants={fadeInRight} className="field">
               <div className="control has-icons-right">
                 {/* textarea not expanded */}
                 <textarea
@@ -127,8 +141,8 @@ export const ContactForm = ({ data }: ContactFormProps) => {
                   </div>
                 )}
               </div>
-            </div>
-            <div className="field">
+            </motion.div>
+            <motion.div variants={fadeInRight} className="field">
               <div
                 className={`control is-flex btn-wrapper ${
                   isSuccess && "is-success"
@@ -143,8 +157,8 @@ export const ContactForm = ({ data }: ContactFormProps) => {
                   submit
                 </div>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
         <div className="bg-pattern" />
         <div className="bg-pattern-mobile">

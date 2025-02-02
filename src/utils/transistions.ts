@@ -3,10 +3,17 @@
 import { easeInOut } from "framer-motion";
 
 export const stager = {
-  hidden: {},
-  show: {
+  hidden: {
+    opacity: 0,
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.2,
+    },
+  },
+  show: {
+    opacity: 1,
+    transition: {
+      duration: 0.4,
+      staggerChildren: 0.2,
     },
   },
 };
@@ -59,4 +66,9 @@ export const fadeInHomeImgTab = {
     scale: 1.4,
     transition: { duration: 0.4, ease: easeInOut },
   },
+};
+
+export const scaleDown = {
+  hidden: { scale: 1.2 },
+  show: { scale: 1, transition: { duration: 0.6, ease: easeInOut } },
 };

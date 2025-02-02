@@ -6,6 +6,8 @@ import CirclesMobile from "../assets/images/shared/desktop/bg-pattern-three-circ
 import CirclesTablet from "../assets/images/shared/desktop/bg-pattern-two-circles.svg";
 
 import Map from "./Global/Map";
+import { motion } from "framer-motion";
+import { fadeInLeft, fadeInRight, scaleDown } from "@/utils/transistions";
 
 export type LocationsType = {
   __component: "components.locations";
@@ -58,17 +60,33 @@ const Locations = ({ data }: LocationsProps) => {
                       : "is-desktop"
                   }`}
                 >
-                  <Map
-                    data={{
-                      Latitude,
-                      Longitude,
-                      Address: location.address,
-                    }}
-                  />
+                  <motion.div
+                    variants={scaleDown}
+                    initial="hidden"
+                    whileInView={"show"}
+                    viewport={{ once: true }}
+                    className="map-wrapper"
+                  >
+                    <Map
+                      data={{
+                        Latitude,
+                        Longitude,
+                        Address: location.address,
+                      }}
+                    />
+                  </motion.div>
                 </div>
                 <div className="column is-12-tablet is-8-desktop content-col">
                   <div className="content-wrapper">
-                    <div
+                    <motion.div
+                      variants={
+                        location.Position === "img-left"
+                          ? fadeInRight
+                          : fadeInLeft
+                      }
+                      initial="hidden"
+                      whileInView={"show"}
+                      viewport={{ once: true }}
                       className={`columns is-multiline content-inner-columns`}
                     >
                       <div className="column is-6-mobile is-12-tablet">
@@ -99,7 +117,7 @@ const Locations = ({ data }: LocationsProps) => {
                           </a>
                         </p>
                       </div>
-                    </div>
+                    </motion.div>
                   </div>
                   <div className="bg-pattern">
                     {isMobile ? <CirclesMobile /> : <CirclesTablet />}
