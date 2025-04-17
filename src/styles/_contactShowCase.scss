@@ -3,11 +3,8 @@
   margin-bottom: 0;
   transform: translateY(13rem);
   margin-top: -13rem;
-  z-index: 3;
+  z-index: 5;
 
-  .bg-pattern {
-    z-index: -1;
-  }
   * {
     &::selection {
       color: $white;

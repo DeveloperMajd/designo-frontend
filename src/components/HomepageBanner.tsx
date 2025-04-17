@@ -78,8 +78,6 @@ export const HomepageBanner = ({ data }: HomepageBannerProps) => {
           </div>
         </div>
       </div>
-
-      {/* Todo: add condition props (has-bg-shape) */}
       <div className="bg-pattern is-left-bottom is-hidden-touch">
         <BgShape />
       </div>

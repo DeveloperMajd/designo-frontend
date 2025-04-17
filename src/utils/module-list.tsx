@@ -63,7 +63,7 @@ export const Modules = (props: ModulesProps) => {
     case "components.locations-highlights":
       return <LocationsHighlights data={props.module} labels={props.labels} />;
     case "components.locations":
-      return <Locations data={props.module} />;
+      return <Locations data={props.module} labels={props.labels} />;
     case "components.contact-form":
       return <ContactForm data={props.module} />;
     default:

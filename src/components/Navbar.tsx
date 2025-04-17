@@ -13,7 +13,13 @@ interface NavbarProps {
 }
 
 export const Navbar = ({ mainMenu }: NavbarProps) => {
+  console.log("🚀 ~ Navbar ~ mainMenu:", mainMenu);
   const [isOpen, setIsOpen] = useState(false);
+
+  // order menu items by attribute.order
+  const orderMenuItems = mainMenu?.attributes.items.data.sort((a, b) => {
+    return a.attributes.order - b.attributes.order;
+  });
 
   const variants = {
     hidden: {
@@ -61,16 +67,17 @@ export const Navbar = ({ mainMenu }: NavbarProps) => {
         </div>
         <div className="nav-items-wrapper is-hidden-mobile">
           <div className="nav-items">
-            {mainMenu?.attributes.items.data.map((item, index) => (
-              <Link
-                key={index}
-                href={item.attributes.url}
-                target={item.attributes.target}
-                className="nav-item"
-              >
-                {item.attributes.title}
-              </Link>
-            ))}
+            {orderMenuItems &&
+              orderMenuItems.map((item, index) => (
+                <Link
+                  key={index}
+                  href={item.attributes.url}
+                  target={item.attributes.target}
+                  className="nav-item"
+                >
+                  {item.attributes.title}
+                </Link>
+              ))}
           </div>
         </div>
       </div>

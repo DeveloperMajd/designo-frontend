@@ -61,6 +61,7 @@ const ProjectCard = ({
             href={link.url}
             target={link.target}
             className="column is-12-mobile is-6-tablet is-12-desktop card-content link"
+            aria-label={`${link.title}`}
           >
             <div className="title h3">{Title}</div>
             <div

@@ -143,8 +143,9 @@ strong {
   display: flex;
   justify-content: center;
   align-items: center;
-
   cursor: pointer;
+
+  transition: all 0.2s ease-in-out;
 
   &.onDark {
     color: $dark-grey;
@@ -232,31 +233,46 @@ strong {
 
   &.is-left-bottom {
     top: 50%;
-    left: -5rem;
+    left: calc($section-padding-mobile * -1);
 
-    @include fullhd {
-      left: -10.3125rem;
+    @include tablet {
+      left: calc($section-padding-tablet * -1);
     }
+    @include desktop {
+      left: calc($section-padding-desktop * -1);
+    }
+    @include fullhd {
+      left: calc($section-padding-fullhd * -1);
+    }
+  
   }
   &.is-right-top {
     bottom: 50%;
     right: -5rem;
     transform: rotate(180deg);
     @include fullhd {
-      right: -10.3125rem;
+      // right: -10.3125rem;
+      right: 0;
     }
   }
   &.is-right-bottom {
     bottom: 0;
-    right: -5rem;
-    transform: translate(40%, 70%);
+    right: calc($section-padding-mobile * -1);
+    top: 25%; 
 
+    svg {
+      transform: rotate(180deg);
+    }
+
+    @include tablet {
+      right: calc($section-padding-tablet * -1);
+    }
+    @include desktop {
+      right: calc($section-padding-desktop * -1);
+    }
     @include fullhd {
-      right: -10.3125rem;
-      transform: translate(30%, 70%);
+      right: calc($section-padding-fullhd * -1);
     }
-    @include ultrahd {
-      transform: translate(15%, 70%);
-    }
+
   }
 }

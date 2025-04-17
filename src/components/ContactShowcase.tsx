@@ -15,14 +15,24 @@ export const ContactShowcase = ({ labels }: ContactShowcaseProps) => {
 
   return (
     <section className="contact-showcase">
-      <div className="container">
+      <div className="container overflow-hidden">
         <div className="bg-wrapper">
           <BgImage />
         </div>
         <div className="columns is-multiline is-centered content-wrapper m-0">
           <div className="column is-12-mobile is-10-tablet is-6-desktop content">
-            <div className="title h4">{title}</div>
-            <div className="text">{text}</div>
+            {title && (
+              <div
+                className="title h4"
+                dangerouslySetInnerHTML={{ __html: title }}
+              />
+            )}
+            {text && (
+              <div
+                className="text"
+                dangerouslySetInnerHTML={{ __html: text }}
+              />
+            )}
           </div>
           <div className="column is-12-mobile  is-10-tablet is-6-desktop btn-wrapper">
             <Link className="btn onDark" href={"/contact"}>
@@ -30,10 +40,6 @@ export const ContactShowcase = ({ labels }: ContactShowcaseProps) => {
             </Link>
           </div>
         </div>
-      </div>
-      {/* Todo: add condition props (has-bg-shape) */}
-      <div className="bg-pattern is-right-top is-hidden-touch">
-        <BgShape />
       </div>
     </section>
   );

@@ -18,7 +18,7 @@ export type ContactType = {
   id: number;
   attributes: {
     address?: string;
-    phone?: string;
+    phone?: number;
     email?: string;
     Label: string;
     socials?: {
@@ -29,6 +29,16 @@ export type ContactType = {
   };
 };
 
+export type MenuItemType = {
+  order: number;
+  parent: {
+    data: MenuItemType | null;
+  };
+  target: "_blank" | "_self";
+  url: string;
+  title: string;
+};
+
 export type MenuType = {
   id: number;
   attributes: {
@@ -37,7 +47,7 @@ export type MenuType = {
     items: {
       data: {
         id: number;
-        attributes: LinkType;
+        attributes: MenuItemType;
       }[];
     };
   };

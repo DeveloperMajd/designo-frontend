@@ -54,7 +54,7 @@ const ProjectGridItem = ({
   Type,
 }: ProjectGridItemProps) => {
   const controls = useAnimation();
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   useEffect(() => {
     if (inView && index === currentIndex) {

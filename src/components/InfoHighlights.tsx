@@ -4,6 +4,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { fadeInLeft } from "@/utils/transistions";
 import React, { useEffect, useState } from "react";
+import BgShape from "../assets/images/shared/desktop/bg-pattern-leaf.svg";
 
 export type InfoHighlightsType = {
   __component: "components.info-highlights";
@@ -91,6 +92,9 @@ export const InfoHighlights = ({ data }: InfoHighlightsProps) => {
             />
           ))}
         </div>
+      </div>
+      <div className="bg-pattern is-right-bottom is-hidden-touch">
+        <BgShape />
       </div>
     </section>
   );

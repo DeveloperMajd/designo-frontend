@@ -1,5 +1,4 @@
 .projects-grid {
-
   .grid-wrapper {
     display: grid;
     gap: 1.5rem;
@@ -42,7 +41,7 @@
       position: absolute;
       width: 100%;
       height: 100%;
-      background: transparent;
+      background: rgba($color: #000000, $alpha: 0.4);
       border-radius: 0.9375rem;
       transition: background 0.3s ease-in-out;
       z-index: 1;

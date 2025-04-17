@@ -4,5 +4,5 @@ export const findLabel = (
     [key: string]: string;
   }[]
 ) => {
-  return labels.find((item) => Object.keys(item)[0] === label)?.[label];
+  return labels?.find((item) => Object.keys(item)[0] === label)?.[label];
 };

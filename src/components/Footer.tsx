@@ -5,6 +5,7 @@ import { SocialIcons } from "./SocialIcons";
 import { ContactShowcase } from "./ContactShowcase";
 import { ContactType, LabelsType, MenuType } from "@/utils/baseTypes";
 import { findLabel } from "@/utils/findLabel";
+import { formatPhoneNumber } from "@/utils/formatPhoneNumber";
 
 interface footerProps {
   showContactShowcase: boolean;
@@ -24,16 +25,16 @@ export const Footer = ({
   const email = contactData?.attributes.email;
   const socials = contactData?.attributes.socials;
 
-  const formattedPhone = phone?.replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
+  const formattedPhone = formatPhoneNumber(phone ?? "", "Germany");
 
   const contactUs = findLabel("contact-us", labels);
+  const phoneLabel = findLabel("phone", labels);
+  const emailLabel = findLabel("email", labels);
 
   return (
     <>
       {showContactShowcase && <ContactShowcase labels={labels} />}
-      <footer
-        className={`footer ${showContactShowcase ? "" : "contact-page"}`}
-      >
+      <footer className={`footer ${showContactShowcase ? "" : "contact-page"}`}>
         <section>
           <div className={`container ${showContactShowcase ? "has-box" : ""}`}>
             <div className="columns is-multiline">
@@ -70,12 +71,15 @@ export const Footer = ({
                   )}
 
                   <div className="column contact-info is-4-tablet">
-                    {contactUs && <p>{contactUs}</p>}
+                    {contactUs && (
+                      <strong className="contact-us">{contactUs}</strong>
+                    )}
                     <p>
-                      Phone: <a href={`tel:${phone}`}>{formattedPhone}</a>
+                      <strong>{phoneLabel ?? "Phone : "}</strong>
+                      <a href={`tel:${phone}`}>{formattedPhone}</a>
                     </p>
                     <p>
-                      Email:{" "}
+                      <strong>{emailLabel ?? "Email : "}</strong>
                       <a
                         href={`mailto:${email}`}
                         target="_blank"

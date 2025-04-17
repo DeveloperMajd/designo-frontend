@@ -8,6 +8,9 @@ import CirclesTablet from "../assets/images/shared/desktop/bg-pattern-two-circle
 import Map from "./Global/Map";
 import { motion } from "framer-motion";
 import { fadeInLeft, fadeInRight, scaleDown } from "@/utils/transistions";
+import { findLabel } from "@/utils/findLabel";
+import { LabelsType } from "@/utils/baseTypes";
+import { formatPhoneNumber } from "@/utils/formatPhoneNumber";
 
 export type LocationsType = {
   __component: "components.locations";
@@ -16,7 +19,7 @@ export type LocationsType = {
     Longitude: number;
     city: string;
     Tag: string;
-    phone: Number;
+    phone: number;
     Email: string;
     Position: "img-left" | "img-right";
     address: any;
@@ -24,8 +27,9 @@ export type LocationsType = {
 };
 interface LocationsProps {
   data: LocationsType;
+  labels: LabelsType;
 }
-const Locations = ({ data }: LocationsProps) => {
+const Locations = ({ data, labels }: LocationsProps) => {
   const { locations } = data;
 
   const { width } = useWindowSize();
@@ -34,6 +38,9 @@ const Locations = ({ data }: LocationsProps) => {
   const isTablet = width > 768 && width < 1024;
   const isDesktop = width >= 1024;
 
+  const phoneLabel = findLabel("phone", labels);
+  const emailLabel = findLabel("email", labels);
+
   return (
     <section className="locations is-full-width">
       <div className="container">
@@ -41,10 +48,8 @@ const Locations = ({ data }: LocationsProps) => {
           locations.length > 0 &&
           locations.map((location, index) => {
             const { city, Tag, phone, Email, Longitude, Latitude } = location;
-            const formattedPhone = phone
-              ?.toString()
-              .replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
-
+            const formattedPhone = formatPhoneNumber(phone ?? "", city);
+            console.log("🚀 ~ Locations ~ formattedPhone:", formattedPhone);
             return (
               <div
                 id={Tag}
@@ -104,10 +109,11 @@ const Locations = ({ data }: LocationsProps) => {
                           <strong>Contact</strong>
                         </p>
                         <p>
-                          P: <a href={`tel:${phone}`}>{formattedPhone}</a>
+                          {phoneLabel ?? "P: "}
+                          <a href={`tel:${phone}`}>{formattedPhone}</a>
                         </p>
                         <p>
-                          M:{" "}
+                          {emailLabel ?? "M: "}
                           <a
                             href={`mailto:${Email}`}
                             target="_blank"

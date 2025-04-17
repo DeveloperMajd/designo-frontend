@@ -105,7 +105,7 @@ export const LocationsHighlights = ({
               index={index}
               currentIndex={currentIndex}
               triggerNext={triggerNext}
-              label={label}
+              label={label ? label : "See Location"}
             />
           ))}
         </div>
