@@ -13,7 +13,6 @@ interface NavbarProps {
 }
 
 export const Navbar = ({ mainMenu }: NavbarProps) => {
-  console.log("🚀 ~ Navbar ~ mainMenu:", mainMenu);
   const [isOpen, setIsOpen] = useState(false);
 
   // order menu items by attribute.order

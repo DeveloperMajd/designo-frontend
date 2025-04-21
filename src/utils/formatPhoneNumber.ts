@@ -8,10 +8,8 @@ export const formatPhoneNumber = (
   const phoneStr = rawNumber.toString();
 
   const country = byCountry(defaultCountry);
-  console.log("🚀 ~ country:", country)
 
   const countryCode = country?.iso2 || defaultCountry;
-  console.log("🚀 ~ countryCode:", countryCode)
 
   const phoneNumber = parsePhoneNumberFromString(
     phoneStr,

@@ -102,6 +102,9 @@
           &.has-value {
             border-bottom: 3px solid $white;
           }
+          &::selection {
+            background-color: $light-peach;
+          }
         }
         .error-msg {
           position: absolute;
@@ -156,5 +159,24 @@
   input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
+  }
+
+  .loading {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include mobile {
+      position: absolute;
+      bottom: -3.5rem;
+    }
+    .loader {
+      border: 0.125rem solid $light-peach;
+      border-right-color: transparent;
+      border-top-color: transparent;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
 }

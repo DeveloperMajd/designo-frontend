@@ -25,17 +25,45 @@ export const ContactForm = ({ data }: ContactFormProps) => {
   const [submited, setSubmited] = useState(false);
   const [isInvalid, setIsInvalid] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const emailRegex =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   const validateEmail = (email: string) => emailRegex.test(email);
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     setIsInvalid(!validateEmail(email));
     setSubmited(true);
 
-    if (name && email && phone && message && validateEmail(email)) {
+    if (!name || !email || !phone || !message || !validateEmail(email)) return;
+
+    setIsSubmitting(true);
+    setIsSuccess(false);
+
+    try {
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/contact-form/send`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ name, email, phone, message }),
+        }
+      );
+
+      const result = await res.json();
+
+      if (!res.ok) {
+        throw new Error(result?.error || "Something went wrong");
+      }
+
       setIsSuccess(true);
+    } catch (err) {
+      console.error("Submit error:", err);
+      setIsSuccess(false);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -146,11 +174,16 @@ export const ContactForm = ({ data }: ContactFormProps) => {
               <div
                 className={`control is-flex btn-wrapper ${
                   isSuccess && "is-success"
-                }`}
+                } ${isSubmitting && "is-submitting"}`}
               >
                 {isSuccess && (
                   <div className="success-msg">
                     <span>Thanks for submitting!</span>
+                  </div>
+                )}
+                {isSubmitting && (
+                  <div className="loading">
+                    <div className="loader" />
                   </div>
                 )}
                 <div className="btn onDark" onClick={() => handleSubmit()}>

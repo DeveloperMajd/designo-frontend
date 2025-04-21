@@ -49,7 +49,6 @@ const Locations = ({ data, labels }: LocationsProps) => {
           locations.map((location, index) => {
             const { city, Tag, phone, Email, Longitude, Latitude } = location;
             const formattedPhone = formatPhoneNumber(phone ?? "", city);
-            console.log("🚀 ~ Locations ~ formattedPhone:", formattedPhone);
             return (
               <div
                 id={Tag}
