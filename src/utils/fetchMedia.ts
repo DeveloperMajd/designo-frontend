@@ -1,5 +1,6 @@
 export function getStrapiURL() {
-  return process.env.NEXT_PUBLIC_STRAPI_URL ?? "http://localhost:1337";
+  const rawUrl = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:1337";
+  return rawUrl.replace(/\/api\/?$/, ""); // Removes trailing /api or /api/
 }
 
 export function getStrapiMedia(url: string | null) {
