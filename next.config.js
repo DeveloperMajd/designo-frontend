@@ -11,9 +11,8 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "http",
-        hostname: "217.154.194.225",
-        port: "1337",
+        protocol: "https",
+        hostname: "designo-backend.developermajd.com",
       },
       {
         protocol: "https",
