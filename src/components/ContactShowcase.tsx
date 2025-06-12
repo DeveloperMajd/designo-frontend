@@ -1,6 +1,5 @@
 import Link from "next/link";
 import BgImage from "../assets/images/shared/desktop/bg-pattern-call-to-action.svg";
-import BgShape from "../assets/images/shared/desktop/bg-pattern-leaf.svg";
 import { findLabel } from "@/utils/findLabel";
 
 interface ContactShowcaseProps {

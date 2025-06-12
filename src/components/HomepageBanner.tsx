@@ -67,8 +67,8 @@ export const HomepageBanner = ({ data }: HomepageBannerProps) => {
                   isDesktop
                     ? fadeInHomeImgDesk
                     : isTablet
-                    ? fadeInHomeImgTab
-                    : fadeInHomeImgMob
+                      ? fadeInHomeImgTab
+                      : fadeInHomeImgMob
                 }
                 className="img-wrapper"
               >

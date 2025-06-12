@@ -2,7 +2,7 @@ import { NextJSStaticPathType, PageType } from "@/utils/baseTypes";
 import { fetchData } from "@/utils/fetchData";
 
 export const getAllPaths = async (): Promise<NextJSStaticPathType[]> => {
-  let paths: NextJSStaticPathType[] = [];
+  const paths: NextJSStaticPathType[] = [];
   const url = `${process.env.NEXT_PUBLIC_API_URL}/pages`;
 
   try {

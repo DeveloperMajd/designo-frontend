@@ -1,10 +1,5 @@
 "use client";
 
-import ImgTablet from "../assets/images/about/tablet/image-about-hero.jpg";
-import ImgDesktop from "../assets/images/about/desktop/image-about-hero.jpg";
-import ImgMobile from "../assets/images/about/mobile/image-about-hero.jpg";
-
-import Image from "next/image";
 import useWindowSize from "../hooks/useWindowSize";
 
 import BgPatternDesktop from "../assets/images/about/desktop/bg-pattern-hero-about-desktop.svg";

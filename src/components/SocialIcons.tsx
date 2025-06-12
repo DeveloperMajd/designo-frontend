@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { MediaItem } from "./Global/MediaItem";
 import { ImageType, LinkType } from "@/utils/baseTypes";
 import { ReactSVG } from "react-svg";
 import { getStrapiMedia } from "@/utils/fetchMedia";

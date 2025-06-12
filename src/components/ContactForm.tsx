@@ -1,8 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import IconError from "../assets/images/contact/desktop/icon-error.svg";
-import BgPattern from "../assets/shared/desktop/bg-pattern-small-circle.svg";
 import BgPatternMobile from "../assets/images/shared/desktop/bg-pattern-two-circles.svg";
 import { motion } from "framer-motion";
 import { fadeInLeft, fadeInRight, stager } from "@/utils/transistions";

@@ -22,7 +22,7 @@ export type LocationsType = {
     phone: number;
     Email: string;
     Position: "img-left" | "img-right";
-    address: any;
+    address: string;
   }[];
 };
 interface LocationsProps {
@@ -36,7 +36,6 @@ const Locations = ({ data, labels }: LocationsProps) => {
 
   const isMobile = width <= 768;
   const isTablet = width > 768 && width < 1024;
-  const isDesktop = width >= 1024;
 
   const phoneLabel = findLabel("phone", labels);
   const emailLabel = findLabel("email", labels);
