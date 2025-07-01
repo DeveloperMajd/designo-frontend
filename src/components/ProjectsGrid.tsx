@@ -66,7 +66,7 @@ const ProjectGridItem = ({
   const { Slug } = page.data.attributes;
 
   return (
-    <motion.span
+    <motion.div
       ref={ref}
       initial="hidden"
       animate={controls}
@@ -99,7 +99,7 @@ const ProjectGridItem = ({
           </div>
         </div>
       </Link>
-    </motion.span>
+    </motion.div>
   );
 };
 
