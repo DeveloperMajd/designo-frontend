@@ -5,6 +5,7 @@ import IconError from "../assets/images/contact/desktop/icon-error.svg";
 import BgPatternMobile from "../assets/images/shared/desktop/bg-pattern-two-circles.svg";
 import { motion } from "framer-motion";
 import { fadeInLeft, fadeInRight, stager } from "@/utils/transistions";
+import { sendContactMessage } from "@/utils/sendContactMessage";
 
 export type ContactFormType = {
   __component: "components.contact-form";
@@ -25,12 +26,15 @@ export const ContactForm = ({ data }: ContactFormProps) => {
   const [isInvalid, setIsInvalid] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [sendError, setSendError] = useState<string | null>(null);
 
   const emailRegex =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   const validateEmail = (email: string) => emailRegex.test(email);
 
   const handleSubmit = async () => {
+    if (isSubmitting) return;
+
     setIsInvalid(!validateEmail(email));
     setSubmited(true);
 
@@ -38,32 +42,16 @@ export const ContactForm = ({ data }: ContactFormProps) => {
 
     setIsSubmitting(true);
     setIsSuccess(false);
+    setSendError(null);
 
-    try {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/contact-form/send`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ name, email, phone, message }),
-        }
-      );
+    const result = await sendContactMessage({ name, email, phone, message });
 
-      const result = await res.json();
-
-      if (!res.ok) {
-        throw new Error(result?.error || "Something went wrong");
-      }
-
+    if (result.ok) {
       setIsSuccess(true);
-    } catch (err) {
-      console.error("Submit error:", err);
-      setIsSuccess(false);
-    } finally {
-      setIsSubmitting(false);
+    } else {
+      setSendError(result.message);
     }
+    setIsSubmitting(false);
   };
 
   return (
@@ -136,9 +124,10 @@ export const ContactForm = ({ data }: ContactFormProps) => {
             <motion.div variants={fadeInRight} className="field">
               <div className="control has-icons-right">
                 <input
-                  className={`input phone${phone ? "has-value" : ""}`}
-                  type="number"
-                  inputMode="numeric"
+                  className={`input phone ${phone ? "has-value" : ""}`}
+                  type="tel"
+                  inputMode="tel"
+                  autoComplete="tel"
                   placeholder="Phone"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
@@ -171,13 +160,24 @@ export const ContactForm = ({ data }: ContactFormProps) => {
             </motion.div>
             <motion.div variants={fadeInRight} className="field">
               <div
-                className={`control is-flex btn-wrapper ${
-                  isSuccess && "is-success"
-                } ${isSubmitting && "is-submitting"}`}
+                className={[
+                  "control is-flex btn-wrapper",
+                  isSuccess && "is-success",
+                  sendError && "is-error",
+                  isSubmitting && "is-submitting",
+                ]
+                  .filter(Boolean)
+                  .join(" ")}
               >
                 {isSuccess && (
-                  <div className="success-msg">
+                  <div className="success-msg" role="status">
                     <span>Thanks for submitting!</span>
+                  </div>
+                )}
+                {sendError && (
+                  <div className="send-error-msg" role="alert">
+                    <span>{sendError}</span>
+                    <IconError />
                   </div>
                 )}
                 {isSubmitting && (

@@ -133,7 +133,8 @@
       justify-content: flex-end;
     }
 
-    &.is-success {
+    &.is-success,
+    &.is-error {
       flex-direction: column-reverse;
       align-items: center;
 
@@ -151,6 +152,35 @@
       @include tablet {
         margin-top: 0;
         padding-left: 1rem;
+      }
+    }
+
+    // Shown when sending fails; styled like the per-field errors above.
+    .send-error-msg {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1rem;
+
+      @include tablet {
+        margin-top: 0;
+        padding-left: 1rem;
+      }
+
+      text-align: center;
+
+      span {
+        min-width: 0;
+        font-family: $jost-italic;
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+        color: $white;
+        margin-right: 0.5rem;
+      }
+
+      // A long message wraps; the icon must keep its size instead of being squeezed.
+      svg {
+        flex-shrink: 0;
       }
     }
   }
