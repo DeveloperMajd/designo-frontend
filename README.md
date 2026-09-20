@@ -1,72 +1,123 @@
-# Frontend Mentor - Designo agency website solution
+# Designo — Frontend
 
-This is a solution to the [Designo agency website challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/designo-multipage-website-G48K6rfUT). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+A multi-page website for a design agency, rendered from content managed in a headless CMS.
+Built with **Next.js** and **TypeScript** on top of a Strapi API, from the
+[Frontend Mentor Designo challenge](https://www.frontendmentor.io/challenges/designo-multipage-website-G48K6rfUT)
+design.
 
-## Table of contents
+|  |  |
+| --- | --- |
+| Live site | <https://designo.developermajd.com> |
+| Backend (Strapi API) | [DeveloperMajd/designo-backend](https://github.com/DeveloperMajd/designo-backend) |
+| Project overview | [DeveloperMajd/designo](https://github.com/DeveloperMajd/designo) |
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
+![Designo screenshot](./screenshot.png)
 
-## Overview
+## Features
 
-### The challenge
+- **Pages driven by the CMS.** A page is an ordered list of sections stored in Strapi.
+  The frontend renders whatever the editor composes, so pages can be added or reordered
+  without a code change.
+- **Static and fast.** Pages are prerendered and refreshed in the background every two
+  minutes (incremental static regeneration), so content edits go live without a rebuild.
+- **Editable everywhere.** Navigation, footer details and interface labels come from the CMS
+  too.
+- **Locations page with maps.** Interactive Leaflet maps with OpenStreetMap tiles, loaded
+  on the client only.
+- **Contact form** with inline validation. Rate limiting and input hardening happen on the
+  backend.
+- **Motion.** Scroll-triggered animations with Framer Motion.
+- **Responsive.** Layouts for mobile, tablet and desktop, built with Bulma and SCSS.
+- **SEO basics.** A title per page, a description, canonical URLs and Open Graph tags;
+  unknown URLs return a real 404.
 
-Users should be able to:
+## How it works
 
-- View the optimal layout for each page depending on their device's screen size
-- See hover states for all interactive elements throughout the site
-- Receive an error message when the contact form is submitted if:
-  - The `Name`, `Email Address` or `Your Message` fields are empty should show "Can't be empty"
-  - The `Email Address` is not formatted correctly should show "Please use a valid email address"
-- **Bonus**: View actual locations on the locations page maps (using [Leaflet JS](https://leafletjs.com/))
+- `src/pages/[[...dynamicRoute]].tsx` is the only route. `getStaticPaths` asks the API for
+  every page slug; `getStaticProps` fetches the page, the menu, the labels and the contact
+  details.
+- Each section type in the CMS (for example `components.homepage-banner`) is mapped to a
+  React component in `src/utils/module-list.tsx`. The page layout is whatever order the
+  editor chose.
+- New pages are generated on their first visit (`fallback: "blocking"`). A slug the API has
+  no page for returns a 404. If the API cannot be reached, a page that was already
+  generated keeps being served instead of being replaced by an error.
 
-### Screenshot
+## Tech stack
 
-![](./screenshot.png)
+| Area | Tools |
+| --- | --- |
+| Framework | Next.js 15 (pages router), React 19, TypeScript |
+| Styling | SCSS, Bulma |
+| Animation | Framer Motion, react-intersection-observer |
+| Maps | Leaflet, React Leaflet |
+| Data | Strapi REST API, `qs` for query strings |
+| Utilities | libphonenumber-js, hamburger-react |
+| Hosting | Vercel |
 
-### Links
+## Getting started
 
-### Links
+Requires **Node 20 or newer** and **yarn**. The site reads all of its content from the
+Strapi API, so the backend has to be running.
 
-- Frontend Repository: [https://github.com/DeveloperMajd/designo-frontend.git](https://github.com/DeveloperMajd/designo-frontend.git)
-- Backend Repository: [https://github.com/DeveloperMajd/designo-backend.git](https://github.com/DeveloperMajd/designo-backend.git)
-- Live Site URL: [https://designo-frontend.developermajd.com/](https://designo-frontend.developermajd.com/)
+The easiest way is `make dev` from the
+[project repo](https://github.com/DeveloperMajd/designo), which starts the backend and this
+frontend together. To run only the frontend against a local backend:
 
+```bash
+yarn install
+echo 'NEXT_PUBLIC_API_URL=http://localhost:1337/api' > .env.local
+yarn dev
+```
 
-## My process
+Open <http://localhost:3000>. `.env.local` is ignored by git and overrides the
+production URL in `.env`.
 
-I started by building the frontend with hardcoded content to closely match the Figma design. Once the visual layout looked good, I set up the backend using Strapi, fetched the data, and replaced the hardcoded content with dynamic content from the backend. After that, I added animations to enhance the user experience.
+| Script | What it does |
+| --- | --- |
+| `yarn dev` | Development server |
+| `yarn build` | Production build (also lints and type-checks) |
+| `yarn start` | Serve the production build |
+| `yarn lint` | Run ESLint |
 
-One of the main challenges was hosting Strapi on a VPS, which proved to be tricky. Moving forward, I’d prefer using WordPress with Advanced Custom Fields (ACF) for greater customization and easier management.
+## Configuration
 
-### Built with
+| Variable | Purpose |
+| --- | --- |
+| `NEXT_PUBLIC_API_URL` | Base URL of the Strapi API, including `/api`. The host of this URL is also allowed as an image source in `next.config.js`, so pointing the site at a different backend needs no code change. |
 
-- HTML
-- SCSS
-- TypeScript
-- React
-- Next.js
-- Bulma
-- Leaflet
-- Strapi (backend)
+`NEXT_PUBLIC_*` values are inlined at build time, so changing one needs a rebuild.
 
-### What I learned
+## Deployment
 
-- I learned how to use Strapi for the first time, which helped me understand backend content management.
-- I also learned about hosting and managing domains, expanding my deployment skills.
+The site is deployed on Vercel, straight from this repository: every push to `master` builds
+and deploys. Set `NEXT_PUBLIC_API_URL` in the Vercel project settings (or keep the value in
+`.env`), and redeploy after changing it.
 
-### Continued development
+Vercel refuses to deploy Next.js versions with known security advisories, so the framework
+has to be kept up to date.
 
-In future projects, I want to focus more on accessibility and SEO, as I did not consider these aspects in this project but recognize their importance.
+## Project structure
 
-### Useful resources
+```
+src/
+  pages/[[...dynamicRoute]].tsx   the only route: fetches a page by slug and renders it
+  components/                     one component per CMS section, plus navbar and footer
+  hooks/                          data fetching and small UI hooks
+  utils/                          section-to-component map, API types, helpers, site constants
+  styles/                         SCSS partials, one per component
+  assets/                         fonts, images and SVGs
+```
 
-- Learned Strapi through various YouTube tutorials.
-- For the frontend, I built upon knowledge from past projects to structure and style the application.
+## Known limitations
+
+- **Accessibility** has not been audited yet (keyboard navigation, focus handling, ARIA).
+- **Contact form feedback:** the form shows validation errors and a success message, but
+  not an error when sending fails, for example when the backend's rate limit is hit.
+- **Meta descriptions** are one site-wide text; the CMS has no per-page description field.
+- There are **no automated tests** yet.
+
+## Credits
+
+Design and image assets by [Frontend Mentor](https://www.frontendmentor.io). Typeface:
+Jost. Map data © [OpenStreetMap](https://www.openstreetmap.org/copyright) contributors.
