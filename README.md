@@ -24,8 +24,9 @@ design.
   too.
 - **Locations page with maps.** Interactive Leaflet maps with OpenStreetMap tiles, loaded
   on the client only.
-- **Contact form** with inline validation. Rate limiting and input hardening happen on the
-  backend.
+- **Contact form** with inline validation and clear feedback when sending fails
+  (validation errors, rate limiting, network and server errors). Rate limiting and input
+  hardening happen on the backend.
 - **Motion.** Scroll-triggered animations with Framer Motion.
 - **Responsive.** Layouts for mobile, tablet and desktop, built with Bulma and SCSS.
 - **SEO basics.** A title per page, a description, canonical URLs and Open Graph tags;
@@ -112,8 +113,6 @@ src/
 ## Known limitations
 
 - **Accessibility** has not been audited yet (keyboard navigation, focus handling, ARIA).
-- **Contact form feedback:** the form shows validation errors and a success message, but
-  not an error when sending fails, for example when the backend's rate limit is hit.
 - **Meta descriptions** are one site-wide text; the CMS has no per-page description field.
 - There are **no automated tests** yet.
 
