@@ -35,18 +35,27 @@
 
   .img-col {
     overflow: hidden;
-    .leaflet-container {
-      display: block;
+
+    // The map loads on the client only, so its wrapper holds the space meanwhile and the
+    // offices below do not move when it appears.
+    .map-wrapper {
       aspect-ratio: 1/1;
 
       @include tablet {
-        border-radius: 0.9375rem;
         margin-bottom: 2rem;
         max-height: 20.375rem;
       }
       @include desktop {
         margin-bottom: 0;
         max-height: unset;
+      }
+    }
+
+    .leaflet-container {
+      display: block;
+
+      @include tablet {
+        border-radius: 0.9375rem;
       }
     }
 

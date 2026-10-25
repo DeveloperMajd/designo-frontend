@@ -11,6 +11,7 @@ import { motion, useAnimation } from "motion/react";
 import { fadeInLeft } from "@/utils/transistions";
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState } from "react";
+import { officeAnchor } from "@/utils/officeAnchor";
 
 export type LocationsHighlightsType = {
   __component: "components.locations-highlights";
@@ -73,7 +74,7 @@ const HighlightItem = ({
       </div>
       <div className="content">
         <div className="title h3">{City}</div>
-        <Link href={`/locations/#${Tag}`} className="btn onLight">
+        <Link href={`/locations#${officeAnchor(Tag)}`} className="btn onLight">
           {label}
         </Link>
       </div>

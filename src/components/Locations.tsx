@@ -5,12 +5,18 @@ import useWindowSize from "../hooks/useWindowSize";
 import CirclesMobile from "../assets/images/shared/desktop/bg-pattern-three-circles.svg";
 import CirclesTablet from "../assets/images/shared/desktop/bg-pattern-two-circles.svg";
 
-import Map from "./Global/Map";
+import dynamic from "next/dynamic";
 import { motion } from "motion/react";
 import { fadeInLeft, fadeInRight, scaleDown } from "@/utils/transistions";
 import { findLabel } from "@/utils/findLabel";
 import { LabelsType } from "@/utils/baseTypes";
 import { formatPhoneNumber } from "@/utils/formatPhoneNumber";
+import { officeAnchor } from "@/utils/officeAnchor";
+
+// Leaflet needs the browser, so only the map loads on the client. The offices are
+// rendered on the server like the rest of the page, which also lets links to
+// /locations#<office> find their target.
+const Map = dynamic(() => import("./Global/Map"), { ssr: false });
 
 export type LocationsType = {
   __component: "components.locations";
@@ -50,7 +56,7 @@ const Locations = ({ data, labels }: LocationsProps) => {
             const formattedPhone = formatPhoneNumber(phone ?? "", city);
             return (
               <div
-                id={Tag}
+                id={officeAnchor(Tag)}
                 key={index}
                 className={`columns is-variable is-4 ${location.Position}`}
               >

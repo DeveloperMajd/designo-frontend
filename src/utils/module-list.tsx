@@ -19,13 +19,8 @@ import {
   TextMediaBannerType,
 } from "@/components/TextMediaBanner";
 import { LabelsType } from "./baseTypes";
-import { LocationsType } from "@/components/Locations";
-import dynamic from "next/dynamic";
+import Locations, { LocationsType } from "@/components/Locations";
 import { ContactForm, ContactFormType } from "@/components/ContactForm";
-
-const Locations = dynamic(() => import("@/components/Locations"), {
-  ssr: false,
-});
 
 export type ModulesType =
   | HomepageBannerType

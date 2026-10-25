@@ -22,8 +22,9 @@ design.
   minutes (incremental static regeneration), so content edits go live without a rebuild.
 - **Editable everywhere.** Navigation, footer details and interface labels come from the CMS
   too.
-- **Locations page with maps.** Interactive Leaflet maps with OpenStreetMap tiles, loaded
-  on the client only.
+- **Locations page with maps.** The offices are rendered on the server, so "See Location"
+  links can jump straight to one; the interactive Leaflet maps (OpenStreetMap tiles) load
+  on the client, into space reserved for them.
 - **Contact form** with inline validation and clear feedback when sending fails
   (validation errors, rate limiting, network and server errors). Rate limiting and input
   hardening happen on the backend.
