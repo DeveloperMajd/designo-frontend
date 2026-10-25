@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ImageType, LinkType } from "@/utils/baseTypes";
 import { ReactSVG } from "react-svg";
 import { getStrapiMedia } from "@/utils/fetchMedia";
+import { normalizeHref } from "@/utils/normalizeHref";
 
 type socialType = {
   icon: ImageType;
@@ -28,7 +29,7 @@ export const SocialIcons = ({ socials }: socialProps) => {
         return (
           <Link
             key={index}
-            href={link.url}
+            href={normalizeHref(link.url)}
             target={link.target}
             className="social-icon"
             aria-label={link.title}

@@ -6,6 +6,7 @@ import { ContactShowcase } from "./ContactShowcase";
 import { ContactType, LabelsType, MenuType } from "@/utils/baseTypes";
 import { findLabel } from "@/utils/findLabel";
 import { formatPhoneNumber } from "@/utils/formatPhoneNumber";
+import { normalizeHref } from "@/utils/normalizeHref";
 
 interface footerProps {
   showContactShowcase: boolean;
@@ -48,7 +49,7 @@ export const Footer = ({
                     {mainMenu?.attributes.items.data.map((item, index) => (
                       <Link
                         key={index}
-                        href={item.attributes.url}
+                        href={normalizeHref(item.attributes.url)}
                         target={item.attributes.target}
                         className="nav-item footer-item"
                       >

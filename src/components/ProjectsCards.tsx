@@ -1,5 +1,6 @@
 import { ImageType, LinkType } from "@/utils/baseTypes";
 import { MediaItem } from "./Global/MediaItem";
+import { normalizeHref } from "@/utils/normalizeHref";
 import Link from "next/link";
 import { motion, useAnimation } from "motion/react";
 import { useInView } from "react-intersection-observer";
@@ -58,7 +59,7 @@ const ProjectCard = ({
         </div>
         {link && link.url ? (
           <Link
-            href={link.url}
+            href={normalizeHref(link.url)}
             target={link.target}
             className="column is-12-mobile is-6-tablet is-12-desktop card-content link"
             aria-label={`${link.title}`}

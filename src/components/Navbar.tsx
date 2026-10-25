@@ -7,6 +7,7 @@ import Hamburger from "hamburger-react";
 import { motion, type Variants } from "motion/react";
 import Link from "next/link";
 import { MenuType } from "@/utils/baseTypes";
+import { normalizeHref } from "@/utils/normalizeHref";
 
 interface NavbarProps {
   mainMenu?: MenuType;
@@ -70,7 +71,7 @@ export const Navbar = ({ mainMenu }: NavbarProps) => {
               orderMenuItems.map((item, index) => (
                 <Link
                   key={index}
-                  href={item.attributes.url}
+                  href={normalizeHref(item.attributes.url)}
                   target={item.attributes.target}
                   className="nav-item"
                 >
@@ -90,7 +91,7 @@ export const Navbar = ({ mainMenu }: NavbarProps) => {
           {mainMenu?.attributes.items.data.map((item, index) => (
             <Link
               key={index}
-              href={item.attributes.url}
+              href={normalizeHref(item.attributes.url)}
               target={item.attributes.target}
               className="nav-item"
             >
