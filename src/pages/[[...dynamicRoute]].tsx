@@ -11,7 +11,7 @@ import {
   SITE_TAGLINE,
   SITE_URL,
 } from "@/utils/site";
-import { GetStaticPropsContext } from "next";
+import { GetStaticPathsResult, GetStaticPropsContext } from "next";
 
 import Head from "next/head";
 
@@ -79,7 +79,7 @@ export default function DynamicPage({
   );
 }
 
-export async function getStaticPaths({}) {
+export async function getStaticPaths(): Promise<GetStaticPathsResult> {
   const allPaths = await getAllPaths();
   return {
     paths: allPaths,
@@ -87,10 +87,10 @@ export async function getStaticPaths({}) {
   };
 }
 
-export async function getStaticProps(context: GetStaticPropsContext) {
-  const { dynamicRoute }: any = context.params;
-
-  const pageData = await getPageData(dynamicRoute);
+export async function getStaticProps(
+  context: GetStaticPropsContext<{ dynamicRoute?: string[] }>
+) {
+  const pageData = await getPageData(context.params?.dynamicRoute);
 
   // The API did not answer. Throwing keeps serving the last good copy of a page that
   // was already generated, instead of replacing it with an empty page or a 404.

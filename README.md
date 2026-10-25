@@ -27,7 +27,7 @@ design.
 - **Contact form** with inline validation and clear feedback when sending fails
   (validation errors, rate limiting, network and server errors). Rate limiting and input
   hardening happen on the backend.
-- **Motion.** Scroll-triggered animations with Framer Motion.
+- **Motion.** Scroll-triggered animations with Motion (formerly Framer Motion).
 - **Responsive.** Layouts for mobile, tablet and desktop, built with Bulma and SCSS.
 - **SEO basics.** A title per page, a description, canonical URLs and Open Graph tags;
   unknown URLs return a real 404.
@@ -50,7 +50,7 @@ design.
 | --- | --- |
 | Framework | Next.js 15 (pages router), React 19, TypeScript |
 | Styling | SCSS, Bulma |
-| Animation | Framer Motion, react-intersection-observer |
+| Animation | Motion, react-intersection-observer |
 | Maps | Leaflet, React Leaflet |
 | Data | Strapi REST API, `qs` for query strings |
 | Utilities | libphonenumber-js, hamburger-react |
@@ -79,7 +79,8 @@ production URL in `.env`.
 | `yarn dev` | Development server |
 | `yarn build` | Production build (also lints and type-checks) |
 | `yarn start` | Serve the production build |
-| `yarn lint` | Run ESLint |
+| `yarn lint` | Run ESLint (`eslint.config.mjs`: Next.js core web vitals and TypeScript rules) |
+| `yarn typecheck` | Type-check the project with `tsc` |
 
 ## Configuration
 
