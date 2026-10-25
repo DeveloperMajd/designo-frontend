@@ -104,6 +104,9 @@ anything new fails.
 - After content changes in the CMS, re-record the fixtures from a running Strapi:
   `node e2e/fixtures/record.mjs http://localhost:1337/api`.
 
+CI (`.github/workflows/ci.yml`) runs lint, the type check, the format check and both test
+suites on every pull request and every push to `master`.
+
 ## Configuration
 
 | Variable | Purpose |
