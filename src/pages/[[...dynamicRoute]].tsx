@@ -53,7 +53,12 @@ export default function DynamicPage({
         <title>{title}</title>
         <meta name="description" content={SITE_DESCRIPTION} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
         <link rel="canonical" href={url} />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content={SITE_NAME} />

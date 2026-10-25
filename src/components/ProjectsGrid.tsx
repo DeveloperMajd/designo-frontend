@@ -76,8 +76,8 @@ const ProjectGridItem = ({
             ? fadeInLeft
             : fadeInRight
           : index === 0
-          ? fadeInLeft
-          : fadeInRight
+            ? fadeInLeft
+            : fadeInRight
       }
       onAnimationComplete={() => {
         if (index === currentIndex) triggerNext();

@@ -59,8 +59,8 @@ const Locations = ({ data, labels }: LocationsProps) => {
                     isMobile
                       ? "is-mobile"
                       : isTablet
-                      ? "is-tablet"
-                      : "is-desktop"
+                        ? "is-tablet"
+                        : "is-desktop"
                   }`}
                 >
                   <motion.div

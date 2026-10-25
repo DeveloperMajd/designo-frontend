@@ -1,0 +1,10 @@
+.next/
+coverage/
+playwright-report/
+test-results/
+public/
+e2e/fixtures/*.json
+yarn.lock
+next-env.d.ts
+*.md
+.vscode/

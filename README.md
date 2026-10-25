@@ -81,6 +81,7 @@ production URL in `.env`.
 | `yarn start` | Serve the production build |
 | `yarn lint` | Run ESLint (`eslint.config.mjs`: Next.js core web vitals and TypeScript rules) |
 | `yarn typecheck` | Type-check the project with `tsc` |
+| `yarn format` | Format the code with Prettier (`yarn format:check` only reports) |
 
 ## Configuration
 

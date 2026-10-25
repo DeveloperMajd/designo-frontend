@@ -103,7 +103,8 @@ export const ContactForm = ({ data }: ContactFormProps) => {
                   placeholder="Email Address"
                   value={email}
                   onChange={(e) => (
-                    setEmail(e.target.value), setIsInvalid(false)
+                    setEmail(e.target.value),
+                    setIsInvalid(false)
                   )}
                 />
                 {submited ? (
