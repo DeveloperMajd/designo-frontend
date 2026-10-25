@@ -1,0 +1,181 @@
+{
+  "data": {
+    "id": 1,
+    "attributes": {
+      "createdAt": "2024-09-22T12:51:25.265Z",
+      "updatedAt": "2024-10-11T14:16:14.559Z",
+      "publishedAt": "2024-09-22T13:40:14.761Z",
+      "phone": "3213123213",
+      "email": "developermajd@gmail.com",
+      "address": "<p><strong>Designo Central Office</strong></p>\n<p>3886 Wellington Street</p>\n<p>Toronto, Ontario M9C 3J5</p>",
+      "socials": [
+        {
+          "id": 7,
+          "platform": "Facebook",
+          "icon": {
+            "data": {
+              "id": 32,
+              "attributes": {
+                "name": "icon-facebook.svg",
+                "alternativeText": "facebook icon",
+                "caption": null,
+                "width": 24,
+                "height": 24,
+                "formats": null,
+                "hash": "icon_facebook_e19d02ceca",
+                "ext": ".svg",
+                "mime": "image/svg+xml",
+                "size": 0.43,
+                "url": "/uploads/icon_facebook_e19d02ceca.svg",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "createdAt": "2024-09-15T14:38:32.375Z",
+                "updatedAt": "2024-09-22T13:24:35.753Z"
+              }
+            }
+          },
+          "link": {
+            "id": 9,
+            "url": "facebook.com",
+            "target": "_blank",
+            "title": "Facebook"
+          }
+        },
+        {
+          "id": 8,
+          "platform": "Youtube",
+          "icon": {
+            "data": {
+              "id": 36,
+              "attributes": {
+                "name": "icon-youtube.svg",
+                "alternativeText": "youtube icon",
+                "caption": null,
+                "width": 24,
+                "height": 24,
+                "formats": null,
+                "hash": "icon_youtube_a090d0330a",
+                "ext": ".svg",
+                "mime": "image/svg+xml",
+                "size": 0.43,
+                "url": "/uploads/icon_youtube_a090d0330a.svg",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "createdAt": "2024-09-15T14:38:32.385Z",
+                "updatedAt": "2024-09-18T14:29:26.127Z"
+              }
+            }
+          },
+          "link": {
+            "id": 10,
+            "url": "youtube.com",
+            "target": "_blank",
+            "title": "youtube"
+          }
+        },
+        {
+          "id": 9,
+          "platform": "Twitter",
+          "icon": {
+            "data": {
+              "id": 35,
+              "attributes": {
+                "name": "icon-twitter.svg",
+                "alternativeText": "twitter icon",
+                "caption": null,
+                "width": 24,
+                "height": 20,
+                "formats": null,
+                "hash": "icon_twitter_788d5bbfcd",
+                "ext": ".svg",
+                "mime": "image/svg+xml",
+                "size": 0.55,
+                "url": "/uploads/icon_twitter_788d5bbfcd.svg",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "createdAt": "2024-09-15T14:38:32.383Z",
+                "updatedAt": "2024-09-18T14:29:35.796Z"
+              }
+            }
+          },
+          "link": {
+            "id": 11,
+            "url": "x.com",
+            "target": "_blank",
+            "title": "twitter"
+          }
+        },
+        {
+          "id": 10,
+          "platform": "Pinterest",
+          "icon": {
+            "data": {
+              "id": 34,
+              "attributes": {
+                "name": "icon-pinterest.svg",
+                "alternativeText": "pinterest icon",
+                "caption": null,
+                "width": 24,
+                "height": 24,
+                "formats": null,
+                "hash": "icon_pinterest_e6b3d7e48d",
+                "ext": ".svg",
+                "mime": "image/svg+xml",
+                "size": 0.85,
+                "url": "/uploads/icon_pinterest_e6b3d7e48d.svg",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "createdAt": "2024-09-15T14:38:32.381Z",
+                "updatedAt": "2024-09-18T14:29:46.271Z"
+              }
+            }
+          },
+          "link": {
+            "id": 12,
+            "url": "pinterest.com",
+            "target": "_blank",
+            "title": "pinterest"
+          }
+        },
+        {
+          "id": 11,
+          "platform": "Instagram",
+          "icon": {
+            "data": {
+              "id": 33,
+              "attributes": {
+                "name": "icon-instagram.svg",
+                "alternativeText": "instagram icon",
+                "caption": null,
+                "width": 24,
+                "height": 24,
+                "formats": null,
+                "hash": "icon_instagram_3fa1908a90",
+                "ext": ".svg",
+                "mime": "image/svg+xml",
+                "size": 0.99,
+                "url": "/uploads/icon_instagram_3fa1908a90.svg",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "createdAt": "2024-09-15T14:38:32.379Z",
+                "updatedAt": "2024-09-18T14:29:55.329Z"
+              }
+            }
+          },
+          "link": {
+            "id": 13,
+            "url": "instagram.com",
+            "target": "_blank",
+            "title": "instagram"
+          }
+        }
+      ]
+    }
+  },
+  "meta": {}
+}

@@ -1,0 +1,77 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "attributes": {
+        "createdAt": "2024-09-25T10:25:57.871Z",
+        "updatedAt": "2024-09-25T10:28:31.539Z",
+        "publishedAt": "2024-09-25T10:28:31.537Z",
+        "label": {
+          "id": 1,
+          "Name": "contact-us",
+          "Value": "Contact Us (Central Office)"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "attributes": {
+        "createdAt": "2024-09-25T10:36:48.961Z",
+        "updatedAt": "2024-09-25T10:38:09.817Z",
+        "publishedAt": "2024-09-25T10:36:57.822Z",
+        "label": {
+          "id": 2,
+          "Name": "contact-show-case-title",
+          "Value": "Let’s talk about your project"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "attributes": {
+        "createdAt": "2024-09-25T10:37:51.534Z",
+        "updatedAt": "2024-09-25T10:38:22.726Z",
+        "publishedAt": "2024-09-25T10:38:22.725Z",
+        "label": {
+          "id": 3,
+          "Name": "contact-show-case-text",
+          "Value": "Ready to take it to the next level? Contact us today and find out how our expertise can help your business grow."
+        }
+      }
+    },
+    {
+      "id": 4,
+      "attributes": {
+        "createdAt": "2024-09-25T10:38:56.822Z",
+        "updatedAt": "2024-09-25T10:39:04.289Z",
+        "publishedAt": "2024-09-25T10:39:04.288Z",
+        "label": {
+          "id": 4,
+          "Name": "contact-show-case-link",
+          "Value": "get in touch"
+        }
+      }
+    },
+    {
+      "id": 5,
+      "attributes": {
+        "createdAt": "2024-10-11T12:29:35.694Z",
+        "updatedAt": "2024-10-11T12:30:03.525Z",
+        "publishedAt": "2024-10-11T12:29:42.280Z",
+        "label": {
+          "id": 5,
+          "Name": "see-location",
+          "Value": "See Location"
+        }
+      }
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "page": 1,
+      "pageSize": 25,
+      "pageCount": 1,
+      "total": 5
+    }
+  }
+}
