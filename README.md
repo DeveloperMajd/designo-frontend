@@ -82,6 +82,7 @@ production URL in `.env`.
 | `yarn lint` | Run ESLint (`eslint.config.mjs`: Next.js core web vitals and TypeScript rules) |
 | `yarn typecheck` | Type-check the project with `tsc` |
 | `yarn format` | Format the code with Prettier (`yarn format:check` only reports) |
+| `yarn test` | Unit tests with Vitest and Testing Library (`yarn test:watch` while working) |
 
 ## Configuration
 
@@ -116,7 +117,6 @@ src/
 
 - **Accessibility** has not been audited yet (keyboard navigation, focus handling, ARIA).
 - **Meta descriptions** are one site-wide text; the CMS has no per-page description field.
-- There are **no automated tests** yet.
 
 ## Credits
 
