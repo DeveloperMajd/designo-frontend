@@ -3,7 +3,7 @@ import BgShape from "../assets/images/shared/desktop/bg-pattern-leaf.svg";
 import { ImageType, LinkType } from "@/utils/baseTypes";
 import Link from "next/link";
 import { MediaItem } from "./Global/MediaItem";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import {
   fadeInHomeImgDesk,
   fadeInHomeImgMob,

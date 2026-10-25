@@ -1,7 +1,7 @@
 import { ImageType, LinkType } from "@/utils/baseTypes";
 import { MediaItem } from "./Global/MediaItem";
 import Link from "next/link";
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation } from "motion/react";
 import { useInView } from "react-intersection-observer";
 import { fadeInLeft, fadeInRight } from "@/utils/transistions";
 import { useEffect } from "react";

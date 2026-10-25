@@ -1,6 +1,6 @@
 // create trnasition for the components in framer motions
 
-import { easeInOut } from "framer-motion";
+import { easeInOut } from "motion/react";
 
 export const stager = {
   hidden: {

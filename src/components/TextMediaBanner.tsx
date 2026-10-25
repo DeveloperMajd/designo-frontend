@@ -8,7 +8,7 @@ import BgPatternMobile from "../assets/images/about/mobile/bg-pattern-hero-about
 import BgShape from "../assets/images/shared/desktop/bg-pattern-leaf.svg";
 import { ImageType } from "@/utils/baseTypes";
 import { MediaItem } from "./Global/MediaItem";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { fadeInLeft, scaleDown } from "@/utils/transistions";
 
 export type TextMediaBannerType = {

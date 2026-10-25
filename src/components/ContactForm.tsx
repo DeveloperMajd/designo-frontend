@@ -3,7 +3,7 @@
 import { useState } from "react";
 import IconError from "../assets/images/contact/desktop/icon-error.svg";
 import BgPatternMobile from "../assets/images/shared/desktop/bg-pattern-two-circles.svg";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { fadeInLeft, fadeInRight, stager } from "@/utils/transistions";
 import { sendContactMessage } from "@/utils/sendContactMessage";
 

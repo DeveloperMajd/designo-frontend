@@ -7,7 +7,7 @@ import Link from "next/link";
 import { ImageType, LabelsType } from "@/utils/baseTypes";
 import { MediaItem } from "./Global/MediaItem";
 import { findLabel } from "@/utils/findLabel";
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation } from "motion/react";
 import { fadeInLeft } from "@/utils/transistions";
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState } from "react";

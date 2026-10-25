@@ -4,7 +4,7 @@ import Image from "next/image";
 import Logo from "../assets/images/shared/desktop/logo-dark.png";
 import { useEffect, useState } from "react";
 import Hamburger from "hamburger-react";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "motion/react";
 import Link from "next/link";
 import { MenuType } from "@/utils/baseTypes";
 
@@ -20,7 +20,7 @@ export const Navbar = ({ mainMenu }: NavbarProps) => {
     return a.attributes.order - b.attributes.order;
   });
 
-  const variants = {
+  const variants: Variants = {
     hidden: {
       y: "-100%",
       opacity: 0,

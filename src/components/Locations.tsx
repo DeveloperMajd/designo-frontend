@@ -6,7 +6,7 @@ import CirclesMobile from "../assets/images/shared/desktop/bg-pattern-three-circ
 import CirclesTablet from "../assets/images/shared/desktop/bg-pattern-two-circles.svg";
 
 import Map from "./Global/Map";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { fadeInLeft, fadeInRight, scaleDown } from "@/utils/transistions";
 import { findLabel } from "@/utils/findLabel";
 import { LabelsType } from "@/utils/baseTypes";
