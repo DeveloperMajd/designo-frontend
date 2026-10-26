@@ -11,7 +11,7 @@ import {
   SITE_TAGLINE,
   SITE_URL,
 } from "@/utils/site";
-import { GetStaticPropsContext } from "next";
+import { GetStaticPathsResult, GetStaticPropsContext } from "next";
 
 import Head from "next/head";
 
@@ -53,7 +53,12 @@ export default function DynamicPage({
         <title>{title}</title>
         <meta name="description" content={SITE_DESCRIPTION} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
         <link rel="canonical" href={url} />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content={SITE_NAME} />
@@ -79,7 +84,7 @@ export default function DynamicPage({
   );
 }
 
-export async function getStaticPaths({}) {
+export async function getStaticPaths(): Promise<GetStaticPathsResult> {
   const allPaths = await getAllPaths();
   return {
     paths: allPaths,
@@ -87,10 +92,10 @@ export async function getStaticPaths({}) {
   };
 }
 
-export async function getStaticProps(context: GetStaticPropsContext) {
-  const { dynamicRoute }: any = context.params;
-
-  const pageData = await getPageData(dynamicRoute);
+export async function getStaticProps(
+  context: GetStaticPropsContext<{ dynamicRoute?: string[] }>
+) {
+  const pageData = await getPageData(context.params?.dynamicRoute);
 
   // The API did not answer. Throwing keeps serving the last good copy of a page that
   // was already generated, instead of replacing it with an empty page or a 404.

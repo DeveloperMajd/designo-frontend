@@ -1,0 +1,3027 @@
+{
+  "data": [
+    {
+      "id": 3,
+      "attributes": {
+        "Slug": "webdesign",
+        "createdAt": "2024-03-04T15:30:39.931Z",
+        "updatedAt": "2024-09-29T14:47:22.210Z",
+        "publishedAt": "2024-03-04T16:29:37.498Z",
+        "Title": "Web design",
+        "Module": [
+          {
+            "id": 1,
+            "__component": "components.page-banner",
+            "Title": "Web Design",
+            "Content": "We build websites that serve as powerful marketing tools \nand bring memorable brand experiences."
+          },
+          {
+            "id": 1,
+            "__component": "components.project-cards",
+            "Elements": [
+              {
+                "id": 3,
+                "Title": "Express",
+                "Content": "A multi-carrier shipping website for ecommerce businesses",
+                "Image": {
+                  "data": {
+                    "id": 41,
+                    "attributes": {
+                      "name": "image-express.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 700,
+                      "height": 640,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-express.jpg",
+                          "hash": "thumbnail_image_express_7452bc0ad3",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 171,
+                          "height": 156,
+                          "size": 4.78,
+                          "url": "/uploads/thumbnail_image_express_7452bc0ad3.jpg"
+                        },
+                        "small": {
+                          "name": "small_image-express.jpg",
+                          "hash": "small_image_express_7452bc0ad3",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 500,
+                          "height": 457,
+                          "size": 26.28,
+                          "url": "/uploads/small_image_express_7452bc0ad3.jpg"
+                        }
+                      },
+                      "hash": "image_express_7452bc0ad3",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 44.65,
+                      "url": "/uploads/image_express_7452bc0ad3.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-09-29T13:49:47.050Z",
+                      "updatedAt": "2024-09-29T13:49:47.050Z"
+                    }
+                  }
+                },
+                "link": {
+                  "id": 14,
+                  "url": "#",
+                  "target": "_blank",
+                  "title": null
+                }
+              },
+              {
+                "id": 4,
+                "Title": "Transfer",
+                "Content": "Site for low-cost money transfers and sending money within seconds",
+                "Image": {
+                  "data": {
+                    "id": 43,
+                    "attributes": {
+                      "name": "image-transfer.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 700,
+                      "height": 640,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-transfer.jpg",
+                          "hash": "thumbnail_image_transfer_b21e2ad889",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 171,
+                          "height": 156,
+                          "size": 4.09,
+                          "url": "/uploads/thumbnail_image_transfer_b21e2ad889.jpg"
+                        },
+                        "small": {
+                          "name": "small_image-transfer.jpg",
+                          "hash": "small_image_transfer_b21e2ad889",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 500,
+                          "height": 457,
+                          "size": 18.91,
+                          "url": "/uploads/small_image_transfer_b21e2ad889.jpg"
+                        }
+                      },
+                      "hash": "image_transfer_b21e2ad889",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 29.98,
+                      "url": "/uploads/image_transfer_b21e2ad889.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-09-29T13:49:47.091Z",
+                      "updatedAt": "2024-09-29T13:49:47.091Z"
+                    }
+                  }
+                },
+                "link": {
+                  "id": 15,
+                  "url": "#",
+                  "target": "_blank",
+                  "title": null
+                }
+              },
+              {
+                "id": 5,
+                "Title": "Photon",
+                "Content": "A state-of-the-art music player with high-resolution audio and DSP effects",
+                "Image": {
+                  "data": {
+                    "id": 42,
+                    "attributes": {
+                      "name": "image-photon.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 700,
+                      "height": 640,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-photon.jpg",
+                          "hash": "thumbnail_image_photon_1a86a56039",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 171,
+                          "height": 156,
+                          "size": 5.92,
+                          "url": "/uploads/thumbnail_image_photon_1a86a56039.jpg"
+                        },
+                        "small": {
+                          "name": "small_image-photon.jpg",
+                          "hash": "small_image_photon_1a86a56039",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 500,
+                          "height": 457,
+                          "size": 36.18,
+                          "url": "/uploads/small_image_photon_1a86a56039.jpg"
+                        }
+                      },
+                      "hash": "image_photon_1a86a56039",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 63.55,
+                      "url": "/uploads/image_photon_1a86a56039.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-09-29T13:49:47.056Z",
+                      "updatedAt": "2024-09-29T13:49:47.056Z"
+                    }
+                  }
+                },
+                "link": {
+                  "id": 16,
+                  "url": "#",
+                  "target": "_blank",
+                  "title": null
+                }
+              },
+              {
+                "id": 6,
+                "Title": "Builder",
+                "Content": "Connects users with local contractors based on their location",
+                "Image": {
+                  "data": {
+                    "id": 38,
+                    "attributes": {
+                      "name": "image-builder.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 700,
+                      "height": 640,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-builder.jpg",
+                          "hash": "thumbnail_image_builder_a8ff67610c",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 171,
+                          "height": 156,
+                          "size": 5.75,
+                          "url": "/uploads/thumbnail_image_builder_a8ff67610c.jpg"
+                        },
+                        "small": {
+                          "name": "small_image-builder.jpg",
+                          "hash": "small_image_builder_a8ff67610c",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 500,
+                          "height": 457,
+                          "size": 28.57,
+                          "url": "/uploads/small_image_builder_a8ff67610c.jpg"
+                        }
+                      },
+                      "hash": "image_builder_a8ff67610c",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 46.49,
+                      "url": "/uploads/image_builder_a8ff67610c.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-09-29T13:49:47.025Z",
+                      "updatedAt": "2024-09-29T13:49:47.025Z"
+                    }
+                  }
+                },
+                "link": {
+                  "id": 17,
+                  "url": "#",
+                  "target": "_blank",
+                  "title": null
+                }
+              },
+              {
+                "id": 1,
+                "Title": "Bloger",
+                "Content": "Bloger is a platform for creating an online blog or publication",
+                "Image": {
+                  "data": {
+                    "id": 39,
+                    "attributes": {
+                      "name": "image-blogr.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 700,
+                      "height": 640,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-blogr.jpg",
+                          "hash": "thumbnail_image_blogr_358491d53c",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 171,
+                          "height": 156,
+                          "size": 4.62,
+                          "url": "/uploads/thumbnail_image_blogr_358491d53c.jpg"
+                        },
+                        "small": {
+                          "name": "small_image-blogr.jpg",
+                          "hash": "small_image_blogr_358491d53c",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 500,
+                          "height": 457,
+                          "size": 21.15,
+                          "url": "/uploads/small_image_blogr_358491d53c.jpg"
+                        }
+                      },
+                      "hash": "image_blogr_358491d53c",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 34.01,
+                      "url": "/uploads/image_blogr_358491d53c.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-09-29T13:49:47.028Z",
+                      "updatedAt": "2024-09-29T13:49:47.028Z"
+                    }
+                  }
+                },
+                "link": null
+              },
+              {
+                "id": 2,
+                "Title": "Camp",
+                "Content": "Get expert training in coding, data, design, and digital marketing",
+                "Image": {
+                  "data": {
+                    "id": 40,
+                    "attributes": {
+                      "name": "image-camp.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 700,
+                      "height": 640,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-camp.jpg",
+                          "hash": "thumbnail_image_camp_6ed9b8fbc8",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 171,
+                          "height": 156,
+                          "size": 5.01,
+                          "url": "/uploads/thumbnail_image_camp_6ed9b8fbc8.jpg"
+                        },
+                        "small": {
+                          "name": "small_image-camp.jpg",
+                          "hash": "small_image_camp_6ed9b8fbc8",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 500,
+                          "height": 457,
+                          "size": 26.07,
+                          "url": "/uploads/small_image_camp_6ed9b8fbc8.jpg"
+                        }
+                      },
+                      "hash": "image_camp_6ed9b8fbc8",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 43.02,
+                      "url": "/uploads/image_camp_6ed9b8fbc8.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-09-29T13:49:47.033Z",
+                      "updatedAt": "2024-09-29T13:49:47.033Z"
+                    }
+                  }
+                },
+                "link": null
+              }
+            ]
+          },
+          {
+            "id": 3,
+            "__component": "components.project-grids",
+            "Type": "two-grid",
+            "Elements": [
+              {
+                "id": 4,
+                "Title": "app design",
+                "Image": {
+                  "data": {
+                    "id": 22,
+                    "attributes": {
+                      "name": "image-app-design.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 541,
+                      "height": 308,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-app-design.jpg",
+                          "hash": "thumbnail_image_app_design_18c6c81d70",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 245,
+                          "height": 139,
+                          "size": 3.7,
+                          "url": "/uploads/thumbnail_image_app_design_18c6c81d70.jpg"
+                        },
+                        "small": {
+                          "name": "small_image-app-design.jpg",
+                          "hash": "small_image_app_design_18c6c81d70",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 500,
+                          "height": 285,
+                          "size": 10.07,
+                          "url": "/uploads/small_image_app_design_18c6c81d70.jpg"
+                        }
+                      },
+                      "hash": "image_app_design_18c6c81d70",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 11.31,
+                      "url": "/uploads/image_app_design_18c6c81d70.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-09-14T12:51:13.310Z",
+                      "updatedAt": "2024-09-14T12:51:13.310Z"
+                    }
+                  }
+                },
+                "ImageMobile": {
+                  "data": {
+                    "id": 26,
+                    "attributes": {
+                      "name": "image-app-design.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 327,
+                      "height": 250,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-app-design.jpg",
+                          "hash": "thumbnail_image_app_design_7e4ba1de3b",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 204,
+                          "height": 156,
+                          "size": 3.03,
+                          "url": "/uploads/thumbnail_image_app_design_7e4ba1de3b.jpg"
+                        }
+                      },
+                      "hash": "image_app_design_7e4ba1de3b",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 5.83,
+                      "url": "/uploads/image_app_design_7e4ba1de3b.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-09-14T12:51:37.043Z",
+                      "updatedAt": "2024-09-14T12:51:37.043Z"
+                    }
+                  }
+                },
+                "ImageTablet": {
+                  "data": {
+                    "id": 30,
+                    "attributes": {
+                      "name": "image-app-design.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 689,
+                      "height": 200,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-app-design.jpg",
+                          "hash": "thumbnail_image_app_design_bc61aeb094",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 245,
+                          "height": 71,
+                          "size": 1.96,
+                          "url": "/uploads/thumbnail_image_app_design_bc61aeb094.jpg"
+                        },
+                        "small": {
+                          "name": "small_image-app-design.jpg",
+                          "hash": "small_image_app_design_bc61aeb094",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 500,
+                          "height": 145,
+                          "size": 5.24,
+                          "url": "/uploads/small_image_app_design_bc61aeb094.jpg"
+                        }
+                      },
+                      "hash": "image_app_design_bc61aeb094",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 8.21,
+                      "url": "/uploads/image_app_design_bc61aeb094.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-09-14T12:51:53.742Z",
+                      "updatedAt": "2024-09-14T12:51:53.742Z"
+                    }
+                  }
+                },
+                "page": {
+                  "data": {
+                    "id": 4,
+                    "attributes": {
+                      "Slug": "app-design",
+                      "createdAt": "2024-03-04T16:16:08.435Z",
+                      "updatedAt": "2024-10-03T14:43:15.994Z",
+                      "publishedAt": "2024-03-04T16:29:27.614Z",
+                      "Title": "App Design"
+                    }
+                  }
+                }
+              },
+              {
+                "id": 5,
+                "Title": "graphic design",
+                "Image": {
+                  "data": {
+                    "id": 21,
+                    "attributes": {
+                      "name": "image-graphic-design.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 541,
+                      "height": 308,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-graphic-design.jpg",
+                          "hash": "thumbnail_image_graphic_design_285a73bd97",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 245,
+                          "height": 139,
+                          "size": 8,
+                          "url": "/uploads/thumbnail_image_graphic_design_285a73bd97.jpg"
+                        },
+                        "small": {
+                          "name": "small_image-graphic-design.jpg",
+                          "hash": "small_image_graphic_design_285a73bd97",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 500,
+                          "height": 285,
+                          "size": 24.12,
+                          "url": "/uploads/small_image_graphic_design_285a73bd97.jpg"
+                        }
+                      },
+                      "hash": "image_graphic_design_285a73bd97",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 27.16,
+                      "url": "/uploads/image_graphic_design_285a73bd97.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-09-14T12:51:13.307Z",
+                      "updatedAt": "2024-09-14T12:51:13.307Z"
+                    }
+                  }
+                },
+                "ImageMobile": {
+                  "data": {
+                    "id": 28,
+                    "attributes": {
+                      "name": "image-graphic-design.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 327,
+                      "height": 250,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-graphic-design.jpg",
+                          "hash": "thumbnail_image_graphic_design_b9970e2f1e",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 204,
+                          "height": 156,
+                          "size": 6.69,
+                          "url": "/uploads/thumbnail_image_graphic_design_b9970e2f1e.jpg"
+                        }
+                      },
+                      "hash": "image_graphic_design_b9970e2f1e",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 13.43,
+                      "url": "/uploads/image_graphic_design_b9970e2f1e.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-09-14T12:51:37.047Z",
+                      "updatedAt": "2024-09-14T12:51:37.047Z"
+                    }
+                  }
+                },
+                "ImageTablet": {
+                  "data": {
+                    "id": 31,
+                    "attributes": {
+                      "name": "image-graphic-design.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 689,
+                      "height": 200,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-graphic-design.jpg",
+                          "hash": "thumbnail_image_graphic_design_2f63e13eea",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 245,
+                          "height": 71,
+                          "size": 3.97,
+                          "url": "/uploads/thumbnail_image_graphic_design_2f63e13eea.jpg"
+                        },
+                        "small": {
+                          "name": "small_image-graphic-design.jpg",
+                          "hash": "small_image_graphic_design_2f63e13eea",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 500,
+                          "height": 145,
+                          "size": 12.14,
+                          "url": "/uploads/small_image_graphic_design_2f63e13eea.jpg"
+                        }
+                      },
+                      "hash": "image_graphic_design_2f63e13eea",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 19.68,
+                      "url": "/uploads/image_graphic_design_2f63e13eea.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-09-14T12:51:53.746Z",
+                      "updatedAt": "2024-09-14T12:51:53.746Z"
+                    }
+                  }
+                },
+                "page": {
+                  "data": {
+                    "id": 5,
+                    "attributes": {
+                      "Slug": "graphic-design",
+                      "createdAt": "2024-03-04T16:16:50.595Z",
+                      "updatedAt": "2024-10-03T15:10:09.935Z",
+                      "publishedAt": "2024-03-04T16:29:32.805Z",
+                      "Title": "Graphic Design"
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "attributes": {
+        "Slug": "app-design",
+        "createdAt": "2024-03-04T16:16:08.435Z",
+        "updatedAt": "2024-10-03T14:43:15.994Z",
+        "publishedAt": "2024-03-04T16:29:27.614Z",
+        "Title": "App Design",
+        "Module": [
+          {
+            "id": 2,
+            "__component": "components.page-banner",
+            "Title": "App Design",
+            "Content": "Our mobile designs bring intuitive digital solutions to your customers right at their fingertips."
+          },
+          {
+            "id": 2,
+            "__component": "components.project-cards",
+            "Elements": [
+              {
+                "id": 10,
+                "Title": "AIRFILTER",
+                "Content": "Solving the problem of poor indoor air quality by filtering the air",
+                "Image": {
+                  "data": {
+                    "id": 46,
+                    "attributes": {
+                      "name": "image-airfilter.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 700,
+                      "height": 640,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-airfilter.jpg",
+                          "hash": "thumbnail_image_airfilter_2325976ba6",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 171,
+                          "height": 156,
+                          "size": 3.4,
+                          "url": "/uploads/thumbnail_image_airfilter_2325976ba6.jpg"
+                        },
+                        "small": {
+                          "name": "small_image-airfilter.jpg",
+                          "hash": "small_image_airfilter_2325976ba6",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 500,
+                          "height": 457,
+                          "size": 15.92,
+                          "url": "/uploads/small_image_airfilter_2325976ba6.jpg"
+                        }
+                      },
+                      "hash": "image_airfilter_2325976ba6",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 23.99,
+                      "url": "/uploads/image_airfilter_2325976ba6.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-10-03T14:39:26.502Z",
+                      "updatedAt": "2024-10-03T14:39:26.502Z"
+                    }
+                  }
+                },
+                "link": {
+                  "id": 18,
+                  "url": "#",
+                  "target": "_self",
+                  "title": null
+                }
+              },
+              {
+                "id": 7,
+                "Title": "EYECAM",
+                "Content": "Product that lets you edit your favorite photos and videos at any time",
+                "Image": {
+                  "data": {
+                    "id": 47,
+                    "attributes": {
+                      "name": "image-eyecam.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 700,
+                      "height": 640,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-eyecam.jpg",
+                          "hash": "thumbnail_image_eyecam_4575a4e76c",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 171,
+                          "height": 156,
+                          "size": 2.97,
+                          "url": "/uploads/thumbnail_image_eyecam_4575a4e76c.jpg"
+                        },
+                        "small": {
+                          "name": "small_image-eyecam.jpg",
+                          "hash": "small_image_eyecam_4575a4e76c",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 500,
+                          "height": 457,
+                          "size": 11.4,
+                          "url": "/uploads/small_image_eyecam_4575a4e76c.jpg"
+                        }
+                      },
+                      "hash": "image_eyecam_4575a4e76c",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 16.1,
+                      "url": "/uploads/image_eyecam_4575a4e76c.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-10-03T14:39:26.523Z",
+                      "updatedAt": "2024-10-03T14:39:26.523Z"
+                    }
+                  }
+                },
+                "link": {
+                  "id": 20,
+                  "url": "#",
+                  "target": "_self",
+                  "title": null
+                }
+              },
+              {
+                "id": 11,
+                "Title": "FACEIT",
+                "Content": "Get to meet your favorite internet superstar with the faceit app",
+                "Image": {
+                  "data": {
+                    "id": 45,
+                    "attributes": {
+                      "name": "image-faceit.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 700,
+                      "height": 640,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-faceit.jpg",
+                          "hash": "thumbnail_image_faceit_b9239893a9",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 171,
+                          "height": 156,
+                          "size": 3.55,
+                          "url": "/uploads/thumbnail_image_faceit_b9239893a9.jpg"
+                        },
+                        "small": {
+                          "name": "small_image-faceit.jpg",
+                          "hash": "small_image_faceit_b9239893a9",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 500,
+                          "height": 457,
+                          "size": 16.6,
+                          "url": "/uploads/small_image_faceit_b9239893a9.jpg"
+                        }
+                      },
+                      "hash": "image_faceit_b9239893a9",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 24.83,
+                      "url": "/uploads/image_faceit_b9239893a9.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-10-03T14:39:26.499Z",
+                      "updatedAt": "2024-10-03T14:39:26.499Z"
+                    }
+                  }
+                },
+                "link": {
+                  "id": 19,
+                  "url": null,
+                  "target": "_blank",
+                  "title": null
+                }
+              },
+              {
+                "id": 8,
+                "Title": "TODO",
+                "Content": "A todo app that features cloud sync with light and dark mode",
+                "Image": {
+                  "data": {
+                    "id": 48,
+                    "attributes": {
+                      "name": "image-todo.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 700,
+                      "height": 640,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-todo.jpg",
+                          "hash": "thumbnail_image_todo_a4aeef2a39",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 171,
+                          "height": 156,
+                          "size": 2.64,
+                          "url": "/uploads/thumbnail_image_todo_a4aeef2a39.jpg"
+                        },
+                        "small": {
+                          "name": "small_image-todo.jpg",
+                          "hash": "small_image_todo_a4aeef2a39",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 500,
+                          "height": 457,
+                          "size": 13.61,
+                          "url": "/uploads/small_image_todo_a4aeef2a39.jpg"
+                        }
+                      },
+                      "hash": "image_todo_a4aeef2a39",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 21.63,
+                      "url": "/uploads/image_todo_a4aeef2a39.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-10-03T14:39:26.526Z",
+                      "updatedAt": "2024-10-03T14:39:26.526Z"
+                    }
+                  }
+                },
+                "link": null
+              },
+              {
+                "id": 9,
+                "Title": "LOOPSTUDIOS",
+                "Content": "A VR experience app made for Loopstudios",
+                "Image": {
+                  "data": {
+                    "id": 49,
+                    "attributes": {
+                      "name": "image-loopstudios.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 700,
+                      "height": 640,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-loopstudios.jpg",
+                          "hash": "thumbnail_image_loopstudios_1dee2f7474",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 171,
+                          "height": 156,
+                          "size": 4.27,
+                          "url": "/uploads/thumbnail_image_loopstudios_1dee2f7474.jpg"
+                        },
+                        "small": {
+                          "name": "small_image-loopstudios.jpg",
+                          "hash": "small_image_loopstudios_1dee2f7474",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 500,
+                          "height": 457,
+                          "size": 22.7,
+                          "url": "/uploads/small_image_loopstudios_1dee2f7474.jpg"
+                        }
+                      },
+                      "hash": "image_loopstudios_1dee2f7474",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 34.5,
+                      "url": "/uploads/image_loopstudios_1dee2f7474.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-10-03T14:39:26.544Z",
+                      "updatedAt": "2024-10-03T14:39:26.544Z"
+                    }
+                  }
+                },
+                "link": null
+              }
+            ]
+          },
+          {
+            "id": 4,
+            "__component": "components.project-grids",
+            "Type": "two-grid",
+            "Elements": [
+              {
+                "id": 6,
+                "Title": "web design",
+                "Image": {
+                  "data": {
+                    "id": 24,
+                    "attributes": {
+                      "name": "image-web-design-small.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 541,
+                      "height": 308,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-web-design-small.jpg",
+                          "hash": "thumbnail_image_web_design_small_8311c47755",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 245,
+                          "height": 139,
+                          "size": 8.26,
+                          "url": "/uploads/thumbnail_image_web_design_small_8311c47755.jpg"
+                        },
+                        "small": {
+                          "name": "small_image-web-design-small.jpg",
+                          "hash": "small_image_web_design_small_8311c47755",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 500,
+                          "height": 285,
+                          "size": 23.99,
+                          "url": "/uploads/small_image_web_design_small_8311c47755.jpg"
+                        }
+                      },
+                      "hash": "image_web_design_small_8311c47755",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 27.12,
+                      "url": "/uploads/image_web_design_small_8311c47755.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-09-14T12:51:13.352Z",
+                      "updatedAt": "2024-09-14T12:51:13.352Z"
+                    }
+                  }
+                },
+                "ImageMobile": {
+                  "data": {
+                    "id": 27,
+                    "attributes": {
+                      "name": "image-web-design.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 327,
+                      "height": 250,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-web-design.jpg",
+                          "hash": "thumbnail_image_web_design_2c5c529ba8",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 204,
+                          "height": 156,
+                          "size": 4.29,
+                          "url": "/uploads/thumbnail_image_web_design_2c5c529ba8.jpg"
+                        }
+                      },
+                      "hash": "image_web_design_2c5c529ba8",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 8.19,
+                      "url": "/uploads/image_web_design_2c5c529ba8.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-09-14T12:51:37.045Z",
+                      "updatedAt": "2024-10-03T15:09:57.856Z"
+                    }
+                  }
+                },
+                "ImageTablet": {
+                  "data": {
+                    "id": 29,
+                    "attributes": {
+                      "name": "image-web-design.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 689,
+                      "height": 200,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-web-design.jpg",
+                          "hash": "thumbnail_image_web_design_3cfa48d5f1",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 245,
+                          "height": 71,
+                          "size": 3.06,
+                          "url": "/uploads/thumbnail_image_web_design_3cfa48d5f1.jpg"
+                        },
+                        "small": {
+                          "name": "small_image-web-design.jpg",
+                          "hash": "small_image_web_design_3cfa48d5f1",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 500,
+                          "height": 145,
+                          "size": 8.57,
+                          "url": "/uploads/small_image_web_design_3cfa48d5f1.jpg"
+                        }
+                      },
+                      "hash": "image_web_design_3cfa48d5f1",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 13.07,
+                      "url": "/uploads/image_web_design_3cfa48d5f1.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-09-14T12:51:53.740Z",
+                      "updatedAt": "2024-09-14T12:53:38.896Z"
+                    }
+                  }
+                },
+                "page": {
+                  "data": {
+                    "id": 3,
+                    "attributes": {
+                      "Slug": "webdesign",
+                      "createdAt": "2024-03-04T15:30:39.931Z",
+                      "updatedAt": "2024-09-29T14:47:22.210Z",
+                      "publishedAt": "2024-03-04T16:29:37.498Z",
+                      "Title": "Web design"
+                    }
+                  }
+                }
+              },
+              {
+                "id": 7,
+                "Title": "graphic design",
+                "Image": {
+                  "data": {
+                    "id": 21,
+                    "attributes": {
+                      "name": "image-graphic-design.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 541,
+                      "height": 308,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-graphic-design.jpg",
+                          "hash": "thumbnail_image_graphic_design_285a73bd97",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 245,
+                          "height": 139,
+                          "size": 8,
+                          "url": "/uploads/thumbnail_image_graphic_design_285a73bd97.jpg"
+                        },
+                        "small": {
+                          "name": "small_image-graphic-design.jpg",
+                          "hash": "small_image_graphic_design_285a73bd97",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 500,
+                          "height": 285,
+                          "size": 24.12,
+                          "url": "/uploads/small_image_graphic_design_285a73bd97.jpg"
+                        }
+                      },
+                      "hash": "image_graphic_design_285a73bd97",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 27.16,
+                      "url": "/uploads/image_graphic_design_285a73bd97.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-09-14T12:51:13.307Z",
+                      "updatedAt": "2024-09-14T12:51:13.307Z"
+                    }
+                  }
+                },
+                "ImageMobile": {
+                  "data": {
+                    "id": 28,
+                    "attributes": {
+                      "name": "image-graphic-design.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 327,
+                      "height": 250,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-graphic-design.jpg",
+                          "hash": "thumbnail_image_graphic_design_b9970e2f1e",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 204,
+                          "height": 156,
+                          "size": 6.69,
+                          "url": "/uploads/thumbnail_image_graphic_design_b9970e2f1e.jpg"
+                        }
+                      },
+                      "hash": "image_graphic_design_b9970e2f1e",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 13.43,
+                      "url": "/uploads/image_graphic_design_b9970e2f1e.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-09-14T12:51:37.047Z",
+                      "updatedAt": "2024-09-14T12:51:37.047Z"
+                    }
+                  }
+                },
+                "ImageTablet": {
+                  "data": {
+                    "id": 31,
+                    "attributes": {
+                      "name": "image-graphic-design.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 689,
+                      "height": 200,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-graphic-design.jpg",
+                          "hash": "thumbnail_image_graphic_design_2f63e13eea",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 245,
+                          "height": 71,
+                          "size": 3.97,
+                          "url": "/uploads/thumbnail_image_graphic_design_2f63e13eea.jpg"
+                        },
+                        "small": {
+                          "name": "small_image-graphic-design.jpg",
+                          "hash": "small_image_graphic_design_2f63e13eea",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 500,
+                          "height": 145,
+                          "size": 12.14,
+                          "url": "/uploads/small_image_graphic_design_2f63e13eea.jpg"
+                        }
+                      },
+                      "hash": "image_graphic_design_2f63e13eea",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 19.68,
+                      "url": "/uploads/image_graphic_design_2f63e13eea.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-09-14T12:51:53.746Z",
+                      "updatedAt": "2024-09-14T12:51:53.746Z"
+                    }
+                  }
+                },
+                "page": {
+                  "data": {
+                    "id": 5,
+                    "attributes": {
+                      "Slug": "graphic-design",
+                      "createdAt": "2024-03-04T16:16:50.595Z",
+                      "updatedAt": "2024-10-03T15:10:09.935Z",
+                      "publishedAt": "2024-03-04T16:29:32.805Z",
+                      "Title": "Graphic Design"
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "attributes": {
+        "Slug": "graphic-design",
+        "createdAt": "2024-03-04T16:16:50.595Z",
+        "updatedAt": "2024-10-03T15:10:09.935Z",
+        "publishedAt": "2024-03-04T16:29:32.805Z",
+        "Title": "Graphic Design",
+        "Module": [
+          {
+            "id": 3,
+            "__component": "components.page-banner",
+            "Title": "Graphic Design",
+            "Content": "We deliver eye-catching branding materials that are tailored to meet your business objectives."
+          },
+          {
+            "id": 3,
+            "__component": "components.project-cards",
+            "Elements": [
+              {
+                "id": 14,
+                "Title": "TIM BROWN",
+                "Content": "A book cover designed for Tim Brown’s new release, ‘Change’",
+                "Image": {
+                  "data": {
+                    "id": 53,
+                    "attributes": {
+                      "name": "image-change.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 700,
+                      "height": 640,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-change.jpg",
+                          "hash": "thumbnail_image_change_571fe30b5f",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 171,
+                          "height": 156,
+                          "size": 7.64,
+                          "url": "/uploads/thumbnail_image_change_571fe30b5f.jpg"
+                        },
+                        "small": {
+                          "name": "small_image-change.jpg",
+                          "hash": "small_image_change_571fe30b5f",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 500,
+                          "height": 457,
+                          "size": 42.96,
+                          "url": "/uploads/small_image_change_571fe30b5f.jpg"
+                        }
+                      },
+                      "hash": "image_change_571fe30b5f",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 74.7,
+                      "url": "/uploads/image_change_571fe30b5f.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-10-03T14:54:01.757Z",
+                      "updatedAt": "2024-10-03T14:54:01.757Z"
+                    }
+                  }
+                },
+                "link": {
+                  "id": 21,
+                  "url": "https://de.wikipedia.org/wiki/Tim_Brown_(Designer)",
+                  "target": "_blank",
+                  "title": "Tim Brown Wiki page"
+                }
+              },
+              {
+                "id": 12,
+                "Title": "BOXED WATER",
+                "Content": "A simple packaging concept made for Boxed Water",
+                "Image": {
+                  "data": {
+                    "id": 51,
+                    "attributes": {
+                      "name": "image-boxed-water.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 700,
+                      "height": 640,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-boxed-water.jpg",
+                          "hash": "thumbnail_image_boxed_water_f34acc6120",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 171,
+                          "height": 156,
+                          "size": 9.2,
+                          "url": "/uploads/thumbnail_image_boxed_water_f34acc6120.jpg"
+                        },
+                        "small": {
+                          "name": "small_image-boxed-water.jpg",
+                          "hash": "small_image_boxed_water_f34acc6120",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 500,
+                          "height": 457,
+                          "size": 41.96,
+                          "url": "/uploads/small_image_boxed_water_f34acc6120.jpg"
+                        }
+                      },
+                      "hash": "image_boxed_water_f34acc6120",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 65.83,
+                      "url": "/uploads/image_boxed_water_f34acc6120.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-10-03T14:54:01.714Z",
+                      "updatedAt": "2024-10-03T14:54:01.714Z"
+                    }
+                  }
+                },
+                "link": {
+                  "id": 22,
+                  "url": "https://boxedwaterisbetter.com/?srsltid=AfmBOorQZKKuYm3aG_vbLyHjG4etmE5hKwtxsGZkNTUVfizMD3fiB2Xw",
+                  "target": "_blank",
+                  "title": "Boxed Water"
+                }
+              },
+              {
+                "id": 13,
+                "Title": "SCIENCE!",
+                "Content": "A poster made in collaboration with the Federal Art Project",
+                "Image": {
+                  "data": {
+                    "id": 52,
+                    "attributes": {
+                      "name": "image-science.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 700,
+                      "height": 640,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-science.jpg",
+                          "hash": "thumbnail_image_science_b4c4c2694c",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 171,
+                          "height": 156,
+                          "size": 5.96,
+                          "url": "/uploads/thumbnail_image_science_b4c4c2694c.jpg"
+                        },
+                        "small": {
+                          "name": "small_image-science.jpg",
+                          "hash": "small_image_science_b4c4c2694c",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 500,
+                          "height": 457,
+                          "size": 30.96,
+                          "url": "/uploads/small_image_science_b4c4c2694c.jpg"
+                        }
+                      },
+                      "hash": "image_science_b4c4c2694c",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 53.84,
+                      "url": "/uploads/image_science_b4c4c2694c.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-10-03T14:54:01.734Z",
+                      "updatedAt": "2024-10-03T14:54:01.734Z"
+                    }
+                  }
+                },
+                "link": null
+              }
+            ]
+          },
+          {
+            "id": 5,
+            "__component": "components.project-grids",
+            "Type": "two-grid",
+            "Elements": [
+              {
+                "id": 8,
+                "Title": "App design",
+                "Image": {
+                  "data": {
+                    "id": 22,
+                    "attributes": {
+                      "name": "image-app-design.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 541,
+                      "height": 308,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-app-design.jpg",
+                          "hash": "thumbnail_image_app_design_18c6c81d70",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 245,
+                          "height": 139,
+                          "size": 3.7,
+                          "url": "/uploads/thumbnail_image_app_design_18c6c81d70.jpg"
+                        },
+                        "small": {
+                          "name": "small_image-app-design.jpg",
+                          "hash": "small_image_app_design_18c6c81d70",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 500,
+                          "height": 285,
+                          "size": 10.07,
+                          "url": "/uploads/small_image_app_design_18c6c81d70.jpg"
+                        }
+                      },
+                      "hash": "image_app_design_18c6c81d70",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 11.31,
+                      "url": "/uploads/image_app_design_18c6c81d70.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-09-14T12:51:13.310Z",
+                      "updatedAt": "2024-09-14T12:51:13.310Z"
+                    }
+                  }
+                },
+                "ImageMobile": {
+                  "data": {
+                    "id": 26,
+                    "attributes": {
+                      "name": "image-app-design.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 327,
+                      "height": 250,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-app-design.jpg",
+                          "hash": "thumbnail_image_app_design_7e4ba1de3b",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 204,
+                          "height": 156,
+                          "size": 3.03,
+                          "url": "/uploads/thumbnail_image_app_design_7e4ba1de3b.jpg"
+                        }
+                      },
+                      "hash": "image_app_design_7e4ba1de3b",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 5.83,
+                      "url": "/uploads/image_app_design_7e4ba1de3b.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-09-14T12:51:37.043Z",
+                      "updatedAt": "2024-09-14T12:51:37.043Z"
+                    }
+                  }
+                },
+                "ImageTablet": {
+                  "data": {
+                    "id": 30,
+                    "attributes": {
+                      "name": "image-app-design.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 689,
+                      "height": 200,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-app-design.jpg",
+                          "hash": "thumbnail_image_app_design_bc61aeb094",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 245,
+                          "height": 71,
+                          "size": 1.96,
+                          "url": "/uploads/thumbnail_image_app_design_bc61aeb094.jpg"
+                        },
+                        "small": {
+                          "name": "small_image-app-design.jpg",
+                          "hash": "small_image_app_design_bc61aeb094",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 500,
+                          "height": 145,
+                          "size": 5.24,
+                          "url": "/uploads/small_image_app_design_bc61aeb094.jpg"
+                        }
+                      },
+                      "hash": "image_app_design_bc61aeb094",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 8.21,
+                      "url": "/uploads/image_app_design_bc61aeb094.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-09-14T12:51:53.742Z",
+                      "updatedAt": "2024-09-14T12:51:53.742Z"
+                    }
+                  }
+                },
+                "page": {
+                  "data": {
+                    "id": 4,
+                    "attributes": {
+                      "Slug": "app-design",
+                      "createdAt": "2024-03-04T16:16:08.435Z",
+                      "updatedAt": "2024-10-03T14:43:15.994Z",
+                      "publishedAt": "2024-03-04T16:29:27.614Z",
+                      "Title": "App Design"
+                    }
+                  }
+                }
+              },
+              {
+                "id": 9,
+                "Title": "Web design",
+                "Image": {
+                  "data": {
+                    "id": 24,
+                    "attributes": {
+                      "name": "image-web-design-small.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 541,
+                      "height": 308,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-web-design-small.jpg",
+                          "hash": "thumbnail_image_web_design_small_8311c47755",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 245,
+                          "height": 139,
+                          "size": 8.26,
+                          "url": "/uploads/thumbnail_image_web_design_small_8311c47755.jpg"
+                        },
+                        "small": {
+                          "name": "small_image-web-design-small.jpg",
+                          "hash": "small_image_web_design_small_8311c47755",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 500,
+                          "height": 285,
+                          "size": 23.99,
+                          "url": "/uploads/small_image_web_design_small_8311c47755.jpg"
+                        }
+                      },
+                      "hash": "image_web_design_small_8311c47755",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 27.12,
+                      "url": "/uploads/image_web_design_small_8311c47755.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-09-14T12:51:13.352Z",
+                      "updatedAt": "2024-09-14T12:51:13.352Z"
+                    }
+                  }
+                },
+                "ImageMobile": {
+                  "data": {
+                    "id": 27,
+                    "attributes": {
+                      "name": "image-web-design.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 327,
+                      "height": 250,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-web-design.jpg",
+                          "hash": "thumbnail_image_web_design_2c5c529ba8",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 204,
+                          "height": 156,
+                          "size": 4.29,
+                          "url": "/uploads/thumbnail_image_web_design_2c5c529ba8.jpg"
+                        }
+                      },
+                      "hash": "image_web_design_2c5c529ba8",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 8.19,
+                      "url": "/uploads/image_web_design_2c5c529ba8.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-09-14T12:51:37.045Z",
+                      "updatedAt": "2024-10-03T15:09:57.856Z"
+                    }
+                  }
+                },
+                "ImageTablet": {
+                  "data": {
+                    "id": 29,
+                    "attributes": {
+                      "name": "image-web-design.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 689,
+                      "height": 200,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-web-design.jpg",
+                          "hash": "thumbnail_image_web_design_3cfa48d5f1",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 245,
+                          "height": 71,
+                          "size": 3.06,
+                          "url": "/uploads/thumbnail_image_web_design_3cfa48d5f1.jpg"
+                        },
+                        "small": {
+                          "name": "small_image-web-design.jpg",
+                          "hash": "small_image_web_design_3cfa48d5f1",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 500,
+                          "height": 145,
+                          "size": 8.57,
+                          "url": "/uploads/small_image_web_design_3cfa48d5f1.jpg"
+                        }
+                      },
+                      "hash": "image_web_design_3cfa48d5f1",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 13.07,
+                      "url": "/uploads/image_web_design_3cfa48d5f1.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-09-14T12:51:53.740Z",
+                      "updatedAt": "2024-09-14T12:53:38.896Z"
+                    }
+                  }
+                },
+                "page": {
+                  "data": {
+                    "id": 3,
+                    "attributes": {
+                      "Slug": "webdesign",
+                      "createdAt": "2024-03-04T15:30:39.931Z",
+                      "updatedAt": "2024-09-29T14:47:22.210Z",
+                      "publishedAt": "2024-03-04T16:29:37.498Z",
+                      "Title": "Web design"
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "attributes": {
+        "Slug": "about",
+        "createdAt": "2024-03-04T16:17:05.266Z",
+        "updatedAt": "2024-10-11T12:20:12.395Z",
+        "publishedAt": "2024-03-04T16:43:34.754Z",
+        "Title": "About",
+        "Module": [
+          {
+            "id": 1,
+            "__component": "components.text-media-banner",
+            "Title": "About Us",
+            "Content": "Founded in 2010, we are a creative agency that produces lasting results for our clients. We’ve partnered with many startups, corporations, and nonprofits alike to craft designs that make real impact. We’re always looking forward to creating brands, products, and digital experiences that connect with our clients’ audiences.",
+            "Image": {
+              "data": {
+                "id": 55,
+                "attributes": {
+                  "name": "image-about-hero.jpg",
+                  "alternativeText": null,
+                  "caption": null,
+                  "width": 476,
+                  "height": 480,
+                  "formats": {
+                    "thumbnail": {
+                      "name": "thumbnail_image-about-hero.jpg",
+                      "hash": "thumbnail_image_about_hero_2517d36e3c",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "path": null,
+                      "width": 155,
+                      "height": 156,
+                      "size": 8.05,
+                      "url": "/uploads/thumbnail_image_about_hero_2517d36e3c.jpg"
+                    }
+                  },
+                  "hash": "image_about_hero_2517d36e3c",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "size": 47.89,
+                  "url": "/uploads/image_about_hero_2517d36e3c.jpg",
+                  "previewUrl": null,
+                  "provider": "local",
+                  "provider_metadata": null,
+                  "createdAt": "2024-10-05T16:51:28.940Z",
+                  "updatedAt": "2024-10-05T16:51:28.940Z"
+                }
+              }
+            },
+            "ImageMobile": {
+              "data": {
+                "id": 63,
+                "attributes": {
+                  "name": "image-about-hero.jpg",
+                  "alternativeText": null,
+                  "caption": null,
+                  "width": 689,
+                  "height": 320,
+                  "formats": {
+                    "thumbnail": {
+                      "name": "thumbnail_image-about-hero.jpg",
+                      "hash": "thumbnail_image_about_hero_b49c83dccd",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "path": null,
+                      "width": 245,
+                      "height": 114,
+                      "size": 9.37,
+                      "url": "/uploads/thumbnail_image_about_hero_b49c83dccd.jpg"
+                    },
+                    "small": {
+                      "name": "small_image-about-hero.jpg",
+                      "hash": "small_image_about_hero_b49c83dccd",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "path": null,
+                      "width": 500,
+                      "height": 232,
+                      "size": 27.97,
+                      "url": "/uploads/small_image_about_hero_b49c83dccd.jpg"
+                    }
+                  },
+                  "hash": "image_about_hero_b49c83dccd",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "size": 46.89,
+                  "url": "/uploads/image_about_hero_b49c83dccd.jpg",
+                  "previewUrl": null,
+                  "provider": "local",
+                  "provider_metadata": null,
+                  "createdAt": "2024-10-05T16:52:00.526Z",
+                  "updatedAt": "2024-10-05T16:52:00.526Z"
+                }
+              }
+            },
+            "ImageTablet": {
+              "data": {
+                "id": 60,
+                "attributes": {
+                  "name": "image-about-hero.jpg",
+                  "alternativeText": null,
+                  "caption": null,
+                  "width": 689,
+                  "height": 320,
+                  "formats": {
+                    "thumbnail": {
+                      "name": "thumbnail_image-about-hero.jpg",
+                      "hash": "thumbnail_image_about_hero_529fd95c7a",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "path": null,
+                      "width": 245,
+                      "height": 114,
+                      "size": 9.37,
+                      "url": "/uploads/thumbnail_image_about_hero_529fd95c7a.jpg"
+                    },
+                    "small": {
+                      "name": "small_image-about-hero.jpg",
+                      "hash": "small_image_about_hero_529fd95c7a",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "path": null,
+                      "width": 500,
+                      "height": 232,
+                      "size": 27.97,
+                      "url": "/uploads/small_image_about_hero_529fd95c7a.jpg"
+                    }
+                  },
+                  "hash": "image_about_hero_529fd95c7a",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "size": 46.89,
+                  "url": "/uploads/image_about_hero_529fd95c7a.jpg",
+                  "previewUrl": null,
+                  "provider": "local",
+                  "provider_metadata": null,
+                  "createdAt": "2024-10-05T16:51:47.639Z",
+                  "updatedAt": "2024-10-05T16:51:47.639Z"
+                }
+              }
+            }
+          },
+          {
+            "id": 1,
+            "__component": "components.text-media",
+            "Content": "We are a crew of strategists, problem-solvers, and technologists. Every design is thoughtfully crafted from concept to launch, ensuring success in its given market. We are constantly updating our skills in a myriad of platforms.   \n\nOur team is multi-disciplinary and we are not merely interested in form — content and meaning are just as important. We give great importance to craftsmanship, service, and prompt delivery. Clients have always been impressed with our high-quality outcomes that encapsulates their brand’s story and mission.",
+            "Position": "img-left",
+            "Title": "World-class talent",
+            "Image": {
+              "data": {
+                "id": 57,
+                "attributes": {
+                  "name": "image-world-class-talent.jpg",
+                  "alternativeText": null,
+                  "caption": null,
+                  "width": 476,
+                  "height": 640,
+                  "formats": {
+                    "thumbnail": {
+                      "name": "thumbnail_image-world-class-talent.jpg",
+                      "hash": "thumbnail_image_world_class_talent_4e29f8a87b",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "path": null,
+                      "width": 116,
+                      "height": 156,
+                      "size": 3.61,
+                      "url": "/uploads/thumbnail_image_world_class_talent_4e29f8a87b.jpg"
+                    },
+                    "small": {
+                      "name": "small_image-world-class-talent.jpg",
+                      "hash": "small_image_world_class_talent_4e29f8a87b",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "path": null,
+                      "width": 372,
+                      "height": 500,
+                      "size": 19.71,
+                      "url": "/uploads/small_image_world_class_talent_4e29f8a87b.jpg"
+                    }
+                  },
+                  "hash": "image_world_class_talent_4e29f8a87b",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "size": 27.58,
+                  "url": "/uploads/image_world_class_talent_4e29f8a87b.jpg",
+                  "previewUrl": null,
+                  "provider": "local",
+                  "provider_metadata": null,
+                  "createdAt": "2024-10-05T16:51:28.975Z",
+                  "updatedAt": "2024-10-05T16:51:28.975Z"
+                }
+              }
+            },
+            "ImageMobile": {
+              "data": {
+                "id": 62,
+                "attributes": {
+                  "name": "image-world-class-talent.jpg",
+                  "alternativeText": null,
+                  "caption": null,
+                  "width": 689,
+                  "height": 320,
+                  "formats": {
+                    "thumbnail": {
+                      "name": "thumbnail_image-world-class-talent.jpg",
+                      "hash": "thumbnail_image_world_class_talent_dbee22e583",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "path": null,
+                      "width": 245,
+                      "height": 114,
+                      "size": 4.35,
+                      "url": "/uploads/thumbnail_image_world_class_talent_dbee22e583.jpg"
+                    },
+                    "small": {
+                      "name": "small_image-world-class-talent.jpg",
+                      "hash": "small_image_world_class_talent_dbee22e583",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "path": null,
+                      "width": 500,
+                      "height": 232,
+                      "size": 11.39,
+                      "url": "/uploads/small_image_world_class_talent_dbee22e583.jpg"
+                    }
+                  },
+                  "hash": "image_world_class_talent_dbee22e583",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "size": 17.95,
+                  "url": "/uploads/image_world_class_talent_dbee22e583.jpg",
+                  "previewUrl": null,
+                  "provider": "local",
+                  "provider_metadata": null,
+                  "createdAt": "2024-10-05T16:52:00.523Z",
+                  "updatedAt": "2024-10-05T16:52:00.523Z"
+                }
+              }
+            },
+            "ImageTablet": {
+              "data": {
+                "id": 59,
+                "attributes": {
+                  "name": "image-world-class-talent.jpg",
+                  "alternativeText": null,
+                  "caption": null,
+                  "width": 689,
+                  "height": 320,
+                  "formats": {
+                    "thumbnail": {
+                      "name": "thumbnail_image-world-class-talent.jpg",
+                      "hash": "thumbnail_image_world_class_talent_6dfe547594",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "path": null,
+                      "width": 245,
+                      "height": 114,
+                      "size": 4.35,
+                      "url": "/uploads/thumbnail_image_world_class_talent_6dfe547594.jpg"
+                    },
+                    "small": {
+                      "name": "small_image-world-class-talent.jpg",
+                      "hash": "small_image_world_class_talent_6dfe547594",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "path": null,
+                      "width": 500,
+                      "height": 232,
+                      "size": 11.39,
+                      "url": "/uploads/small_image_world_class_talent_6dfe547594.jpg"
+                    }
+                  },
+                  "hash": "image_world_class_talent_6dfe547594",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "size": 17.95,
+                  "url": "/uploads/image_world_class_talent_6dfe547594.jpg",
+                  "previewUrl": null,
+                  "provider": "local",
+                  "provider_metadata": null,
+                  "createdAt": "2024-10-05T16:51:47.634Z",
+                  "updatedAt": "2024-10-05T16:51:47.634Z"
+                }
+              }
+            }
+          },
+          {
+            "id": 1,
+            "__component": "components.locations-highlights",
+            "Elements": [
+              {
+                "id": 1,
+                "City": "Canada",
+                "Tag": "ca",
+                "Image": {
+                  "data": {
+                    "id": 96,
+                    "attributes": {
+                      "name": "illustration-canada.svg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 202,
+                      "height": 202,
+                      "formats": null,
+                      "hash": "illustration_canada_2c94c65ac4",
+                      "ext": ".svg",
+                      "mime": "image/svg+xml",
+                      "size": 19.72,
+                      "url": "/uploads/illustration_canada_2c94c65ac4.svg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-10-11T12:15:12.621Z",
+                      "updatedAt": "2025-01-09T13:30:16.253Z"
+                    }
+                  }
+                }
+              },
+              {
+                "id": 2,
+                "City": "Australia",
+                "Tag": "au",
+                "Image": {
+                  "data": {
+                    "id": 95,
+                    "attributes": {
+                      "name": "illustration-australia.svg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 202,
+                      "height": 202,
+                      "formats": null,
+                      "hash": "illustration_australia_1668a054f3",
+                      "ext": ".svg",
+                      "mime": "image/svg+xml",
+                      "size": 13.27,
+                      "url": "/uploads/illustration_australia_1668a054f3.svg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-10-11T12:15:12.599Z",
+                      "updatedAt": "2024-10-11T12:18:29.656Z"
+                    }
+                  }
+                }
+              },
+              {
+                "id": 3,
+                "City": "United Kingdom",
+                "Tag": "uk",
+                "Image": {
+                  "data": {
+                    "id": 97,
+                    "attributes": {
+                      "name": "illustration-united-kingdom.svg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 202,
+                      "height": 202,
+                      "formats": null,
+                      "hash": "illustration_united_kingdom_604084f7e7",
+                      "ext": ".svg",
+                      "mime": "image/svg+xml",
+                      "size": 23.88,
+                      "url": "/uploads/illustration_united_kingdom_604084f7e7.svg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-10-11T12:15:12.623Z",
+                      "updatedAt": "2024-10-11T12:19:30.184Z"
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "__component": "components.text-media",
+            "Content": "As strategic partners in our clients’ businesses, we are ready to take on any challenge as our own. Solving real problems require empathy and collaboration, and we strive to bring a fresh perspective to every opportunity. We make design and technology more accessible and give you tools to measure success.\n\nWe are visual storytellers in appealing and captivating ways. By combining business and marketing strategies, we inspire audiences to take action and drive real results.",
+            "Position": "img-right",
+            "Title": "The real deal",
+            "Image": {
+              "data": {
+                "id": 56,
+                "attributes": {
+                  "name": "image-real-deal.jpg",
+                  "alternativeText": null,
+                  "caption": null,
+                  "width": 476,
+                  "height": 640,
+                  "formats": {
+                    "thumbnail": {
+                      "name": "thumbnail_image-real-deal.jpg",
+                      "hash": "thumbnail_image_real_deal_d28dcea638",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "path": null,
+                      "width": 116,
+                      "height": 156,
+                      "size": 4.24,
+                      "url": "/uploads/thumbnail_image_real_deal_d28dcea638.jpg"
+                    },
+                    "small": {
+                      "name": "small_image-real-deal.jpg",
+                      "hash": "small_image_real_deal_d28dcea638",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "path": null,
+                      "width": 372,
+                      "height": 500,
+                      "size": 21.03,
+                      "url": "/uploads/small_image_real_deal_d28dcea638.jpg"
+                    }
+                  },
+                  "hash": "image_real_deal_d28dcea638",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "size": 29.26,
+                  "url": "/uploads/image_real_deal_d28dcea638.jpg",
+                  "previewUrl": null,
+                  "provider": "local",
+                  "provider_metadata": null,
+                  "createdAt": "2024-10-05T16:51:28.972Z",
+                  "updatedAt": "2024-10-05T16:51:28.972Z"
+                }
+              }
+            },
+            "ImageMobile": {
+              "data": {
+                "id": 61,
+                "attributes": {
+                  "name": "image-real-deal.jpg",
+                  "alternativeText": null,
+                  "caption": null,
+                  "width": 689,
+                  "height": 320,
+                  "formats": {
+                    "thumbnail": {
+                      "name": "thumbnail_image-real-deal.jpg",
+                      "hash": "thumbnail_image_real_deal_9522566977",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "path": null,
+                      "width": 245,
+                      "height": 114,
+                      "size": 4.83,
+                      "url": "/uploads/thumbnail_image_real_deal_9522566977.jpg"
+                    },
+                    "small": {
+                      "name": "small_image-real-deal.jpg",
+                      "hash": "small_image_real_deal_9522566977",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "path": null,
+                      "width": 500,
+                      "height": 232,
+                      "size": 11.98,
+                      "url": "/uploads/small_image_real_deal_9522566977.jpg"
+                    }
+                  },
+                  "hash": "image_real_deal_9522566977",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "size": 18.38,
+                  "url": "/uploads/image_real_deal_9522566977.jpg",
+                  "previewUrl": null,
+                  "provider": "local",
+                  "provider_metadata": null,
+                  "createdAt": "2024-10-05T16:52:00.521Z",
+                  "updatedAt": "2024-10-05T16:52:00.521Z"
+                }
+              }
+            },
+            "ImageTablet": {
+              "data": {
+                "id": 58,
+                "attributes": {
+                  "name": "image-real-deal.jpg",
+                  "alternativeText": null,
+                  "caption": null,
+                  "width": 689,
+                  "height": 320,
+                  "formats": {
+                    "thumbnail": {
+                      "name": "thumbnail_image-real-deal.jpg",
+                      "hash": "thumbnail_image_real_deal_0fc2b1fc79",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "path": null,
+                      "width": 245,
+                      "height": 114,
+                      "size": 4.83,
+                      "url": "/uploads/thumbnail_image_real_deal_0fc2b1fc79.jpg"
+                    },
+                    "small": {
+                      "name": "small_image-real-deal.jpg",
+                      "hash": "small_image_real_deal_0fc2b1fc79",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "path": null,
+                      "width": 500,
+                      "height": 232,
+                      "size": 11.98,
+                      "url": "/uploads/small_image_real_deal_0fc2b1fc79.jpg"
+                    }
+                  },
+                  "hash": "image_real_deal_0fc2b1fc79",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "size": 18.38,
+                  "url": "/uploads/image_real_deal_0fc2b1fc79.jpg",
+                  "previewUrl": null,
+                  "provider": "local",
+                  "provider_metadata": null,
+                  "createdAt": "2024-10-05T16:51:47.628Z",
+                  "updatedAt": "2024-10-05T16:51:47.628Z"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "attributes": {
+        "Slug": "locations",
+        "createdAt": "2024-03-04T16:17:20.697Z",
+        "updatedAt": "2024-10-13T16:23:03.597Z",
+        "publishedAt": "2024-03-04T16:43:46.913Z",
+        "Title": "Locations",
+        "Module": [
+          {
+            "id": 1,
+            "__component": "components.locations",
+            "locations": [
+              {
+                "id": 2,
+                "city": "Canada",
+                "address": "<strong>Designo Central Office</strong>\n<p>3886 Wellington Street</p>\n<p>Toronto, Ontario M9C 3J5</p>",
+                "phone": "12538638967",
+                "Email": "contact@designo.co",
+                "Longitude": -79.375748,
+                "Position": "img-right",
+                "Tag": "Ca",
+                "Latitude": 43.648178
+              },
+              {
+                "id": 3,
+                "city": "Australia",
+                "address": "<strong>Designo AU Office</strong>\n<p>19 Balonne Street</p>\n<p>New South Wales 2443</p>",
+                "phone": "267209092",
+                "Email": "contact@designo.au",
+                "Longitude": 149.788193,
+                "Position": "img-left",
+                "Tag": "au",
+                "Latitude": -30.329531
+              },
+              {
+                "id": 4,
+                "city": "United Kingdom",
+                "address": "Designo UK Office\n13  Colorado Way Rhyd-y-fro SA8 9GA",
+                "phone": "7831151400",
+                "Email": "contact@designo.uk",
+                "Longitude": -107.547401,
+                "Position": "img-right",
+                "Tag": "uk",
+                "Latitude": 40.514278
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "attributes": {
+        "Slug": "contact",
+        "createdAt": "2024-03-04T16:17:32.733Z",
+        "updatedAt": "2025-01-09T13:32:10.059Z",
+        "publishedAt": "2024-03-04T16:43:40.878Z",
+        "Title": "Contact",
+        "Module": [
+          {
+            "id": 1,
+            "__component": "components.contact-form",
+            "Title": "Contact Us",
+            "Content": "Ready to take it to the next level? Let’s talk about your project or idea and find out how we can help your business grow. If you are looking for unique digital experiences that’s relatable to your users, drop us a line."
+          },
+          {
+            "id": 2,
+            "__component": "components.locations-highlights",
+            "Elements": [
+              {
+                "id": 4,
+                "City": "Canada",
+                "Tag": "ca",
+                "Image": {
+                  "data": {
+                    "id": 96,
+                    "attributes": {
+                      "name": "illustration-canada.svg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 202,
+                      "height": 202,
+                      "formats": null,
+                      "hash": "illustration_canada_2c94c65ac4",
+                      "ext": ".svg",
+                      "mime": "image/svg+xml",
+                      "size": 19.72,
+                      "url": "/uploads/illustration_canada_2c94c65ac4.svg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-10-11T12:15:12.621Z",
+                      "updatedAt": "2025-01-09T13:30:16.253Z"
+                    }
+                  }
+                }
+              },
+              {
+                "id": 5,
+                "City": "AUSTRALIA",
+                "Tag": "au",
+                "Image": {
+                  "data": {
+                    "id": 95,
+                    "attributes": {
+                      "name": "illustration-australia.svg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 202,
+                      "height": 202,
+                      "formats": null,
+                      "hash": "illustration_australia_1668a054f3",
+                      "ext": ".svg",
+                      "mime": "image/svg+xml",
+                      "size": 13.27,
+                      "url": "/uploads/illustration_australia_1668a054f3.svg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-10-11T12:15:12.599Z",
+                      "updatedAt": "2024-10-11T12:18:29.656Z"
+                    }
+                  }
+                }
+              },
+              {
+                "id": 6,
+                "City": "UNITED KINGDOM",
+                "Tag": "uk",
+                "Image": {
+                  "data": {
+                    "id": 97,
+                    "attributes": {
+                      "name": "illustration-united-kingdom.svg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 202,
+                      "height": 202,
+                      "formats": null,
+                      "hash": "illustration_united_kingdom_604084f7e7",
+                      "ext": ".svg",
+                      "mime": "image/svg+xml",
+                      "size": 23.88,
+                      "url": "/uploads/illustration_united_kingdom_604084f7e7.svg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-10-11T12:15:12.623Z",
+                      "updatedAt": "2024-10-11T12:19:30.184Z"
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "attributes": {
+        "Slug": "startpage",
+        "createdAt": "2024-05-10T14:36:30.057Z",
+        "updatedAt": "2025-02-02T17:16:16.341Z",
+        "publishedAt": "2024-05-10T14:39:15.543Z",
+        "Title": "StartPage",
+        "Module": [
+          {
+            "id": 3,
+            "__component": "components.homepage-banner",
+            "headline": "Award-winning custom designs and digital branding solutions",
+            "text": "With over 10 years in the industry, we are experienced in creating fully responsive websites, app design, and engaging brand experiences. Find out more about our services.",
+            "image": {
+              "data": {
+                "id": 25,
+                "attributes": {
+                  "name": "image-hero-phone.png",
+                  "alternativeText": null,
+                  "caption": null,
+                  "width": 624,
+                  "height": 913,
+                  "formats": {
+                    "thumbnail": {
+                      "name": "thumbnail_image-hero-phone.png",
+                      "hash": "thumbnail_image_hero_phone_bca909869d",
+                      "ext": ".png",
+                      "mime": "image/png",
+                      "path": null,
+                      "width": 107,
+                      "height": 156,
+                      "size": 12.91,
+                      "url": "/uploads/thumbnail_image_hero_phone_bca909869d.png"
+                    },
+                    "small": {
+                      "name": "small_image-hero-phone.png",
+                      "hash": "small_image_hero_phone_bca909869d",
+                      "ext": ".png",
+                      "mime": "image/png",
+                      "path": null,
+                      "width": 342,
+                      "height": 500,
+                      "size": 77.9,
+                      "url": "/uploads/small_image_hero_phone_bca909869d.png"
+                    },
+                    "medium": {
+                      "name": "medium_image-hero-phone.png",
+                      "hash": "medium_image_hero_phone_bca909869d",
+                      "ext": ".png",
+                      "mime": "image/png",
+                      "path": null,
+                      "width": 513,
+                      "height": 750,
+                      "size": 162.57,
+                      "url": "/uploads/medium_image_hero_phone_bca909869d.png"
+                    }
+                  },
+                  "hash": "image_hero_phone_bca909869d",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "size": 36.99,
+                  "url": "/uploads/image_hero_phone_bca909869d.png",
+                  "previewUrl": null,
+                  "provider": "local",
+                  "provider_metadata": null,
+                  "createdAt": "2024-09-14T12:51:13.419Z",
+                  "updatedAt": "2024-09-14T13:12:25.388Z"
+                }
+              }
+            },
+            "link": {
+              "id": 3,
+              "url": "/about",
+              "target": "_self",
+              "title": "Learn More"
+            }
+          },
+          {
+            "id": 2,
+            "__component": "components.project-grids",
+            "Type": "three-grid",
+            "Elements": [
+              {
+                "id": 1,
+                "Title": "web design",
+                "Image": {
+                  "data": {
+                    "id": 23,
+                    "attributes": {
+                      "name": "image-web-design-large.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 541,
+                      "height": 640,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-web-design-large.jpg",
+                          "hash": "thumbnail_image_web_design_large_784c94221b",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 132,
+                          "height": 156,
+                          "size": 6.2,
+                          "url": "/uploads/thumbnail_image_web_design_large_784c94221b.jpg"
+                        },
+                        "small": {
+                          "name": "small_image-web-design-large.jpg",
+                          "hash": "small_image_web_design_large_784c94221b",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 423,
+                          "height": 500,
+                          "size": 34.4,
+                          "url": "/uploads/small_image_web_design_large_784c94221b.jpg"
+                        }
+                      },
+                      "hash": "image_web_design_large_784c94221b",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 49.41,
+                      "url": "/uploads/image_web_design_large_784c94221b.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-09-14T12:51:13.350Z",
+                      "updatedAt": "2024-09-14T12:51:13.350Z"
+                    }
+                  }
+                },
+                "ImageMobile": {
+                  "data": {
+                    "id": 27,
+                    "attributes": {
+                      "name": "image-web-design.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 327,
+                      "height": 250,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-web-design.jpg",
+                          "hash": "thumbnail_image_web_design_2c5c529ba8",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 204,
+                          "height": 156,
+                          "size": 4.29,
+                          "url": "/uploads/thumbnail_image_web_design_2c5c529ba8.jpg"
+                        }
+                      },
+                      "hash": "image_web_design_2c5c529ba8",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 8.19,
+                      "url": "/uploads/image_web_design_2c5c529ba8.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-09-14T12:51:37.045Z",
+                      "updatedAt": "2024-10-03T15:09:57.856Z"
+                    }
+                  }
+                },
+                "ImageTablet": {
+                  "data": {
+                    "id": 29,
+                    "attributes": {
+                      "name": "image-web-design.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 689,
+                      "height": 200,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-web-design.jpg",
+                          "hash": "thumbnail_image_web_design_3cfa48d5f1",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 245,
+                          "height": 71,
+                          "size": 3.06,
+                          "url": "/uploads/thumbnail_image_web_design_3cfa48d5f1.jpg"
+                        },
+                        "small": {
+                          "name": "small_image-web-design.jpg",
+                          "hash": "small_image_web_design_3cfa48d5f1",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 500,
+                          "height": 145,
+                          "size": 8.57,
+                          "url": "/uploads/small_image_web_design_3cfa48d5f1.jpg"
+                        }
+                      },
+                      "hash": "image_web_design_3cfa48d5f1",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 13.07,
+                      "url": "/uploads/image_web_design_3cfa48d5f1.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-09-14T12:51:53.740Z",
+                      "updatedAt": "2024-09-14T12:53:38.896Z"
+                    }
+                  }
+                },
+                "page": {
+                  "data": {
+                    "id": 3,
+                    "attributes": {
+                      "Slug": "webdesign",
+                      "createdAt": "2024-03-04T15:30:39.931Z",
+                      "updatedAt": "2024-09-29T14:47:22.210Z",
+                      "publishedAt": "2024-03-04T16:29:37.498Z",
+                      "Title": "Web design"
+                    }
+                  }
+                }
+              },
+              {
+                "id": 2,
+                "Title": "app design",
+                "Image": {
+                  "data": {
+                    "id": 22,
+                    "attributes": {
+                      "name": "image-app-design.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 541,
+                      "height": 308,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-app-design.jpg",
+                          "hash": "thumbnail_image_app_design_18c6c81d70",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 245,
+                          "height": 139,
+                          "size": 3.7,
+                          "url": "/uploads/thumbnail_image_app_design_18c6c81d70.jpg"
+                        },
+                        "small": {
+                          "name": "small_image-app-design.jpg",
+                          "hash": "small_image_app_design_18c6c81d70",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 500,
+                          "height": 285,
+                          "size": 10.07,
+                          "url": "/uploads/small_image_app_design_18c6c81d70.jpg"
+                        }
+                      },
+                      "hash": "image_app_design_18c6c81d70",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 11.31,
+                      "url": "/uploads/image_app_design_18c6c81d70.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-09-14T12:51:13.310Z",
+                      "updatedAt": "2024-09-14T12:51:13.310Z"
+                    }
+                  }
+                },
+                "ImageMobile": {
+                  "data": {
+                    "id": 26,
+                    "attributes": {
+                      "name": "image-app-design.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 327,
+                      "height": 250,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-app-design.jpg",
+                          "hash": "thumbnail_image_app_design_7e4ba1de3b",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 204,
+                          "height": 156,
+                          "size": 3.03,
+                          "url": "/uploads/thumbnail_image_app_design_7e4ba1de3b.jpg"
+                        }
+                      },
+                      "hash": "image_app_design_7e4ba1de3b",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 5.83,
+                      "url": "/uploads/image_app_design_7e4ba1de3b.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-09-14T12:51:37.043Z",
+                      "updatedAt": "2024-09-14T12:51:37.043Z"
+                    }
+                  }
+                },
+                "ImageTablet": {
+                  "data": {
+                    "id": 30,
+                    "attributes": {
+                      "name": "image-app-design.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 689,
+                      "height": 200,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-app-design.jpg",
+                          "hash": "thumbnail_image_app_design_bc61aeb094",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 245,
+                          "height": 71,
+                          "size": 1.96,
+                          "url": "/uploads/thumbnail_image_app_design_bc61aeb094.jpg"
+                        },
+                        "small": {
+                          "name": "small_image-app-design.jpg",
+                          "hash": "small_image_app_design_bc61aeb094",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 500,
+                          "height": 145,
+                          "size": 5.24,
+                          "url": "/uploads/small_image_app_design_bc61aeb094.jpg"
+                        }
+                      },
+                      "hash": "image_app_design_bc61aeb094",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 8.21,
+                      "url": "/uploads/image_app_design_bc61aeb094.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-09-14T12:51:53.742Z",
+                      "updatedAt": "2024-09-14T12:51:53.742Z"
+                    }
+                  }
+                },
+                "page": {
+                  "data": {
+                    "id": 4,
+                    "attributes": {
+                      "Slug": "app-design",
+                      "createdAt": "2024-03-04T16:16:08.435Z",
+                      "updatedAt": "2024-10-03T14:43:15.994Z",
+                      "publishedAt": "2024-03-04T16:29:27.614Z",
+                      "Title": "App Design"
+                    }
+                  }
+                }
+              },
+              {
+                "id": 3,
+                "Title": "Graphic design",
+                "Image": {
+                  "data": {
+                    "id": 21,
+                    "attributes": {
+                      "name": "image-graphic-design.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 541,
+                      "height": 308,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-graphic-design.jpg",
+                          "hash": "thumbnail_image_graphic_design_285a73bd97",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 245,
+                          "height": 139,
+                          "size": 8,
+                          "url": "/uploads/thumbnail_image_graphic_design_285a73bd97.jpg"
+                        },
+                        "small": {
+                          "name": "small_image-graphic-design.jpg",
+                          "hash": "small_image_graphic_design_285a73bd97",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 500,
+                          "height": 285,
+                          "size": 24.12,
+                          "url": "/uploads/small_image_graphic_design_285a73bd97.jpg"
+                        }
+                      },
+                      "hash": "image_graphic_design_285a73bd97",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 27.16,
+                      "url": "/uploads/image_graphic_design_285a73bd97.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-09-14T12:51:13.307Z",
+                      "updatedAt": "2024-09-14T12:51:13.307Z"
+                    }
+                  }
+                },
+                "ImageMobile": {
+                  "data": {
+                    "id": 28,
+                    "attributes": {
+                      "name": "image-graphic-design.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 327,
+                      "height": 250,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-graphic-design.jpg",
+                          "hash": "thumbnail_image_graphic_design_b9970e2f1e",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 204,
+                          "height": 156,
+                          "size": 6.69,
+                          "url": "/uploads/thumbnail_image_graphic_design_b9970e2f1e.jpg"
+                        }
+                      },
+                      "hash": "image_graphic_design_b9970e2f1e",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 13.43,
+                      "url": "/uploads/image_graphic_design_b9970e2f1e.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-09-14T12:51:37.047Z",
+                      "updatedAt": "2024-09-14T12:51:37.047Z"
+                    }
+                  }
+                },
+                "ImageTablet": {
+                  "data": {
+                    "id": 31,
+                    "attributes": {
+                      "name": "image-graphic-design.jpg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 689,
+                      "height": 200,
+                      "formats": {
+                        "thumbnail": {
+                          "name": "thumbnail_image-graphic-design.jpg",
+                          "hash": "thumbnail_image_graphic_design_2f63e13eea",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 245,
+                          "height": 71,
+                          "size": 3.97,
+                          "url": "/uploads/thumbnail_image_graphic_design_2f63e13eea.jpg"
+                        },
+                        "small": {
+                          "name": "small_image-graphic-design.jpg",
+                          "hash": "small_image_graphic_design_2f63e13eea",
+                          "ext": ".jpg",
+                          "mime": "image/jpeg",
+                          "path": null,
+                          "width": 500,
+                          "height": 145,
+                          "size": 12.14,
+                          "url": "/uploads/small_image_graphic_design_2f63e13eea.jpg"
+                        }
+                      },
+                      "hash": "image_graphic_design_2f63e13eea",
+                      "ext": ".jpg",
+                      "mime": "image/jpeg",
+                      "size": 19.68,
+                      "url": "/uploads/image_graphic_design_2f63e13eea.jpg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-09-14T12:51:53.746Z",
+                      "updatedAt": "2024-09-14T12:51:53.746Z"
+                    }
+                  }
+                },
+                "page": {
+                  "data": {
+                    "id": 5,
+                    "attributes": {
+                      "Slug": "graphic-design",
+                      "createdAt": "2024-03-04T16:16:50.595Z",
+                      "updatedAt": "2024-10-03T15:10:09.935Z",
+                      "publishedAt": "2024-03-04T16:29:32.805Z",
+                      "Title": "Graphic Design"
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "__component": "components.info-highlights",
+            "Elements": [
+              {
+                "id": 4,
+                "title": "Passionate",
+                "content": "Each project starts with an in-depth brand research to ensure we only create products that serve a purpose. We merge art, design, and technology into exciting new solutions.",
+                "Image": {
+                  "data": {
+                    "id": 19,
+                    "attributes": {
+                      "name": "illustration-passionate.svg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 202,
+                      "height": 202,
+                      "formats": null,
+                      "hash": "illustration_passionate_cc8ba7195f",
+                      "ext": ".svg",
+                      "mime": "image/svg+xml",
+                      "size": 20.21,
+                      "url": "/uploads/illustration_passionate_cc8ba7195f.svg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-09-14T12:51:13.251Z",
+                      "updatedAt": "2024-09-25T09:48:54.308Z"
+                    }
+                  }
+                }
+              },
+              {
+                "id": 5,
+                "title": "RESOURCEFUL",
+                "content": "Everything that we do has a strategic purpose. We use an agile approach in all of our projects and value customer collaboration. It guarantees superior results that fulfill our clients’ needs.",
+                "Image": {
+                  "data": {
+                    "id": 20,
+                    "attributes": {
+                      "name": "illustration-resourceful.svg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 202,
+                      "height": 202,
+                      "formats": null,
+                      "hash": "illustration_resourceful_7ec3a82660",
+                      "ext": ".svg",
+                      "mime": "image/svg+xml",
+                      "size": 29.97,
+                      "url": "/uploads/illustration_resourceful_7ec3a82660.svg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-09-14T12:51:13.253Z",
+                      "updatedAt": "2024-09-14T12:51:13.253Z"
+                    }
+                  }
+                }
+              },
+              {
+                "id": 6,
+                "title": "FRIENDLY",
+                "content": "We are a group of enthusiastic folks who know how to put people first. Our success depends on our\ncustomers, and we strive to give them the best experience a company can provide.",
+                "Image": {
+                  "data": {
+                    "id": 18,
+                    "attributes": {
+                      "name": "illustration-friendly.svg",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": 202,
+                      "height": 202,
+                      "formats": null,
+                      "hash": "illustration_friendly_05eddca1f5",
+                      "ext": ".svg",
+                      "mime": "image/svg+xml",
+                      "size": 20.52,
+                      "url": "/uploads/illustration_friendly_05eddca1f5.svg",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-09-14T12:51:13.219Z",
+                      "updatedAt": "2024-09-14T12:51:13.219Z"
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "page": 1,
+      "pageSize": 25,
+      "pageCount": 1,
+      "total": 7
+    }
+  }
+}

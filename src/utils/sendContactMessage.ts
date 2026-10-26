@@ -33,7 +33,10 @@ export async function sendContactMessage(
 
     const body = await res.json().catch(() => null);
     const message = body?.error?.message;
-    if ((res.status === 400 || res.status === 429) && typeof message === "string") {
+    if (
+      (res.status === 400 || res.status === 429) &&
+      typeof message === "string"
+    ) {
       return { ok: false, message };
     }
     return { ok: false, message: GENERIC_ERROR };

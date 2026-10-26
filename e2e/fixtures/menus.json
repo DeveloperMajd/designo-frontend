@@ -1,0 +1,98 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "attributes": {
+        "title": "main menu",
+        "slug": "main-menu",
+        "createdAt": "2024-09-18T15:33:45.011Z",
+        "updatedAt": "2024-09-22T15:11:41.576Z",
+        "items": {
+          "data": [
+            {
+              "id": 1,
+              "attributes": {
+                "order": 0,
+                "title": "our company",
+                "url": "/about",
+                "target": "_self",
+                "createdAt": "2024-09-18T15:33:45.020Z",
+                "updatedAt": "2024-09-22T15:11:41.566Z",
+                "root_menu": {
+                  "data": {
+                    "id": 1,
+                    "attributes": {
+                      "title": "main menu",
+                      "slug": "main-menu",
+                      "createdAt": "2024-09-18T15:33:45.011Z",
+                      "updatedAt": "2024-09-22T15:11:41.576Z"
+                    }
+                  }
+                },
+                "parent": {
+                  "data": null
+                }
+              }
+            },
+            {
+              "id": 2,
+              "attributes": {
+                "order": 1,
+                "title": "locations",
+                "url": "/locations",
+                "target": "_self",
+                "createdAt": "2024-09-18T15:33:45.021Z",
+                "updatedAt": "2024-09-22T15:11:41.567Z",
+                "root_menu": {
+                  "data": {
+                    "id": 1,
+                    "attributes": {
+                      "title": "main menu",
+                      "slug": "main-menu",
+                      "createdAt": "2024-09-18T15:33:45.011Z",
+                      "updatedAt": "2024-09-22T15:11:41.576Z"
+                    }
+                  }
+                },
+                "parent": {
+                  "data": null
+                }
+              }
+            },
+            {
+              "id": 3,
+              "attributes": {
+                "order": 2,
+                "title": "contact",
+                "url": "/contact",
+                "target": "_self",
+                "createdAt": "2024-09-18T15:33:45.023Z",
+                "updatedAt": "2024-09-22T15:11:41.568Z",
+                "root_menu": {
+                  "data": {
+                    "id": 1,
+                    "attributes": {
+                      "title": "main menu",
+                      "slug": "main-menu",
+                      "createdAt": "2024-09-18T15:33:45.011Z",
+                      "updatedAt": "2024-09-22T15:11:41.576Z"
+                    }
+                  }
+                },
+                "parent": {
+                  "data": null
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "meta": {
+    "page": 1,
+    "pageSize": 25,
+    "pageCount": 1,
+    "total": 1
+  }
+}

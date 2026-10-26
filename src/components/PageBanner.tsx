@@ -1,6 +1,6 @@
 import BgImage from "../assets/images/shared/desktop/bg-pattern-call-to-action.svg";
 import BgShape from "../assets/images/shared/desktop/bg-pattern-leaf.svg";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { fadeInUp } from "@/utils/transistions";
 
 export type PageBannerType = {

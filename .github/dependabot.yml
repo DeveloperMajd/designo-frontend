@@ -1,0 +1,36 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      next:
+        patterns: ["next", "eslint-config-next"]
+      testing:
+        patterns:
+          - "vitest"
+          - "vite"
+          - "@vitejs/*"
+          - "vite-plugin-svgr"
+          - "jsdom"
+          - "@testing-library/*"
+          - "@playwright/test"
+          - "axe-core"
+    ignore:
+      # Held at versions that support Node 20, which the Makefile runs both apps on.
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: jsdom
+        update-types: ["version-update:semver-major"]
+      - dependency-name: vitest
+        update-types: ["version-update:semver-major"]
+      # Bulma 1 rewrites the styles the site is built on.
+      - dependency-name: bulma
+        update-types: ["version-update:semver-major"]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly

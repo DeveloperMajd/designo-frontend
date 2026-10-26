@@ -22,12 +22,13 @@ design.
   minutes (incremental static regeneration), so content edits go live without a rebuild.
 - **Editable everywhere.** Navigation, footer details and interface labels come from the CMS
   too.
-- **Locations page with maps.** Interactive Leaflet maps with OpenStreetMap tiles, loaded
-  on the client only.
+- **Locations page with maps.** The offices are rendered on the server, so "See Location"
+  links can jump straight to one; the interactive Leaflet maps (OpenStreetMap tiles) load
+  on the client, into space reserved for them.
 - **Contact form** with inline validation and clear feedback when sending fails
   (validation errors, rate limiting, network and server errors). Rate limiting and input
   hardening happen on the backend.
-- **Motion.** Scroll-triggered animations with Framer Motion.
+- **Motion.** Scroll-triggered animations with Motion (formerly Framer Motion).
 - **Responsive.** Layouts for mobile, tablet and desktop, built with Bulma and SCSS.
 - **SEO basics.** A title per page, a description, canonical URLs and Open Graph tags;
   unknown URLs return a real 404.
@@ -50,7 +51,7 @@ design.
 | --- | --- |
 | Framework | Next.js 15 (pages router), React 19, TypeScript |
 | Styling | SCSS, Bulma |
-| Animation | Framer Motion, react-intersection-observer |
+| Animation | Motion, react-intersection-observer |
 | Maps | Leaflet, React Leaflet |
 | Data | Strapi REST API, `qs` for query strings |
 | Utilities | libphonenumber-js, hamburger-react |
@@ -79,7 +80,32 @@ production URL in `.env`.
 | `yarn dev` | Development server |
 | `yarn build` | Production build (also lints and type-checks) |
 | `yarn start` | Serve the production build |
-| `yarn lint` | Run ESLint |
+| `yarn lint` | Run ESLint (`eslint.config.mjs`: Next.js core web vitals and TypeScript rules) |
+| `yarn typecheck` | Type-check the project: `next typegen` writes the types Next.js generates (such as image imports), then `tsc` checks |
+| `yarn format` | Format the code with Prettier (`yarn format:check` only reports) |
+| `yarn test` | Unit tests with Vitest and Testing Library (`yarn test:watch` while working) |
+| `yarn test:e2e` | End-to-end tests with Playwright, against a mock API (see [Tests](#tests)) |
+
+## Tests
+
+The unit tests (`yarn test`) cover the helpers, the section-to-component map and the
+contact form's validation and feedback.
+
+The end-to-end suite (`yarn test:e2e`) builds the site against `e2e/mock-api.mjs`, a
+stand-in for Strapi that replays responses recorded in `e2e/fixtures/`, so it needs no
+backend. It checks that every page renders without errors, that unknown URLs are 404s, the
+footer's social links, the "See Location" anchors, and the contact form against success,
+refusal and network failure, and it runs [axe](https://github.com/dequelabs/axe-core) on
+every page. Problems the site already has are listed in `e2e/accessibility.spec.ts`;
+anything new fails.
+
+- Install the browser once: `npx playwright install chromium`.
+- Stop `yarn dev` first: the suite builds into the same `.next` folder.
+- After content changes in the CMS, re-record the fixtures from a running Strapi:
+  `node e2e/fixtures/record.mjs http://localhost:1337/api`.
+
+CI (`.github/workflows/ci.yml`) runs lint, the type check, the format check and both test
+suites on every pull request and every push to `master`.
 
 ## Configuration
 
@@ -114,7 +140,6 @@ src/
 
 - **Accessibility** has not been audited yet (keyboard navigation, focus handling, ARIA).
 - **Meta descriptions** are one site-wide text; the CMS has no per-page description field.
-- There are **no automated tests** yet.
 
 ## Credits
 

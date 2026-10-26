@@ -2,7 +2,7 @@ import { PageType } from "@/utils/baseTypes";
 import { getPage } from "./getData";
 
 export async function getPageData(
-  dynamicRoute: string[]
+  dynamicRoute: string[] | undefined
 ): Promise<PageType[] | null> {
   let pageData: PageType[] | null = null;
 

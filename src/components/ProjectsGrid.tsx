@@ -2,7 +2,7 @@
 
 import { ImageType } from "@/utils/baseTypes";
 import { MediaItem } from "./Global/MediaItem";
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation } from "motion/react";
 import { useInView } from "react-intersection-observer";
 import { fadeInLeft, fadeInRight } from "@/utils/transistions";
 import React, { useEffect, useState } from "react";
@@ -76,8 +76,8 @@ const ProjectGridItem = ({
             ? fadeInLeft
             : fadeInRight
           : index === 0
-          ? fadeInLeft
-          : fadeInRight
+            ? fadeInLeft
+            : fadeInRight
       }
       onAnimationComplete={() => {
         if (index === currentIndex) triggerNext();

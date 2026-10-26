@@ -1,8 +1,8 @@
+import qs from "qs";
 import { ContactType, LabelType, MenuType, PageType } from "@/utils/baseTypes";
 import { fetchData } from "@/utils/fetchData";
 
 export const getPage = async (slug: string): Promise<PageType[] | null> => {
-  const qs = require("qs");
   const query = qs.stringify({
     filters: {
       Slug: {
@@ -52,7 +52,6 @@ export const getPage = async (slug: string): Promise<PageType[] | null> => {
 };
 
 export const getContactData = async (): Promise<ContactType | null> => {
-  const qs = require("qs");
   const query = qs.stringify({
     populate: {
       socials: {
@@ -75,7 +74,6 @@ export const getContactData = async (): Promise<ContactType | null> => {
 };
 
 export const getMenuData = async (): Promise<MenuType[] | null> => {
-  const qs = require("qs");
   const query = qs.stringify({
     populate: {
       items: {
@@ -98,7 +96,6 @@ export const getMenuData = async (): Promise<MenuType[] | null> => {
 };
 
 export const getLabelsData = async (): Promise<LabelType[] | null> => {
-  const qs = require("qs");
   const query = qs.stringify({
     populate: "*",
   });

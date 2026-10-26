@@ -16,7 +16,7 @@
   .container {
     z-index: 10;
     background-color: $white;
-    padding: 1.5rem .8rem 1.3rem 1.5rem;
+    padding: 1.5rem 0.8rem 1.3rem 1.5rem;
 
     @include tablet {
       padding: 4rem $section-padding-tablet;
@@ -39,7 +39,7 @@
       position: absolute;
       inset: 0;
       top: 100%;
-      height: calc(100dvh );
+      height: calc(100dvh);
     }
     @include tablet {
       position: relative;

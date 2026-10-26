@@ -5,7 +5,7 @@ import useWindowSize from "../hooks/useWindowSize";
 import BgPattern from "../assets/images/shared/desktop/bg-pattern-three-circles.svg";
 import { ImageType } from "@/utils/baseTypes";
 import { MediaItem } from "./Global/MediaItem";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { fadeInLeft, fadeInRight, scaleDown } from "@/utils/transistions";
 
 export type TextMediaType = {

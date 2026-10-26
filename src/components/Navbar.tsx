@@ -4,9 +4,10 @@ import Image from "next/image";
 import Logo from "../assets/images/shared/desktop/logo-dark.png";
 import { useEffect, useState } from "react";
 import Hamburger from "hamburger-react";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "motion/react";
 import Link from "next/link";
 import { MenuType } from "@/utils/baseTypes";
+import { normalizeHref } from "@/utils/normalizeHref";
 
 interface NavbarProps {
   mainMenu?: MenuType;
@@ -20,7 +21,7 @@ export const Navbar = ({ mainMenu }: NavbarProps) => {
     return a.attributes.order - b.attributes.order;
   });
 
-  const variants = {
+  const variants: Variants = {
     hidden: {
       y: "-100%",
       opacity: 0,
@@ -70,7 +71,7 @@ export const Navbar = ({ mainMenu }: NavbarProps) => {
               orderMenuItems.map((item, index) => (
                 <Link
                   key={index}
-                  href={item.attributes.url}
+                  href={normalizeHref(item.attributes.url)}
                   target={item.attributes.target}
                   className="nav-item"
                 >
@@ -90,7 +91,7 @@ export const Navbar = ({ mainMenu }: NavbarProps) => {
           {mainMenu?.attributes.items.data.map((item, index) => (
             <Link
               key={index}
-              href={item.attributes.url}
+              href={normalizeHref(item.attributes.url)}
               target={item.attributes.target}
               className="nav-item"
             >
