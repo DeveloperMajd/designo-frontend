@@ -8,6 +8,9 @@ updates:
     groups:
       next:
         patterns: ["next", "eslint-config-next"]
+      # React 19 refuses to run with different react and react-dom versions.
+      react:
+        patterns: ["react", "react-dom", "@types/react", "@types/react-dom"]
       testing:
         patterns:
           - "vitest"
@@ -28,6 +31,12 @@ updates:
         update-types: ["version-update:semver-major"]
       # Bulma 1 rewrites the styles the site is built on.
       - dependency-name: bulma
+        update-types: ["version-update:semver-major"]
+      # Next.js 16 is a migration of its own (eslint-config-next's new config format,
+      # Turbopack builds with the SVG loader), planned separately.
+      - dependency-name: next
+        update-types: ["version-update:semver-major"]
+      - dependency-name: eslint-config-next
         update-types: ["version-update:semver-major"]
 
   - package-ecosystem: github-actions
