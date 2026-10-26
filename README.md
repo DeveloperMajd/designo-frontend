@@ -36,14 +36,21 @@ design.
 ## How it works
 
 - `src/pages/[[...dynamicRoute]].tsx` is the only route. `getStaticPaths` asks the API for
-  every page slug; `getStaticProps` fetches the page, the menu, the labels and the contact
-  details.
-- Each section type in the CMS (for example `components.homepage-banner`) is mapped to a
-  React component in `src/utils/module-list.tsx`. The page layout is whatever order the
-  editor chose.
+  every page slug; `getStaticProps` fetches the page and, in parallel, the menu, the labels
+  and the contact details.
+- All CMS access goes through `src/lib/cms/`. One fetch helper (with a timeout and typed
+  errors) and a Zod schema per response turn Strapi's nested data into the plain props the
+  components use: null-safe images, absolute links, and text. Text fields are rendered as
+  text, never as HTML, so nothing typed into the CMS can run in the browser. Labels reach
+  the components through a React context (`useLabel`).
+- Each section type in the CMS (for example `components.homepage-banner`) has a schema in
+  `src/lib/cms/sections.ts` and a component in `src/utils/module-list.tsx`. The page
+  layout is whatever order the editor chose; section types without a component are
+  skipped.
 - New pages are generated on their first visit (`fallback: "blocking"`). A slug the API has
-  no page for returns a 404. If the API cannot be reached, a page that was already
-  generated keeps being served instead of being replaced by an error.
+  no page for returns a 404. If the API cannot be reached or returns something unexpected,
+  a page that was already generated keeps being served, and a build fails rather than
+  deploying an empty site.
 
 ## Tech stack
 
@@ -130,8 +137,10 @@ has to be kept up to date.
 src/
   pages/[[...dynamicRoute]].tsx   the only route: fetches a page by slug and renders it
   components/                     one component per CMS section, plus navbar and footer
-  hooks/                          data fetching and small UI hooks
-  utils/                          section-to-component map, API types, helpers, site constants
+  lib/cms/                        CMS client, schemas and the types the components receive
+  lib/labels.tsx                  interface labels from the CMS, via React context
+  hooks/                          small UI hooks
+  utils/                          section-to-component map, helpers, site constants
   styles/                         SCSS partials, one per component
   assets/                         fonts, images and SVGs
 ```
@@ -140,6 +149,9 @@ src/
 
 - **Accessibility** has not been audited yet (keyboard navigation, focus handling, ARIA).
 - **Meta descriptions** are one site-wide text; the CMS has no per-page description field.
+- **Formatting in text fields** is not shown: the CMS fields are plain text, so any HTML an
+  editor types is reduced to its text (office addresses keep their lines). Formatted text
+  needs rich-text fields in the CMS.
 
 ## Credits
 

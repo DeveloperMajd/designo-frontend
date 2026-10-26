@@ -2,15 +2,17 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { sendContactMessage } from "@/utils/sendContactMessage";
-import { ContactForm, type ContactFormType } from "./ContactForm";
+import type { SectionOf } from "@/lib/cms/sections";
+import { ContactForm } from "./ContactForm";
 
 vi.mock("@/utils/sendContactMessage", () => ({ sendContactMessage: vi.fn() }));
 const send = vi.mocked(sendContactMessage);
 
-const data: ContactFormType = {
-  __component: "components.contact-form",
-  Title: "Contact Us",
-  Content: "<p>Ready to take it to the next level?</p>",
+const data: SectionOf<"contact-form"> = {
+  kind: "contact-form",
+  id: 1,
+  title: "Contact Us",
+  text: "Ready to take it to the next level?",
 };
 
 const message = {

@@ -1,67 +1,41 @@
-import {
-  HomepageBanner,
-  HomepageBannerType,
-} from "@/components/HomepageBanner";
-import {
-  InfoHighlights,
-  InfoHighlightsType,
-} from "@/components/InfoHighlights";
-import {
-  LocationsHighlights,
-  LocationsHighlightsType,
-} from "@/components/LocationsHighlights";
-import { PageBanner, PageBannerType } from "@/components/PageBanner";
-import { ProjectsCards, ProjectsCardsType } from "@/components/ProjectsCards";
-import { ProjectsGrid, projectsGridType } from "@/components/ProjectsGrid";
-import { TextMedia, TextMediaType } from "@/components/TextMedia";
-import {
-  TextMediaBanner,
-  TextMediaBannerType,
-} from "@/components/TextMediaBanner";
-import { LabelsType } from "./baseTypes";
-import Locations, { LocationsType } from "@/components/Locations";
-import { ContactForm, ContactFormType } from "@/components/ContactForm";
+import { HomepageBanner } from "@/components/HomepageBanner";
+import { InfoHighlights } from "@/components/InfoHighlights";
+import { LocationsHighlights } from "@/components/LocationsHighlights";
+import { PageBanner } from "@/components/PageBanner";
+import { ProjectsCards } from "@/components/ProjectsCards";
+import { ProjectsGrid } from "@/components/ProjectsGrid";
+import { TextMedia } from "@/components/TextMedia";
+import { TextMediaBanner } from "@/components/TextMediaBanner";
+import Locations from "@/components/Locations";
+import { ContactForm } from "@/components/ContactForm";
+import type { Section } from "@/lib/cms/sections";
 
-export type ModulesType =
-  | HomepageBannerType
-  | projectsGridType
-  | InfoHighlightsType
-  | PageBannerType
-  | ProjectsCardsType
-  | TextMediaBannerType
-  | TextMediaType
-  | LocationsHighlightsType
-  | LocationsType
-  | ContactFormType;
-
-interface ModulesProps {
-  module: ModulesType;
-  labels: LabelsType;
-}
-
-export const Modules = (props: ModulesProps) => {
-  switch (props.module.__component) {
-    case "components.homepage-banner":
-      return <HomepageBanner data={props.module} />;
-    case "components.project-grids":
-      return <ProjectsGrid data={props.module} />;
-    case "components.info-highlights":
-      return <InfoHighlights data={props.module} />;
-    case "components.page-banner":
-      return <PageBanner data={props.module} />;
-    case "components.project-cards":
-      return <ProjectsCards data={props.module} />;
-    case "components.text-media-banner":
-      return <TextMediaBanner data={props.module} />;
-    case "components.text-media":
-      return <TextMedia data={props.module} />;
-    case "components.locations-highlights":
-      return <LocationsHighlights data={props.module} labels={props.labels} />;
-    case "components.locations":
-      return <Locations data={props.module} labels={props.labels} />;
-    case "components.contact-form":
-      return <ContactForm data={props.module} />;
+/** Renders one section of a page with its component. */
+export const Modules = ({ section }: { section: Section }) => {
+  switch (section.kind) {
+    case "homepage-banner":
+      return <HomepageBanner data={section} />;
+    case "project-grids":
+      return <ProjectsGrid data={section} />;
+    case "info-highlights":
+      return <InfoHighlights data={section} />;
+    case "page-banner":
+      return <PageBanner data={section} />;
+    case "project-cards":
+      return <ProjectsCards data={section} />;
+    case "text-media-banner":
+      return <TextMediaBanner data={section} />;
+    case "text-media":
+      return <TextMedia data={section} />;
+    case "locations-highlights":
+      return <LocationsHighlights data={section} />;
+    case "locations":
+      return <Locations data={section} />;
+    case "contact-form":
+      return <ContactForm data={section} />;
     default:
+      // A section type in lib/cms/sections.ts without a component here fails the type check.
+      section satisfies never;
       return null;
   }
 };

@@ -6,15 +6,10 @@ import BgPatternMobile from "../assets/images/shared/desktop/bg-pattern-two-circ
 import { motion } from "motion/react";
 import { fadeInLeft, fadeInRight, stager } from "@/utils/transistions";
 import { sendContactMessage } from "@/utils/sendContactMessage";
-
-export type ContactFormType = {
-  __component: "components.contact-form";
-  Content: string;
-  Title: string;
-};
+import type { SectionOf } from "@/lib/cms/sections";
 
 interface ContactFormProps {
-  data: ContactFormType;
+  data: SectionOf<"contact-form">;
 }
 
 export const ContactForm = ({ data }: ContactFormProps) => {
@@ -65,11 +60,8 @@ export const ContactForm = ({ data }: ContactFormProps) => {
             viewport={{ once: true }}
             className="column text-col is-12-tablet is-6-desktop"
           >
-            <div className="title h1">{data.Title}</div>
-            <div
-              className="text"
-              dangerouslySetInnerHTML={{ __html: data.Content }}
-            />
+            <div className="title h1">{data.title}</div>
+            <div className="text">{data.text}</div>
           </motion.div>
           <motion.div
             variants={stager}

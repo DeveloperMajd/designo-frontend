@@ -1,21 +1,17 @@
 import { CircleMarker, MapContainer, Popup, TileLayer } from "react-leaflet";
-
-type MapType = {
-  Latitude: number;
-  Longitude: number;
-  Address: string;
-};
+import { Address } from "./Address";
 
 interface MapProps {
-  data: MapType;
+  coordinates: { lat: number; lng: number };
+  addressLines: string[];
 }
 
-const Map = ({ data }: MapProps) => {
-  const { Latitude, Longitude, Address } = data;
+const Map = ({ coordinates, addressLines }: MapProps) => {
+  const center: [number, number] = [coordinates.lat, coordinates.lng];
 
   return (
     <MapContainer
-      center={[Latitude, Longitude]}
+      center={center}
       zoom={13}
       scrollWheelZoom={true}
       zoomControl={false}
@@ -27,12 +23,12 @@ OpenStreetMap</a> contributors"
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <CircleMarker
-        center={[Latitude, Longitude]}
+        center={center}
         pathOptions={{ color: "#e7816b" }}
         radius={10}
       >
         <Popup>
-          <span dangerouslySetInnerHTML={{ __html: Address }} />
+          <Address lines={addressLines} />
         </Popup>
       </CircleMarker>
     </MapContainer>

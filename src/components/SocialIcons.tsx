@@ -1,53 +1,30 @@
 import Link from "next/link";
-import { ImageType, LinkType } from "@/utils/baseTypes";
 import { ReactSVG } from "react-svg";
-import { getStrapiMedia } from "@/utils/fetchMedia";
-import { normalizeHref } from "@/utils/normalizeHref";
+import type { SiteData } from "@/lib/cms/site";
 
-type socialType = {
-  icon: ImageType;
-  link: LinkType;
-  platform: string;
-};
-
-interface socialProps {
-  socials: socialType[];
+interface SocialIconsProps {
+  socials: SiteData["contact"]["socials"];
 }
 
-export const SocialIcons = ({ socials }: socialProps) => {
-  return (
-    <div className="social-icons">
-      {socials.map((social, index) => {
-        const { icon, link, platform } = social;
-
-        if (icon.data === null) {
-          console.error(`Icon for ${platform} is not available`);
-          return null;
-        }
-        const imageUrl = getStrapiMedia(icon.data?.attributes.url) || "";
-
-        return (
-          <Link
-            key={index}
-            href={normalizeHref(link.url)}
-            target={link.target}
-            className="social-icon"
-            aria-label={link.title}
-          >
-            <ReactSVG
-              width={24}
-              height={24}
-              src={imageUrl}
-              className={`svg-icon ${platform}`}
-              wrapper="svg"
-              beforeInjection={(svg) => {
-                svg.setAttribute("alt", icon.data.attributes.alternativeText);
-              }}
-              role="link"
-            />
-          </Link>
-        );
-      })}
-    </div>
-  );
-};
+export const SocialIcons = ({ socials }: SocialIconsProps) => (
+  <div className="social-icons">
+    {socials.map(({ platform, link, icon }) => (
+      <Link
+        key={link.href}
+        href={link.href}
+        target={link.newTab ? "_blank" : undefined}
+        className="social-icon"
+        aria-label={link.label || platform}
+      >
+        <ReactSVG
+          width={24}
+          height={24}
+          src={icon}
+          className={`svg-icon ${platform}`}
+          wrapper="svg"
+          role="link"
+        />
+      </Link>
+    ))}
+  </div>
+);

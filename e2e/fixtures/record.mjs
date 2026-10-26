@@ -1,6 +1,6 @@
 // Records the API responses the website needs into JSON fixtures for e2e/mock-api.mjs.
 // Usage: node e2e/fixtures/record.mjs [api url]   (default http://localhost:1337/api)
-// The queries match src/hooks/getData.ts; pages are recorded without the slug filter.
+// The queries match src/lib/cms/pages.ts and site.ts; pages are recorded without the slug filter.
 import { writeFileSync } from "node:fs";
 import qs from "qs";
 
