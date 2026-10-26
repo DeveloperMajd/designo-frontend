@@ -1,20 +1,15 @@
 import BgImage from "../assets/images/shared/desktop/bg-pattern-call-to-action.svg";
 import BgShape from "../assets/images/shared/desktop/bg-pattern-leaf.svg";
+import type { SectionOf } from "@/lib/cms/sections";
 import { motion } from "motion/react";
 import { fadeInUp } from "@/utils/transistions";
 
-export type PageBannerType = {
-  __component: "components.page-banner";
-  Title: string;
-  Content: string;
-};
-
 interface PageBannerProps {
-  data: PageBannerType;
+  data: SectionOf<"page-banner">;
 }
 
 export const PageBanner = ({ data }: PageBannerProps) => {
-  const { Title, Content } = data;
+  const { title, text } = data;
 
   return (
     <section className="page-banner is-full-width">
@@ -30,11 +25,8 @@ export const PageBanner = ({ data }: PageBannerProps) => {
             viewport={{ once: true }}
             className="column is-12-mobile is-10-tablet is-6-desktop is-5-fullhd content"
           >
-            <div className="title h4">{Title}</div>
-            <div
-              className="text"
-              dangerouslySetInnerHTML={{ __html: Content }}
-            />
+            <div className="title h4">{title}</div>
+            <div className="text">{text}</div>
           </motion.div>
         </div>
       </div>

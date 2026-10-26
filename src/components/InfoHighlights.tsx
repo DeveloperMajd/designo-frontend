@@ -1,37 +1,22 @@
-import { ImageType } from "@/utils/baseTypes";
+import type { SectionOf } from "@/lib/cms/sections";
 import { MediaItem } from "./Global/MediaItem";
 import { motion, useAnimation } from "motion/react";
 import { useInView } from "react-intersection-observer";
 import { fadeInLeft } from "@/utils/transistions";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import BgShape from "../assets/images/shared/desktop/bg-pattern-leaf.svg";
 
-export type InfoHighlightsType = {
-  __component: "components.info-highlights";
-  Elements: {
-    title: string;
-    content: string;
-    Image: ImageType;
-  }[];
-};
-
-interface InfoHighlightsProps {
-  data: InfoHighlightsType;
-}
+type Highlight = SectionOf<"info-highlights">["items"][number];
 
 interface HighlightItemProps {
-  title: string;
-  content: string;
-  Image: ImageType;
+  item: Highlight;
   index: number;
   currentIndex: number;
   triggerNext: () => void;
 }
 
 const HighlightItem = ({
-  title,
-  content,
-  Image,
+  item,
   index,
   currentIndex,
   triggerNext,
@@ -58,18 +43,21 @@ const HighlightItem = ({
     >
       <div className="img-wrapper">
         <span className="overlay" />
-        <MediaItem imageData={Image} />
+        <MediaItem image={item.image} />
       </div>
       <div className="content">
-        <div className="title h3">{title}</div>
-        <div className="description">{content}</div>
+        <div className="title h3">{item.title}</div>
+        <div className="description">{item.text}</div>
       </div>
     </motion.div>
   );
 };
 
+interface InfoHighlightsProps {
+  data: SectionOf<"info-highlights">;
+}
+
 export const InfoHighlights = ({ data }: InfoHighlightsProps) => {
-  const { Elements } = data;
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const triggerNext = () => {
@@ -80,12 +68,10 @@ export const InfoHighlights = ({ data }: InfoHighlightsProps) => {
     <section className="info-highlights">
       <div className="container">
         <div className="columns">
-          {Elements.map((element, index) => (
+          {data.items.map((item, index) => (
             <HighlightItem
-              key={index}
-              title={element.title}
-              content={element.content}
-              Image={element.Image}
+              key={`${item.title}-${index}`}
+              item={item}
               index={index}
               currentIndex={currentIndex}
               triggerNext={triggerNext}

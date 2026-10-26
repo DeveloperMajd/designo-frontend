@@ -1,41 +1,14 @@
-import { ImageType, LinkType } from "@/utils/baseTypes";
+import type { SectionOf } from "@/lib/cms/sections";
 import { MediaItem } from "./Global/MediaItem";
-import { normalizeHref } from "@/utils/normalizeHref";
 import Link from "next/link";
 import { motion, useAnimation } from "motion/react";
 import { useInView } from "react-intersection-observer";
 import { fadeInLeft, fadeInRight } from "@/utils/transistions";
 import { useEffect } from "react";
 
-export type ProjectsCardsType = {
-  __component: "components.project-cards";
-  Elements: {
-    Title: string;
-    Content: string;
-    Image: ImageType;
-    link: LinkType;
-  }[];
-};
+type Card = SectionOf<"project-cards">["items"][number];
 
-interface ProjectsCardsProps {
-  data: ProjectsCardsType;
-}
-
-interface ProjectCardProps {
-  Title: string;
-  Content: string;
-  Image: ImageType;
-  link: LinkType;
-  index: number;
-}
-
-const ProjectCard = ({
-  Title,
-  Content,
-  Image,
-  link,
-  index,
-}: ProjectCardProps) => {
+const ProjectCard = ({ card, index }: { card: Card; index: number }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
 
@@ -44,6 +17,8 @@ const ProjectCard = ({
       controls.start("show");
     }
   }, [inView, controls]);
+
+  const { title, text, image, link } = card;
 
   return (
     <motion.div
@@ -55,28 +30,22 @@ const ProjectCard = ({
     >
       <div className="columns">
         <div className="column is-12-mobile is-6-tablet is-12-desktop card-image">
-          <MediaItem imageData={Image} />
+          <MediaItem image={image} />
         </div>
-        {link && link.url ? (
+        {link ? (
           <Link
-            href={normalizeHref(link.url)}
-            target={link.target}
+            href={link.href}
+            target={link.newTab ? "_blank" : undefined}
             className="column is-12-mobile is-6-tablet is-12-desktop card-content link"
-            aria-label={`${link.title}`}
+            aria-label={link.label}
           >
-            <div className="title h3">{Title}</div>
-            <div
-              className="text"
-              dangerouslySetInnerHTML={{ __html: Content }}
-            />
+            <div className="title h3">{title}</div>
+            <div className="text">{text}</div>
           </Link>
         ) : (
           <div className="column is-12-mobile is-6-tablet is-12-desktop card-content">
-            <div className="title h3">{Title}</div>
-            <div
-              className="text"
-              dangerouslySetInnerHTML={{ __html: Content }}
-            />
+            <div className="title h3">{title}</div>
+            <div className="text">{text}</div>
           </div>
         )}
       </div>
@@ -84,25 +53,22 @@ const ProjectCard = ({
   );
 };
 
-export const ProjectsCards = ({ data }: ProjectsCardsProps) => {
-  const { Elements } = data;
+interface ProjectsCardsProps {
+  data: SectionOf<"project-cards">;
+}
 
-  return (
-    <section className="projects-cards">
-      <div className="container">
-        <div className="columns is-multiline is-variable is-3-desktop main-columns">
-          {Elements.map((element, index) => (
-            <ProjectCard
-              key={index}
-              Title={element.Title}
-              Content={element.Content}
-              Image={element.Image}
-              link={element.link}
-              index={index}
-            />
-          ))}
-        </div>
+export const ProjectsCards = ({ data }: ProjectsCardsProps) => (
+  <section className="projects-cards">
+    <div className="container">
+      <div className="columns is-multiline is-variable is-3-desktop main-columns">
+        {data.items.map((card, index) => (
+          <ProjectCard
+            key={`${card.title}-${index}`}
+            card={card}
+            index={index}
+          />
+        ))}
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);

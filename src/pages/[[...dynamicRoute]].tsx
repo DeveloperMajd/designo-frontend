@@ -1,54 +1,41 @@
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
-import { getAllPaths } from "@/hooks/getAllPaths";
-import { getContactData, getLabelsData, getMenuData } from "@/hooks/getData";
-import { getPageData } from "@/hooks/getPageData";
-import { ContactType, LabelType, MenuType, PageType } from "@/utils/baseTypes";
+import { getPage, getPageSlugs, type Page } from "@/lib/cms/pages";
+import { getSiteData, type SiteData } from "@/lib/cms/site";
+import { LabelsProvider } from "@/lib/labels";
 import { Modules } from "@/utils/module-list";
 import {
+  HOME_SLUG,
   SITE_DESCRIPTION,
   SITE_NAME,
   SITE_TAGLINE,
   SITE_URL,
 } from "@/utils/site";
-import { GetStaticPathsResult, GetStaticPropsContext } from "next";
+import {
+  GetStaticPathsResult,
+  GetStaticPropsContext,
+  GetStaticPropsResult,
+} from "next";
 
 import Head from "next/head";
 
+const REVALIDATE_SECONDS = 120;
+
 interface DynamicPageProps {
-  pageData: PageType[];
-  contactData: ContactType;
-  menuData: MenuType[];
-  labelsData: LabelType[];
+  page: Page;
+  site: SiteData;
 }
 
-export default function DynamicPage({
-  pageData,
-  contactData,
-  menuData,
-  labelsData,
-}: DynamicPageProps) {
-  const mainMenu = menuData?.find(
-    (menu) => menu.attributes.slug === "main-menu"
-  );
-
-  const _labels = labelsData?.map((label) => {
-    return {
-      [label.attributes.label.Name]: label.attributes.label.Value,
-    };
-  });
-
-  const page = pageData?.[0];
-  const slug = page?.attributes.Slug;
-  // The CMS calls the home page "StartPage", which is not something to show in a tab.
-  const isHome = !slug || slug === "startpage";
+export default function DynamicPage({ page, site }: DynamicPageProps) {
+  // The CMS calls the home page "startpage", which is not something to show in a tab.
+  const isHome = page.slug === HOME_SLUG;
   const title = isHome
     ? `${SITE_NAME} | ${SITE_TAGLINE}`
-    : `${page?.attributes.Title} | ${SITE_NAME}`;
-  const url = isHome ? SITE_URL : `${SITE_URL}/${slug}`;
+    : `${page.title} | ${SITE_NAME}`;
+  const url = isHome ? SITE_URL : `${SITE_URL}/${page.slug}`;
 
   return (
-    <>
+    <LabelsProvider labels={site.labels}>
       <Head>
         <title>{title}</title>
         <meta name="description" content={SITE_DESCRIPTION} />
@@ -67,57 +54,43 @@ export default function DynamicPage({
         <meta property="og:url" content={url} />
       </Head>
       <main>
-        <Navbar mainMenu={mainMenu} />
-        {page &&
-          page.attributes.Module &&
-          page.attributes.Module.map((module, index) => (
-            <Modules key={index} module={module} labels={_labels} />
-          ))}
+        <Navbar menu={site.menu} />
+        {page.sections.map((section) => (
+          <Modules key={`${section.kind}-${section.id}`} section={section} />
+        ))}
         <Footer
-          showContactShowcase={slug !== "contact"}
-          contactData={contactData}
-          mainMenu={mainMenu}
-          labels={_labels}
+          showContactShowcase={page.slug !== "contact"}
+          menu={site.menu}
+          contact={site.contact}
         />
       </main>
-    </>
+    </LabelsProvider>
   );
 }
 
+// If the CMS cannot be reached, these throw: a build then fails and leaves the previous
+// deployment live, and a revalidation keeps serving the last good copy of the page.
+
 export async function getStaticPaths(): Promise<GetStaticPathsResult> {
-  const allPaths = await getAllPaths();
+  const slugs = await getPageSlugs();
   return {
-    paths: allPaths,
+    paths: slugs.map((slug) => ({
+      params: { dynamicRoute: slug === HOME_SLUG ? [] : [slug] },
+    })),
     fallback: "blocking",
   };
 }
 
 export async function getStaticProps(
   context: GetStaticPropsContext<{ dynamicRoute?: string[] }>
-) {
-  const pageData = await getPageData(context.params?.dynamicRoute);
+): Promise<GetStaticPropsResult<DynamicPageProps>> {
+  const slug = context.params?.dynamicRoute?.join("/") || HOME_SLUG;
+  const [page, site] = await Promise.all([getPage(slug), getSiteData()]);
 
-  // The API did not answer. Throwing keeps serving the last good copy of a page that
-  // was already generated, instead of replacing it with an empty page or a 404.
-  if (!Array.isArray(pageData)) {
-    throw new Error("Could not load page data from the API");
+  // The CMS answered and there is no such page: a real 404, not an empty page.
+  if (!page) {
+    return { notFound: true, revalidate: REVALIDATE_SECONDS };
   }
 
-  // The API answered and there is no such page: a real 404, not an empty page.
-  if (pageData.length === 0) {
-    return { notFound: true, revalidate: 120 };
-  }
-
-  const contactData = await getContactData();
-  const menuData = await getMenuData();
-  const labelsData = await getLabelsData();
-  return {
-    props: {
-      pageData,
-      contactData,
-      menuData,
-      labelsData,
-    },
-    revalidate: 120,
-  };
+  return { props: { page, site }, revalidate: REVALIDATE_SECONDS };
 }

@@ -1,26 +1,28 @@
 import Image from "next/image";
-import { getStrapiMedia } from "../../utils/fetchMedia";
-import { ImageType } from "@/utils/baseTypes";
+import type { Media, ResponsiveMedia } from "@/lib/cms/media";
 
-interface MediaItemProps {
-  imageData: ImageType;
-}
+/** The image for the current viewport, or another size when the editor left that one out. */
+export const forViewport = (
+  image: ResponsiveMedia,
+  isMobile: boolean,
+  isTablet: boolean
+) =>
+  (isMobile ? image.mobile : isTablet ? image.tablet : image.desktop) ??
+  image.desktop ??
+  image.tablet ??
+  image.mobile;
 
-export const MediaItem = ({ imageData }: MediaItemProps) => {
-  const { url, alternativeText, width, height } = imageData.data.attributes;
-
-  const imageUrl = getStrapiMedia(url) || "";
-
-  return (
+/** A CMS image. Renders nothing when there is none, rather than breaking the page. */
+export const MediaItem = ({ image }: { image: Media | null }) =>
+  image ? (
     <Image
-      src={imageUrl}
-      alt={alternativeText || ""}
-      width={width}
-      height={height}
+      src={image.src}
+      alt={image.alt}
+      width={image.width}
+      height={image.height}
       style={{
         objectFit: "cover",
         objectPosition: "center",
       }}
     />
-  );
-};
+  ) : null;

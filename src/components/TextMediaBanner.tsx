@@ -6,27 +6,17 @@ import BgPatternDesktop from "../assets/images/about/desktop/bg-pattern-hero-abo
 import BgPatternMobile from "../assets/images/about/mobile/bg-pattern-hero-about-mobile.svg";
 
 import BgShape from "../assets/images/shared/desktop/bg-pattern-leaf.svg";
-import { ImageType } from "@/utils/baseTypes";
-import { MediaItem } from "./Global/MediaItem";
+import type { SectionOf } from "@/lib/cms/sections";
+import { MediaItem, forViewport } from "./Global/MediaItem";
 import { motion } from "motion/react";
 import { fadeInLeft, scaleDown } from "@/utils/transistions";
 
-export type TextMediaBannerType = {
-  __component: "components.text-media-banner";
-  id: string;
-  Title: string;
-  Content: string;
-  Image: ImageType;
-  ImageMobile: ImageType;
-  ImageTablet: ImageType;
-};
-
 interface TextMediaBannerProps {
-  data: TextMediaBannerType;
+  data: SectionOf<"text-media-banner">;
 }
 
 export const TextMediaBanner = ({ data }: TextMediaBannerProps) => {
-  const { Image, ImageMobile, ImageTablet, Title, Content } = data;
+  const { title, text, image } = data;
 
   const { width } = useWindowSize();
   const isMobile = width <= 768;
@@ -45,11 +35,7 @@ export const TextMediaBanner = ({ data }: TextMediaBannerProps) => {
               viewport={{ once: true }}
               className="media-wrapper"
             >
-              <MediaItem
-                imageData={
-                  isMobile ? ImageMobile : isTablet ? ImageTablet : Image
-                }
-              />
+              <MediaItem image={forViewport(image, isMobile, isTablet)} />
             </motion.div>
           </div>
           <div className="column is-12-mobile is-12-tablet is-7-desktop text-column">
@@ -67,8 +53,8 @@ export const TextMediaBanner = ({ data }: TextMediaBannerProps) => {
               viewport={{ once: true }}
               className="text-content"
             >
-              <h1>{Title}</h1>
-              <div dangerouslySetInnerHTML={{ __html: Content }} />
+              <h1>{title}</h1>
+              <div>{text}</div>
             </motion.div>
           </div>
         </div>

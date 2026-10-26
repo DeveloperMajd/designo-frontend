@@ -4,33 +4,18 @@ import Circle from "../assets/images/shared/desktop/bg-pattern-small-circle.svg"
 
 import BgShape from "../assets/images/shared/desktop/bg-pattern-leaf.svg";
 import Link from "next/link";
-import { ImageType, LabelsType } from "@/utils/baseTypes";
+import type { SectionOf } from "@/lib/cms/sections";
+import { useLabel } from "@/lib/labels";
 import { MediaItem } from "./Global/MediaItem";
-import { findLabel } from "@/utils/findLabel";
 import { motion, useAnimation } from "motion/react";
 import { fadeInLeft } from "@/utils/transistions";
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState } from "react";
-import { officeAnchor } from "@/utils/officeAnchor";
 
-export type LocationsHighlightsType = {
-  __component: "components.locations-highlights";
-  Elements: {
-    City: string;
-    Image: ImageType;
-    Tag: string;
-  }[];
-};
-
-interface LocationsHighlightsProps {
-  data: LocationsHighlightsType;
-  labels: LabelsType;
-}
+type Highlight = SectionOf<"locations-highlights">["items"][number];
 
 interface HighlightItemProps {
-  City: string;
-  Image: ImageType;
-  Tag: string;
+  item: Highlight;
   label: string;
   index: number;
   currentIndex: number;
@@ -38,9 +23,7 @@ interface HighlightItemProps {
 }
 
 const HighlightItem = ({
-  City,
-  Image,
-  Tag,
+  item,
   label,
   index,
   currentIndex,
@@ -70,11 +53,11 @@ const HighlightItem = ({
         <span className="overlay">
           <Circle />
         </span>
-        <MediaItem imageData={Image} />
+        <MediaItem image={item.image} />
       </div>
       <div className="content">
-        <div className="title h3">{City}</div>
-        <Link href={`/locations#${officeAnchor(Tag)}`} className="btn onLight">
+        <div className="title h3">{item.city}</div>
+        <Link href={`/locations#${item.anchor}`} className="btn onLight">
           {label}
         </Link>
       </div>
@@ -82,11 +65,12 @@ const HighlightItem = ({
   );
 };
 
-export const LocationsHighlights = ({
-  data,
-  labels,
-}: LocationsHighlightsProps) => {
-  const label = findLabel("see-location", labels);
+interface LocationsHighlightsProps {
+  data: SectionOf<"locations-highlights">;
+}
+
+export const LocationsHighlights = ({ data }: LocationsHighlightsProps) => {
+  const label = useLabel("see-location", "See Location");
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const triggerNext = () => {
@@ -97,16 +81,14 @@ export const LocationsHighlights = ({
     <section className="locations-highlights">
       <div className="container">
         <div className="columns">
-          {data.Elements.map((element, index) => (
+          {data.items.map((item, index) => (
             <HighlightItem
-              key={index}
-              City={element.City}
-              Image={element.Image}
-              Tag={element.Tag}
+              key={item.anchor || index}
+              item={item}
+              label={label}
               index={index}
               currentIndex={currentIndex}
               triggerNext={triggerNext}
-              label={label ? label : "See Location"}
             />
           ))}
         </div>

@@ -6,39 +6,47 @@ import { useEffect, useState } from "react";
 import Hamburger from "hamburger-react";
 import { motion, type Variants } from "motion/react";
 import Link from "next/link";
-import { MenuType } from "@/utils/baseTypes";
-import { normalizeHref } from "@/utils/normalizeHref";
+import type { Link as MenuLink } from "@/lib/cms/links";
 
 interface NavbarProps {
-  mainMenu?: MenuType;
+  /** The main menu, already in the order set in the CMS. */
+  menu: MenuLink[];
 }
 
-export const Navbar = ({ mainMenu }: NavbarProps) => {
+const variants: Variants = {
+  hidden: {
+    y: "-100%",
+    opacity: 0,
+    transition: {
+      type: "tween",
+      duration: 0.4,
+    },
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "tween",
+      duration: 0.4,
+    },
+  },
+};
+
+const MenuItems = ({ menu }: NavbarProps) =>
+  menu.map((item) => (
+    <Link
+      key={item.href}
+      href={item.href}
+      target={item.newTab ? "_blank" : undefined}
+      className="nav-item"
+    >
+      {item.label}
+    </Link>
+  ));
+
+export const Navbar = ({ menu }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // order menu items by attribute.order
-  const orderMenuItems = mainMenu?.attributes.items.data.sort((a, b) => {
-    return a.attributes.order - b.attributes.order;
-  });
-
-  const variants: Variants = {
-    hidden: {
-      y: "-100%",
-      opacity: 0,
-      transition: {
-        type: "tween",
-        duration: 0.4,
-      },
-    },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "tween",
-        duration: 0.4,
-      },
-    },
-  };
   useEffect(() => {
     const html = document.documentElement;
 
@@ -67,17 +75,7 @@ export const Navbar = ({ mainMenu }: NavbarProps) => {
         </div>
         <div className="nav-items-wrapper is-hidden-mobile">
           <div className="nav-items">
-            {orderMenuItems &&
-              orderMenuItems.map((item, index) => (
-                <Link
-                  key={index}
-                  href={normalizeHref(item.attributes.url)}
-                  target={item.attributes.target}
-                  className="nav-item"
-                >
-                  {item.attributes.title}
-                </Link>
-              ))}
+            <MenuItems menu={menu} />
           </div>
         </div>
       </div>
@@ -88,16 +86,7 @@ export const Navbar = ({ mainMenu }: NavbarProps) => {
         variants={variants}
       >
         <div className="nav-items">
-          {mainMenu?.attributes.items.data.map((item, index) => (
-            <Link
-              key={index}
-              href={normalizeHref(item.attributes.url)}
-              target={item.attributes.target}
-              className="nav-item"
-            >
-              {item.attributes.title}
-            </Link>
-          ))}
+          <MenuItems menu={menu} />
         </div>
         <div className="overlay" onClick={() => setIsOpen(false)}></div>
       </motion.div>
