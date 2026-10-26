@@ -81,7 +81,7 @@ production URL in `.env`.
 | `yarn build` | Production build (also lints and type-checks) |
 | `yarn start` | Serve the production build |
 | `yarn lint` | Run ESLint (`eslint.config.mjs`: Next.js core web vitals and TypeScript rules) |
-| `yarn typecheck` | Type-check the project with `tsc` |
+| `yarn typecheck` | Type-check the project: `next typegen` writes the types Next.js generates (such as image imports), then `tsc` checks |
 | `yarn format` | Format the code with Prettier (`yarn format:check` only reports) |
 | `yarn test` | Unit tests with Vitest and Testing Library (`yarn test:watch` while working) |
 | `yarn test:e2e` | End-to-end tests with Playwright, against a mock API (see [Tests](#tests)) |
