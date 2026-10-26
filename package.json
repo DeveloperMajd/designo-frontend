@@ -23,7 +23,7 @@
     "motion": "^12.43.0",
     "next": "^15.5.25",
     "qs": "^6.13.0",
-    "react": "^19.3.0",
+    "react": "^19.3.1",
     "react-dom": "^19.3.0",
     "react-intersection-observer": "^9.15.1",
     "react-leaflet": "^5.0.0",
