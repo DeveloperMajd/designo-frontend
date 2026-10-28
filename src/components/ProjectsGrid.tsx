@@ -1,52 +1,36 @@
-"use client";
-
 import type { SectionOf } from "@/lib/cms/sections";
-import { MediaItem, forViewport } from "./Global/MediaItem";
-import { motion, useAnimation } from "motion/react";
-import { useInView } from "react-intersection-observer";
-import { fadeInLeft, fadeInRight } from "@/utils/transistions";
-import { useEffect, useState } from "react";
-import useWindowSize from "../hooks/useWindowSize";
+import { useLabel } from "@/lib/labels";
+import { ResponsiveMediaItem } from "./Global/MediaItem";
+import { motion } from "motion/react";
+import { fadeInLeft, fadeInRight, revealDelay } from "@/utils/transitions";
 import Arrow from "../assets/images/shared/desktop/icon-right-arrow.svg";
 import Link from "next/link";
 
 type GridItem = SectionOf<"project-grids">["items"][number];
 
-interface ProjectGridItemProps {
-  item: GridItem;
-  index: number;
-  currentIndex: number;
-  triggerNext: () => void;
-  isMobile: boolean;
-  isTablet: boolean;
-}
-
 const ProjectGridItem = ({
   item,
   index,
-  currentIndex,
-  triggerNext,
-  isMobile,
-  isTablet,
-}: ProjectGridItemProps) => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
-
-  useEffect(() => {
-    if (inView && index === currentIndex) {
-      controls.start("show");
-    }
-  }, [inView, controls, index, currentIndex]);
+}: {
+  item: GridItem;
+  index: number;
+}) => {
+  const linkText = useLabel("view-projects", "view projects");
 
   const content = (
     <>
       <div className="image-wrapper">
-        <MediaItem image={forViewport(item.image, isMobile, isTablet)} />
+        <ResponsiveMediaItem
+          image={item.image}
+          sizes="(max-width: 1023px) 100vw, 50vw"
+        />
       </div>
       <div className="content">
-        <div className="title h2">{item.title}</div>
+        <div className="title h2" role="heading" aria-level={2}>
+          {item.title}
+        </div>
         <div className="link">
-          <span>view projects</span>
+          <span>{linkText}</span>
           <span className="arrow">
             <Arrow />
           </span>
@@ -55,15 +39,14 @@ const ProjectGridItem = ({
     </>
   );
 
+  // Each item appears when it scrolls into view, later ones a little after.
   return (
     <motion.div
-      ref={ref}
       initial="hidden"
-      animate={controls}
+      whileInView="show"
+      viewport={{ once: true, amount: 0.1 }}
       variants={index === 0 ? fadeInLeft : fadeInRight}
-      onAnimationComplete={() => {
-        if (index === currentIndex) triggerNext();
-      }}
+      custom={revealDelay(index)}
     >
       {item.href ? (
         <Link href={item.href} className="grid-item">
@@ -82,15 +65,6 @@ interface ProjectsGridProps {
 
 export const ProjectsGrid = ({ data }: ProjectsGridProps) => {
   const { items, layout } = data;
-  const { width } = useWindowSize();
-  const isMobile = width < 768;
-  const isTablet = width >= 768 && width < 1024;
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const triggerNext = () => {
-    setCurrentIndex((prevIndex) => prevIndex + 1);
-  };
 
   return (
     <section className="projects-grid">
@@ -101,10 +75,6 @@ export const ProjectsGrid = ({ data }: ProjectsGridProps) => {
               key={`${item.title}-${index}`}
               item={item}
               index={index}
-              currentIndex={currentIndex}
-              triggerNext={triggerNext}
-              isMobile={isMobile}
-              isTablet={isTablet}
             />
           ))}
         </div>

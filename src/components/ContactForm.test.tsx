@@ -34,13 +34,14 @@ const setup = () => {
     };
     for (const [field, value] of Object.entries(values)) {
       await user.type(
-        screen.getByPlaceholderText(fields[field as keyof typeof fields]),
+        screen.getByLabelText(fields[field as keyof typeof fields]),
         value
       );
     }
   };
-  const submit = () => user.click(screen.getByText("submit"));
-  return { fill, submit };
+  const submit = () =>
+    user.click(screen.getByRole("button", { name: "submit" }));
+  return { user, fill, submit };
 };
 
 beforeEach(() => {
@@ -55,6 +56,46 @@ describe("ContactForm", () => {
 
     expect(screen.getAllByText("Can't be empty")).toHaveLength(4);
     expect(send).not.toHaveBeenCalled();
+  });
+
+  it("ties each error to its field and moves focus to the first one", async () => {
+    const { fill, submit } = setup();
+
+    await fill({ name: message.name, email: "ada@" });
+    await submit();
+
+    const email = screen.getByLabelText("Email Address");
+    expect(email.getAttribute("aria-invalid")).toBe("true");
+    expect(
+      document.getElementById(email.getAttribute("aria-describedby")!)
+        ?.textContent
+    ).toBe("Please enter a valid email address.");
+    expect(document.activeElement).toBe(email);
+    expect(
+      screen.getByLabelText("Name").getAttribute("aria-invalid")
+    ).toBeNull();
+  });
+
+  it("clears a field's error once the visitor changes it", async () => {
+    const { fill, submit } = setup();
+
+    await submit();
+    await fill({ name: "A" });
+
+    expect(screen.getAllByText("Can't be empty")).toHaveLength(3);
+    expect(
+      screen.getByLabelText("Name").getAttribute("aria-invalid")
+    ).toBeNull();
+  });
+
+  it("can be sent with the keyboard alone", async () => {
+    send.mockResolvedValue({ ok: true });
+    const { user, fill } = setup();
+
+    await fill(message);
+    await user.keyboard("{Tab}{Enter}");
+
+    expect(send).toHaveBeenCalledWith(message);
   });
 
   it("rejects an invalid email address", async () => {

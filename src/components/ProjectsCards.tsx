@@ -1,51 +1,50 @@
 import type { SectionOf } from "@/lib/cms/sections";
 import { MediaItem } from "./Global/MediaItem";
 import Link from "next/link";
-import { motion, useAnimation } from "motion/react";
-import { useInView } from "react-intersection-observer";
-import { fadeInLeft, fadeInRight } from "@/utils/transistions";
-import { useEffect } from "react";
+import { motion } from "motion/react";
+import { fadeInLeft, fadeInRight } from "@/utils/transitions";
 
 type Card = SectionOf<"project-cards">["items"][number];
 
 const ProjectCard = ({ card, index }: { card: Card; index: number }) => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("show");
-    }
-  }, [inView, controls]);
-
   const { title, text, image, link } = card;
+
+  const content = (
+    <>
+      <div className="title h3" role="heading" aria-level={2}>
+        {title}
+      </div>
+      <div className="text">{text}</div>
+    </>
+  );
 
   return (
     <motion.div
-      ref={ref}
       initial="hidden"
-      animate={controls}
+      whileInView="show"
+      viewport={{ once: true, amount: 0.2 }}
       variants={index % 2 === 0 ? fadeInLeft : fadeInRight}
       className="column is-12-mobile is-12-tablet is-4-desktop project-card"
     >
       <div className="columns">
         <div className="column is-12-mobile is-6-tablet is-12-desktop card-image">
-          <MediaItem image={image} />
+          <MediaItem
+            image={image}
+            sizes="(max-width: 768px) 100vw, (max-width: 1023px) 50vw, 33vw"
+          />
         </div>
         {link ? (
           <Link
             href={link.href}
             target={link.newTab ? "_blank" : undefined}
             className="column is-12-mobile is-6-tablet is-12-desktop card-content link"
-            aria-label={link.label}
+            aria-label={link.label || undefined}
           >
-            <div className="title h3">{title}</div>
-            <div className="text">{text}</div>
+            {content}
           </Link>
         ) : (
           <div className="column is-12-mobile is-6-tablet is-12-desktop card-content">
-            <div className="title h3">{title}</div>
-            <div className="text">{text}</div>
+            {content}
           </div>
         )}
       </div>

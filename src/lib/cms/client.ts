@@ -5,9 +5,10 @@ import { z } from "zod";
 export class CmsError extends Error {
   constructor(
     message: string,
-    readonly url: string
+    /** Where it went wrong: the URL requested, or what was being parsed, e.g. `page "about"`. */
+    readonly source: string
   ) {
-    super(`${message} (${url})`);
+    super(`${message} (${source})`);
     this.name = "CmsError";
   }
 }
@@ -17,7 +18,7 @@ const TIMEOUT_MS = 10_000;
 /** The Strapi API base URL, including /api. */
 export const apiUrl = () => {
   const url = process.env.NEXT_PUBLIC_API_URL;
-  if (!url) throw new CmsError("NEXT_PUBLIC_API_URL is not set", "(no url)");
+  if (!url) throw new CmsError("NEXT_PUBLIC_API_URL is not set", "environment");
   return url;
 };
 

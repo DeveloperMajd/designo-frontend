@@ -11,16 +11,15 @@ declare global {
 
 const axeSource = readFileSync(require.resolve("axe-core/axe.min.js"), "utf8");
 
-// Serious problems the site already has, to be fixed in the accessibility pass. Remove a
-// rule here once it is fixed; any other serious or critical violation fails the test.
+// Serious problems the site knowingly has. Any other serious or critical violation fails
+// the test.
 const KNOWN = new Set<string>([
-  // The social icons are SVGs injected by react-svg, with no text alternative.
-  "svg-img-alt",
   // White text on the brand peach (#E7816B) is about 2.7:1; AA needs 4.5:1 (3:1 large).
+  // Fixing it means changing the brand colours, which is a design decision.
   "color-contrast",
 ]);
 
-for (const { path } of routes) {
+for (const { path } of [...routes, { path: "/no-such-page" }]) {
   test(`${path} has no new serious accessibility problems`, async ({
     page,
   }) => {

@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import type { Section } from "@/lib/cms/sections";
-import { Modules } from "./module-list";
+import { hasPageHeading, Modules } from "./module-list";
 
 describe("Modules", () => {
   it("renders the component for a section", () => {
@@ -43,5 +43,21 @@ describe("Modules", () => {
 
     expect(screen.getAllByRole("img")).toHaveLength(1);
     expect(screen.getByText("Friendly")).toBeTruthy();
+  });
+});
+
+describe("hasPageHeading", () => {
+  it("is true when a banner gives the page its main heading", () => {
+    expect(
+      hasPageHeading([
+        { kind: "page-banner", id: 1, title: "Web Design", text: "" },
+      ])
+    ).toBe(true);
+  });
+
+  it("is false for a page without one, such as the locations page", () => {
+    expect(hasPageHeading([{ kind: "locations", id: 1, offices: [] }])).toBe(
+      false
+    );
   });
 });

@@ -67,7 +67,9 @@ describe("cmsGet", () => {
 
     expect(error).toBeInstanceOf(CmsError);
     expect((error as CmsError).message).toContain(message);
-    expect((error as CmsError).url).toBe("https://api.example.com/api/pages");
+    expect((error as CmsError).source).toBe(
+      "https://api.example.com/api/pages"
+    );
   });
 
   it("throws a CmsError when the API URL is not configured", async () => {
@@ -86,10 +88,11 @@ describe("parseCms", () => {
     });
   });
 
-  it("throws a CmsError that says what did not fit", () => {
-    expect(() => parseCms(schema, { title: 42 }, "page")).toThrowError(/title/);
-    expect(() => parseCms(schema, { title: 42 }, "page")).toThrowError(
-      CmsError
-    );
+  it("throws a CmsError that says what did not fit, and in what", () => {
+    const parse = () => parseCms(schema, { title: 42 }, "page");
+
+    expect(parse).toThrowError(CmsError);
+    expect(parse).toThrowError(/title/);
+    expect(parse).toThrowError(/\(page\)$/);
   });
 });

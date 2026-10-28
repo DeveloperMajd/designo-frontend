@@ -1,13 +1,9 @@
-"use client";
-
-import useWindowSize from "../hooks/useWindowSize";
-
 import CirclesMobile from "../assets/images/shared/desktop/bg-pattern-three-circles.svg";
 import CirclesTablet from "../assets/images/shared/desktop/bg-pattern-two-circles.svg";
 
 import dynamic from "next/dynamic";
 import { motion } from "motion/react";
-import { fadeInLeft, fadeInRight, scaleDown } from "@/utils/transistions";
+import { fadeInLeft, fadeInRight, scaleDown } from "@/utils/transitions";
 import type { SectionOf } from "@/lib/cms/sections";
 import { useLabel } from "@/lib/labels";
 import { Address } from "./Global/Address";
@@ -22,11 +18,7 @@ interface LocationsProps {
 }
 
 const Locations = ({ data }: LocationsProps) => {
-  const { width } = useWindowSize();
-
-  const isMobile = width <= 768;
-  const isTablet = width > 768 && width < 1024;
-
+  const contactLabel = useLabel("contact", "Contact");
   const phoneLabel = useLabel("phone", "P: ");
   const emailLabel = useLabel("email", "M: ");
 
@@ -39,11 +31,7 @@ const Locations = ({ data }: LocationsProps) => {
             key={office.anchor || index}
             className={`columns is-variable is-4 img-${office.imagePosition}`}
           >
-            <div
-              className={`column is-12-tablet is-4-desktop img-col ${
-                isMobile ? "is-mobile" : isTablet ? "is-tablet" : "is-desktop"
-              }`}
-            >
+            <div className="column is-12-tablet is-4-desktop img-col">
               <motion.div
                 variants={scaleDown}
                 initial="hidden"
@@ -71,7 +59,9 @@ const Locations = ({ data }: LocationsProps) => {
                   className={`columns is-multiline content-inner-columns`}
                 >
                   <div className="column is-6-mobile is-12-tablet">
-                    <div className="title h5">{office.city}</div>
+                    <div className="title h5" role="heading" aria-level={2}>
+                      {office.city}
+                    </div>
                   </div>
                   <div className="column is-6 address">
                     <Address lines={office.addressLines} />
@@ -79,7 +69,7 @@ const Locations = ({ data }: LocationsProps) => {
 
                   <div className="column is-6 contacts">
                     <p>
-                      <strong>Contact</strong>
+                      <strong>{contactLabel}</strong>
                     </p>
                     {office.phone && (
                       <p>
@@ -103,7 +93,8 @@ const Locations = ({ data }: LocationsProps) => {
                 </motion.div>
               </div>
               <div className="bg-pattern">
-                {isMobile ? <CirclesMobile /> : <CirclesTablet />}
+                <CirclesMobile className="is-hidden-tablet" />
+                <CirclesTablet className="is-hidden-mobile" />
               </div>
             </div>
           </div>

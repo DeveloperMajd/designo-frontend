@@ -8,10 +8,10 @@ const values = {
 };
 
 const fillAndSubmit = async (page: Page) => {
-  for (const [placeholder, value] of Object.entries(values)) {
-    await page.getByPlaceholder(placeholder).fill(value);
+  for (const [label, value] of Object.entries(values)) {
+    await page.getByLabel(label).fill(value);
   }
-  await page.getByText("submit", { exact: true }).click();
+  await page.getByRole("button", { name: "submit" }).click();
 };
 
 // The form posts straight from the browser to the API, a different origin.
@@ -27,9 +27,10 @@ test.beforeEach(async ({ page }) => {
 });
 
 test("marks every empty field", async ({ page }) => {
-  await page.getByText("submit", { exact: true }).click();
+  await page.getByRole("button", { name: "submit" }).click();
 
   await expect(page.getByText("Can't be empty")).toHaveCount(4);
+  await expect(page.getByLabel("Name")).toBeFocused();
 });
 
 test("sends the message and thanks the visitor", async ({ page }) => {

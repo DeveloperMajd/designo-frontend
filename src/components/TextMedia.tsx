@@ -1,12 +1,8 @@
-"use client";
-
-import useWindowSize from "../hooks/useWindowSize";
-
 import BgPattern from "../assets/images/shared/desktop/bg-pattern-three-circles.svg";
 import type { SectionOf } from "@/lib/cms/sections";
-import { MediaItem, forViewport } from "./Global/MediaItem";
+import { ResponsiveMediaItem } from "./Global/MediaItem";
 import { motion } from "motion/react";
-import { fadeInLeft, fadeInRight, scaleDown } from "@/utils/transistions";
+import { fadeInLeft, fadeInRight, scaleDown } from "@/utils/transitions";
 
 interface TextMediaProp {
   data: SectionOf<"text-media">;
@@ -15,10 +11,6 @@ interface TextMediaProp {
 export const TextMedia = ({ data }: TextMediaProp) => {
   const { title, text, image, imagePosition } = data;
   const position = `img-${imagePosition}`;
-
-  const { width } = useWindowSize();
-  const isMobile = width <= 768;
-  const isTablet = width > 768 && width < 1024;
 
   return (
     <section className="text-media is-full-width">
@@ -32,7 +24,10 @@ export const TextMedia = ({ data }: TextMediaProp) => {
               viewport={{ once: true }}
               className="media-wrapper"
             >
-              <MediaItem image={forViewport(image, isMobile, isTablet)} />
+              <ResponsiveMediaItem
+                image={image}
+                sizes="(max-width: 1023px) 100vw, 40vw"
+              />
             </motion.div>
           </div>
           <div
@@ -48,7 +43,9 @@ export const TextMedia = ({ data }: TextMediaProp) => {
               viewport={{ once: true }}
               className="text-content"
             >
-              <div className="title h5">{title}</div>
+              <div className="title h5" role="heading" aria-level={2}>
+                {title}
+              </div>
               <div>{text}</div>
             </motion.div>
           </div>
