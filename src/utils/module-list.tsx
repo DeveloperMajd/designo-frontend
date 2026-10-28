@@ -10,6 +10,17 @@ import Locations from "@/components/Locations";
 import { ContactForm } from "@/components/ContactForm";
 import type { Section } from "@/lib/cms/sections";
 
+/** The sections whose title is the page's main heading (its h1). */
+const HEADING_SECTIONS = new Set<Section["kind"]>([
+  "homepage-banner",
+  "page-banner",
+  "text-media-banner",
+  "contact-form",
+]);
+
+export const hasPageHeading = (sections: Section[]) =>
+  sections.some((section) => HEADING_SECTIONS.has(section.kind));
+
 /** Renders one section of a page with its component. */
 export const Modules = ({ section }: { section: Section }) => {
   switch (section.kind) {

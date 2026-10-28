@@ -1,36 +1,27 @@
 //* Fonts
-@font-face {
-  font-family: "Jost Medium";
-  src: url("../assets/fonts/Jost-Medium.ttf");
-}
+// Jost is loaded with next/font in pages/_app.tsx, which defines these variables. One
+// variable font holds every weight, so text sets a real font-weight instead of picking
+// a family per weight.
+$jost: var(--font-jost), Arial, Helvetica, sans-serif;
+$jost-italic: var(--font-jost-italic), Arial, Helvetica, sans-serif;
 
-@font-face {
-  font-family: "Jost Reqular";
-  src: url("../assets/fonts/Jost-Regular.ttf");
+@mixin font-regular {
+  font-family: $jost;
+  font-weight: 400;
 }
-
-@font-face {
-  font-family: "Jost italic";
-  src: url("../assets/fonts/Jost-Italic.ttf");
+@mixin font-medium {
+  font-family: $jost;
+  font-weight: 500;
 }
-
-@font-face {
-  font-family: "Jost Bold";
-  src: url("../assets/fonts/Jost-Bold.ttf");
+@mixin font-bold {
+  font-family: $jost;
+  font-weight: 700;
 }
-
-$jost-bold:
-  "Jost Bold",
-  Arial Bold,
-  Helvetica Bold,
-  sans-serif;
-$jost-medium:
-  "Jost Medium",
-  Arial Bold,
-  Helvetica Bold,
-  sans-serif;
-$jost-reqular: "Jost Reqular", Arial, Helvetica, sans-serif;
-$jost-italic: "Jost italic", Arial, Helvetica, sans-serif;
+@mixin font-italic {
+  font-family: $jost-italic;
+  font-style: italic;
+  font-weight: 400;
+}
 
 //* Colors
 $peach: #e7816b;

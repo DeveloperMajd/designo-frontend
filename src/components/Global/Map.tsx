@@ -13,7 +13,8 @@ const Map = ({ coordinates, addressLines }: MapProps) => {
     <MapContainer
       center={center}
       zoom={13}
-      scrollWheelZoom={true}
+      // Scrolling the page over the map scrolls the page; the map does not zoom.
+      scrollWheelZoom={false}
       zoomControl={false}
       style={{ height: "100%", width: "100%" }}
     >

@@ -22,7 +22,8 @@ export const SocialIcons = ({ socials }: SocialIconsProps) => (
           src={icon}
           className={`svg-icon ${platform}`}
           wrapper="svg"
-          role="link"
+          // The link has the name; the icon is decoration.
+          aria-hidden
         />
       </Link>
     ))}

@@ -29,7 +29,7 @@ export const Footer = ({ showContactShowcase, menu, contact }: FooterProps) => {
             <div className="columns is-multiline">
               <div className="column nav-col is-12 is-flex">
                 <div className="logo">
-                  <Image src={Logo} alt="logo" />
+                  <Image src={Logo} alt="Designo" />
                 </div>
                 <div className="line is-hidden-tablet"></div>
                 <div className="footer-items-wrapper">

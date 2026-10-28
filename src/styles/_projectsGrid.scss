@@ -78,7 +78,7 @@
         }
       }
       .link {
-        font-family: $jost-medium;
+        @include font-medium;
         font-size: 0.9375rem;
         letter-spacing: 0.3125rem;
         display: flex;

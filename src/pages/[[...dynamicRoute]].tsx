@@ -1,15 +1,13 @@
-import { Footer } from "@/components/Footer";
-import { Navbar } from "@/components/Navbar";
+import { Layout } from "@/components/Layout";
 import { getPage, getPageSlugs, type Page } from "@/lib/cms/pages";
 import { getSiteData, type SiteData } from "@/lib/cms/site";
-import { LabelsProvider } from "@/lib/labels";
-import { Modules } from "@/utils/module-list";
+import { hasPageHeading, Modules } from "@/utils/module-list";
 import {
   HOME_SLUG,
   SITE_DESCRIPTION,
   SITE_NAME,
   SITE_TAGLINE,
-  SITE_URL,
+  pageUrl,
 } from "@/utils/site";
 import {
   GetStaticPathsResult,
@@ -32,20 +30,13 @@ export default function DynamicPage({ page, site }: DynamicPageProps) {
   const title = isHome
     ? `${SITE_NAME} | ${SITE_TAGLINE}`
     : `${page.title} | ${SITE_NAME}`;
-  const url = isHome ? SITE_URL : `${SITE_URL}/${page.slug}`;
+  const url = pageUrl(page.slug);
 
   return (
-    <LabelsProvider labels={site.labels}>
+    <Layout site={site} showContactShowcase={page.slug !== "contact"}>
       <Head>
         <title>{title}</title>
         <meta name="description" content={SITE_DESCRIPTION} />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
         <link rel="canonical" href={url} />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content={SITE_NAME} />
@@ -53,18 +44,14 @@ export default function DynamicPage({ page, site }: DynamicPageProps) {
         <meta property="og:description" content={SITE_DESCRIPTION} />
         <meta property="og:url" content={url} />
       </Head>
-      <main>
-        <Navbar menu={site.menu} />
-        {page.sections.map((section) => (
-          <Modules key={`${section.kind}-${section.id}`} section={section} />
-        ))}
-        <Footer
-          showContactShowcase={page.slug !== "contact"}
-          menu={site.menu}
-          contact={site.contact}
-        />
-      </main>
-    </LabelsProvider>
+      {/* Every page needs a main heading; one without a banner gets a hidden one. */}
+      {!hasPageHeading(page.sections) && (
+        <h1 className="is-sr-only">{page.title}</h1>
+      )}
+      {page.sections.map((section) => (
+        <Modules key={`${section.kind}-${section.id}`} section={section} />
+      ))}
+    </Layout>
   );
 }
 
